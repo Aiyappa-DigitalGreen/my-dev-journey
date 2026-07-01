@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.iml
+
+# Android (for later)
+*.apk
+*.keystore
+local.properties
+/build/
+.gradle/
+
+# Python (for later)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Secrets — never commit these
+*.key
+secrets.*

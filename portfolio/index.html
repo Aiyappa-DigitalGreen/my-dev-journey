@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name — AI Engineer & Android Developer</title>
+<meta name="description" content="AI Engineer & Android developer — building intelligence into mobile.">
+<!-- LOCAL & PRIVATE. Replace bracketed fields. Project "Code" links activate as each repo is pushed. -->
+<style>
+  :root{
+    --bg:#07080D; --bg2:#0C0F1C; --panel:rgba(255,255,255,.045); --panel2:rgba(255,255,255,.07);
+    --brd:rgba(255,255,255,.10); --brd2:rgba(255,255,255,.18);
+    --text:#EDEFF6; --soft:#C3C9D8; --muted:#868EA3;
+    --accent:#4B6BFF; --accent2:#9B5CFF; --mint:#57EFB0; --amber:#FFCB6B; --pink:#FF7AC6;
+    --grad:linear-gradient(100deg,#4B6BFF,#9B5CFF);
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:#9DB0FF;text-decoration:none}
+  a:hover{color:#fff}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .mono{font-family:var(--mono)}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  svg.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ambient background */
+  .bg-blobs{position:fixed;inset:0;z-index:-2;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 26s ease-in-out infinite}
+  .blob.b1{width:52vw;height:52vw;left:-12vw;top:-14vw;background:radial-gradient(circle,#2540E0,transparent 62%)}
+  .blob.b2{width:46vw;height:46vw;right:-12vw;top:8vh;background:radial-gradient(circle,#7C3AED,transparent 62%);animation-delay:-8s}
+  .blob.b3{width:40vw;height:40vw;left:20vw;bottom:-18vw;background:radial-gradient(circle,#0E7C6B,transparent 62%);animation-delay:-15s}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(6vw,4vh) scale(1.12)}66%{transform:translate(-5vw,-3vh) scale(.94)}}
+  .grid-overlay{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:54px 54px;mask-image:radial-gradient(circle at 50% 20%,#000 0%,transparent 82%)}
+  #spot{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;
+    background:radial-gradient(circle,rgba(96,120,255,.13),transparent 65%);transform:translate(-50%,-50%);left:50%;top:-30%}
+  #prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:var(--grad);box-shadow:0 0 12px rgba(96,120,255,.7)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(7,8,13,.55);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--brd)}
+  .navrow{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--mono);font-weight:600;font-size:.88rem;color:#EAECF3}
+  .brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navlinks{display:flex;gap:6px}
+  .navlinks a{font-family:var(--mono);font-size:.73rem;text-transform:uppercase;letter-spacing:.07em;color:#AEB5C8;padding:8px 11px;border-radius:8px;transition:background .2s,color .2s}
+  .navlinks a:hover{color:#fff;background:var(--panel)}
+  @media(max-width:820px){.navlinks{display:none}}
+
+  .btn{font-family:var(--mono);font-size:.82rem;letter-spacing:.02em;padding:14px 24px;border-radius:11px;border:1px solid transparent;
+    display:inline-flex;align-items:center;gap:9px;cursor:pointer;position:relative;transition:transform .18s ease,box-shadow .2s ease,background .2s}
+  .btn.primary{background:var(--grad);color:#fff}
+  .btn.primary:hover{box-shadow:0 14px 40px rgba(96,90,255,.5)}
+  .btn.ghost{background:var(--panel);color:#E9ECF5;border-color:var(--brd2)}
+  .btn.ghost:hover{border-color:#fff;background:var(--panel2)}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--brd)}
+  #net{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.6;z-index:0}
+  .hero .wrap{position:relative;z-index:2;padding:110px 28px 92px}
+  .tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+    color:#C7D0FF;background:rgba(75,107,255,.14);border:1px solid rgba(122,150,255,.4);padding:8px 15px;border-radius:100px}
+  .pulse{width:7px;height:7px;border-radius:50%;background:var(--mint);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(87,239,176,.6)}70%{box-shadow:0 0 0 11px rgba(87,239,176,0)}100%{box-shadow:0 0 0 0 rgba(87,239,176,0)}}
+  h1.big{font-size:clamp(2.8rem,7.2vw,5.4rem);line-height:1.01;letter-spacing:-.035em;font-weight:760;margin:24px 0 0;max-width:16ch;text-wrap:balance}
+  h1.big .grad{background:linear-gradient(90deg,#93A6FF,#C9A6FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{font-size:clamp(1.05rem,2.2vw,1.34rem);color:var(--soft);max-width:58ch;margin:24px 0 0}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+  .stats{display:grid;grid-template-columns:repeat(4,auto);gap:16px 46px;margin-top:54px;padding-top:32px;border-top:1px solid var(--brd)}
+  .stat .n{font-size:2rem;font-weight:750;letter-spacing:-.02em;background:linear-gradient(90deg,#fff,#B9C2E6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:4px}
+  @media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr);gap:24px}}
+
+  .marquee{border-bottom:1px solid var(--brd);background:rgba(255,255,255,.02);overflow:hidden;padding:16px 0}
+  .track{display:flex;gap:44px;width:max-content;animation:scroll 32s linear infinite;font-family:var(--mono);font-size:.85rem;color:var(--muted);letter-spacing:.05em;white-space:nowrap}
+  .marquee:hover .track{animation-play-state:paused}
+  .track b{color:#9DB0FF;font-weight:400}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{position:relative;z-index:1;padding:88px 0;border-bottom:1px solid var(--brd)}
+  .shead{display:flex;align-items:baseline;gap:16px;margin-bottom:16px}
+  .shead .num{font-family:var(--mono);font-size:.8rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .shead h2{font-size:clamp(1.6rem,3.2vw,2.3rem);letter-spacing:-.02em;margin:0;font-weight:700}
+  .shead .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--brd),transparent)}
+  .sublead{color:var(--soft);max-width:60ch;margin:0 0 40px;font-size:1.02rem}
+
+  .glass{background:var(--panel);border:1px solid var(--brd);border-radius:18px;backdrop-filter:blur(6px)}
+
+  /* CAPABILITIES */
+  .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:820px){.caps{grid-template-columns:1fr}}
+  .cap{padding:28px;border-radius:18px;background:var(--panel);border:1px solid var(--brd);transition:transform .2s,border-color .2s,box-shadow .2s}
+  .cap:hover{transform:translateY(-6px);border-color:var(--brd2);box-shadow:0 22px 50px rgba(0,0,0,.45)}
+  .capicon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;color:#fff;margin-bottom:18px;background:var(--grad)}
+  .cap.g2 .capicon{background:linear-gradient(100deg,#0E9E6C,#4B6BFF)}
+  .cap.g3 .capicon{background:linear-gradient(100deg,#9B5CFF,#FF7AC6)}
+  .cap h3{margin:0 0 8px;font-size:1.24rem;color:#fff}
+  .cap p{margin:0 0 16px;color:var(--soft);font-size:.95rem}
+  .cap ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .cap li{font-family:var(--mono);font-size:.8rem;color:var(--soft);padding-left:20px;position:relative}
+  .cap li::before{content:"›";position:absolute;left:0;color:#8AA0FF}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:1.5fr 1fr;gap:40px}
+  .about p{margin:0 0 18px;color:var(--soft)} .about p strong{color:#fff}
+  .facts{overflow:hidden;align-self:start;padding:6px}
+  .fact{display:flex;justify-content:space-between;gap:16px;padding:14px 16px;border-radius:12px;font-family:var(--mono);font-size:.82rem;transition:background .2s}
+  .fact:hover{background:var(--panel2)}
+  .fact .k{color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:.72rem}
+  .fact .v{color:#fff;text-align:right}
+  @media(max-width:760px){.about{grid-template-columns:1fr;gap:22px}}
+
+  /* ARCHITECTURE DIAGRAM */
+  .arch{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0;margin-top:6px}
+  .layer{padding:26px 22px;border-radius:16px;background:var(--panel);border:1px solid var(--brd);text-align:center;position:relative}
+  .layer .li{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin:0 auto 14px;color:#fff;background:var(--panel2);border:1px solid var(--brd2)}
+  .layer.l1 .li{background:linear-gradient(100deg,#0E9E6C,#57EFB0);color:#04120C}
+  .layer.l2 .li{background:linear-gradient(100deg,#4B6BFF,#9B5CFF)}
+  .layer.l3 .li{background:linear-gradient(100deg,#9B5CFF,#FF7AC6)}
+  .layer h4{margin:0 0 4px;font-size:1.06rem;color:#fff}
+  .layer .role{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .layer .lt{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .layer .lt span{font-family:var(--mono);font-size:.68rem;color:var(--soft);border:1px solid var(--brd);padding:3px 8px;border-radius:6px}
+  .pipe{width:56px;position:relative;align-self:center}
+  .pipe .rail{height:3px;width:100%;background:linear-gradient(90deg,var(--brd),var(--brd2),var(--brd));border-radius:3px;position:relative;overflow:hidden}
+  .pipe .pkt{position:absolute;top:50%;left:0;width:8px;height:8px;border-radius:50%;background:#9DB0FF;box-shadow:0 0 10px #6f86ff;transform:translateY(-50%);animation:flow 2.6s linear infinite}
+  .pipe.p2 .pkt{animation-delay:1.3s}
+  @keyframes flow{0%{left:-8px;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:100%;opacity:0}}
+  .archnote{margin-top:20px;font-size:.95rem;color:var(--soft);text-align:center}
+  .archnote b{color:#fff}
+  @media(max-width:820px){
+    .arch{grid-template-columns:1fr;gap:0}
+    .pipe{width:100%;height:44px}
+    .pipe .rail{width:3px;height:100%;margin:0 auto;background:linear-gradient(180deg,var(--brd),var(--brd2),var(--brd))}
+    .pipe .pkt{top:0;left:50%;transform:translateX(-50%);animation:flowv 2.6s linear infinite}
+    @keyframes flowv{0%{top:-8px;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:100%;opacity:0}}
+  }
+
+  /* SKILLS */
+  .filter{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+  .fbtn{font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;padding:9px 15px;border-radius:100px;border:1px solid var(--brd2);background:transparent;color:var(--soft);cursor:pointer;transition:all .2s}
+  .fbtn:hover{border-color:#fff;color:#fff}
+  .fbtn.on{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 8px 24px rgba(96,90,255,.4)}
+  .spec{overflow:hidden}
+  .specrow{display:grid;grid-template-columns:190px 1fr;border-bottom:1px solid var(--brd);transition:opacity .3s,filter .3s}
+  .specrow:last-child{border-bottom:0}
+  .specrow.dim{opacity:.2;filter:grayscale(.6)}
+  .specrow .cat{padding:20px;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border-right:1px solid var(--brd)}
+  .chips{padding:16px 18px;display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-family:var(--mono);font-size:.78rem;padding:7px 13px;border:1px solid var(--brd2);border-radius:9px;color:#E4E8F4;background:rgba(255,255,255,.03);transition:transform .16s,border-color .16s,box-shadow .16s,color .16s}
+  .chip:hover{transform:translateY(-3px);border-color:#8AA0FF;color:#fff;box-shadow:0 8px 20px rgba(75,107,255,.28)}
+  .chip.key{border-color:rgba(122,150,255,.5);background:rgba(75,107,255,.12);color:#C7D0FF}
+  @media(max-width:640px){.specrow{grid-template-columns:1fr}.specrow .cat{border-right:0;border-bottom:1px solid var(--brd)}}
+
+  /* PROJECTS */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .tilt{perspective:1000px}
+  .card{position:relative;border:1px solid var(--brd);border-radius:18px;background:var(--panel);padding:28px;display:flex;flex-direction:column;gap:14px;overflow:hidden;transform-style:preserve-3d;transition:transform .12s ease,box-shadow .25s ease,border-color .25s ease;will-change:transform}
+  .card .shine{position:absolute;inset:0;border-radius:18px;pointer-events:none;opacity:0;transition:opacity .25s;background:radial-gradient(340px circle at var(--mx,50%) var(--my,0%),rgba(150,170,255,.18),transparent 55%)}
+  .card:hover{border-color:var(--brd2);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .card:hover .shine{opacity:1}
+  .card.flag{border-color:rgba(122,150,255,.4)}
+  .card.flag::after{content:"★ Flagship";position:absolute;top:16px;right:-34px;transform:rotate(45deg);background:var(--grad);color:#fff;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;padding:5px 40px}
+  .cardtop{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .kicker{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+  .status{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.08em;padding:5px 11px;border-radius:100px;white-space:nowrap}
+  .status.plan{color:#C7D0FF;background:rgba(75,107,255,.16)}
+  .status.done{color:var(--mint);background:rgba(87,239,176,.16)}
+  .card h3{margin:0;font-size:1.32rem;letter-spacing:-.01em;color:#fff}
+  .card p{margin:0;color:var(--soft);font-size:.95rem}
+  .stack{display:flex;flex-wrap:wrap;gap:6px}
+  .stack span{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--brd);padding:3px 9px;border-radius:6px}
+  .cardfoot{margin-top:auto;padding-top:8px}
+  .codesoon{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:inline-flex;gap:6px}
+
+  /* PROCESS */
+  .proc{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  @media(max-width:900px){.proc{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.proc{grid-template-columns:1fr}}
+  .pstep{padding:22px;border-radius:16px;background:var(--panel);border:1px solid var(--brd);position:relative;transition:transform .2s,border-color .2s}
+  .pstep:hover{transform:translateY(-5px);border-color:var(--brd2)}
+  .pstep .pn{font-family:var(--mono);font-size:.75rem;color:#8AA0FF}
+  .pstep .pic{margin:10px 0 12px;color:#C7D0FF}
+  .pstep h4{margin:0 0 6px;font-size:1.02rem;color:#fff}
+  .pstep p{margin:0;font-size:.86rem;color:var(--soft)}
+
+  /* WHY / PRINCIPLES */
+  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:720px){.why{grid-template-columns:1fr}}
+  .wcard{display:flex;gap:16px;padding:24px;border-radius:16px;background:var(--panel);border:1px solid var(--brd);transition:border-color .2s,transform .2s}
+  .wcard:hover{border-color:var(--brd2);transform:translateY(-4px)}
+  .wcard .wi{flex:0 0 46px;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;color:#fff;background:var(--panel2);border:1px solid var(--brd2)}
+  .wcard h4{margin:0 0 5px;font-size:1.06rem;color:#fff}
+  .wcard p{margin:0;font-size:.9rem;color:var(--soft)}
+
+  /* TIMELINE */
+  .road{position:relative;padding-left:44px}
+  .road .line{position:absolute;left:14px;top:6px;bottom:6px;width:2px;background:var(--brd)}
+  .road .fill{position:absolute;left:14px;top:6px;width:2px;height:0;background:var(--grad);box-shadow:0 0 12px rgba(96,120,255,.6)}
+  .step{position:relative;padding:16px 0 26px}
+  .step .node{position:absolute;left:-37px;top:20px;width:16px;height:16px;border-radius:50%;background:var(--bg2);border:2px solid var(--brd2);transition:all .3s}
+  .step.lit .node{background:var(--grad);border-color:transparent;box-shadow:0 0 0 5px rgba(96,120,255,.18)}
+  .step .when{font-family:var(--mono);font-size:.74rem;color:#9DB0FF}
+  .step b{display:block;font-size:1.08rem;margin:4px 0 3px;color:#fff}
+  .step span.d{color:var(--muted);font-size:.92rem}
+
+  /* FAQ */
+  .faq{display:flex;flex-direction:column;gap:12px}
+  .qa{border:1px solid var(--brd);border-radius:14px;background:var(--panel);overflow:hidden}
+  .qa summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.04rem;color:#fff;font-weight:600}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary .plus{font-family:var(--mono);color:#8AA0FF;font-size:1.4rem;transition:transform .25s;flex:0 0 auto}
+  .qa[open] summary .plus{transform:rotate(45deg)}
+  .qa .ans{padding:0 22px 20px;color:var(--soft);font-size:.96rem}
+  .qa .ans b{color:#fff}
+
+  /* CONTACT */
+  .contact{text-align:center;padding:104px 0}
+  .contact h2{font-size:clamp(2rem,4.6vw,3.1rem);letter-spacing:-.02em;margin:12px 0 14px;text-wrap:balance}
+  .contact h2 .grad{background:linear-gradient(90deg,#93A6FF,#C9A6FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .contact p{color:var(--soft);max-width:48ch;margin:0 auto 32px}
+  .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  footer{padding:36px 0 60px;text-align:center;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+
+  #top{position:fixed;right:24px;bottom:24px;z-index:40;width:48px;height:48px;border-radius:14px;cursor:pointer;background:var(--panel2);border:1px solid var(--brd2);color:#fff;font-size:1.1rem;backdrop-filter:blur(8px);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s}
+  #top.show{opacity:1;transform:none}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}#net,#spot,.blob,.pkt{display:none}}
+</style>
+</head>
+<body>
+<div class="bg-blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="grid-overlay"></div>
+<div id="spot"></div>
+<div id="prog"></div>
+
+<nav>
+  <div class="wrap navrow">
+    <span class="brand">[ Your Name ] · <b>AI × Android</b></span>
+    <div class="navlinks">
+      <a href="#what">What</a><a href="#about">About</a><a href="#how">How</a><a href="#stack">Stack</a><a href="#work">Work</a><a href="#roadmap">Path</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="tag"><span class="pulse"></span> Open to AI Engineer / Android roles</span>
+    <h1 class="big">Building <span class="grad">intelligence</span> into mobile.</h1>
+    <p class="lede">I build Android apps with Jetpack Compose and wire them to real AI — LLMs, RAG, agents and on-device models, served through backends I build myself. The rare mobile + AI combination, end to end.</p>
+    <div class="cta">
+      <a class="btn primary mag" href="#work">View projects →</a>
+      <a class="btn ghost mag" href="resume.html">Résumé</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="2">0</div><div class="l">Core languages</div></div>
+      <div class="stat"><div class="n" data-count="6">0</div><div class="l">Portfolio projects</div></div>
+      <div class="stat"><div class="n" data-count="300" data-suffix="+">0</div><div class="l">DSA problems</div></div>
+      <div class="stat"><div class="n" data-count="8" data-suffix=" mo">0</div><div class="l">Build roadmap</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="track">
+    <span><b>Kotlin</b></span><span><b>Jetpack Compose</b></span><span><b>Python</b></span><span><b>FastAPI</b></span><span><b>RAG</b></span><span><b>Vector DBs</b></span><span><b>Agents</b></span><span><b>MCP</b></span><span><b>PyTorch</b></span><span><b>TensorFlow Lite</b></span><span><b>Hilt</b></span><span><b>Coroutines</b></span><span><b>PostgreSQL</b></span><span><b>Docker</b></span><span><b>LLMs</b></span>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="what">
+  <div class="wrap">
+    <div class="shead"><span class="num">01</span><h2>What I build</h2><span class="rule"></span></div>
+    <p class="sublead">Three things, and the seams between them. Most people do one — my edge is doing all three so an AI feature works from the screen all the way to the model.</p>
+    <div class="caps">
+      <div class="cap g1">
+        <div class="capicon"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>AI features</h3>
+        <p>Apps that actually understand text, images and questions — using today's AI models, not from scratch.</p>
+        <ul><li>Chatbots over your own data (RAG)</li><li>AI agents that use tools</li><li>On-device models that run offline</li></ul>
+      </div>
+      <div class="cap g2">
+        <div class="capicon"><svg class="ico" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h3>Android apps</h3>
+        <p>Modern, smooth Android apps built with Jetpack Compose — the way Google recommends today.</p>
+        <ul><li>Clean architecture (MVVM/MVI)</li><li>Offline storage &amp; live data</li><li>Tested and Play-Store ready</li></ul>
+      </div>
+      <div class="cap g3">
+        <div class="capicon"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+        <h3>Backends &amp; APIs</h3>
+        <p>The server side that connects the app to data and AI — built with Python and FastAPI.</p>
+        <ul><li>REST APIs &amp; databases</li><li>Login &amp; security</li><li>Deployed with Docker &amp; CI/CD</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="shead"><span class="num">02</span><h2>About</h2><span class="rule"></span></div>
+    <div class="about" style="margin-top:24px">
+      <div>
+        <p>I'm an <strong>AI Engineer and Android developer</strong> focused on shipping AI features people actually hold in their hands. My work sits where two hard things meet: <strong>native Android</strong> (Kotlin, Compose, clean architecture) and <strong>applied AI</strong> (retrieval-augmented generation, agents, on-device inference).</p>
+        <p>I care about the full path — from a Composable on screen, through a FastAPI backend, to a model returning an answer. I build with production habits: testing, dependency injection, Docker, CI/CD, and evaluation for anything that touches an LLM.</p>
+        <p>Strong foundations in <strong>data structures &amp; algorithms</strong> and <strong>system design</strong>, and a bias toward clear code and clear communication.</p>
+      </div>
+      <div class="facts glass" aria-label="Quick facts">
+        <div class="fact"><span class="k">Focus</span><span class="v">AI Eng + Android</span></div>
+        <div class="fact"><span class="k">Core</span><span class="v">Kotlin · Python</span></div>
+        <div class="fact"><span class="k">AI</span><span class="v">RAG · Agents · On-device</span></div>
+        <div class="fact"><span class="k">Backend</span><span class="v">FastAPI · PostgreSQL</span></div>
+        <div class="fact"><span class="k">Location</span><span class="v">[ City, India ]</span></div>
+        <div class="fact"><span class="k">Status</span><span class="v" style="color:var(--mint)">● Open to work</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS (architecture) -->
+<section id="how">
+  <div class="wrap">
+    <div class="shead"><span class="num">03</span><h2>How my apps work</h2><span class="rule"></span></div>
+    <p class="sublead">A picture of what "full-stack AI" actually means. Your phone talks to my server, my server runs the AI, and the answer flows back — in under a second.</p>
+    <div class="arch">
+      <div class="layer l1">
+        <div class="li"><svg class="ico" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h4>The App</h4><div class="role">Android · Compose</div>
+        <div class="lt"><span>Kotlin</span><span>Compose</span><span>On-device model</span></div>
+      </div>
+      <div class="pipe p1"><div class="rail"><div class="pkt"></div></div></div>
+      <div class="layer l2">
+        <div class="li"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+        <h4>The Backend</h4><div class="role">FastAPI · Python</div>
+        <div class="lt"><span>REST API</span><span>PostgreSQL</span><span>Auth</span></div>
+      </div>
+      <div class="pipe p2"><div class="rail"><div class="pkt"></div></div></div>
+      <div class="layer l3">
+        <div class="li"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h4>The AI</h4><div class="role">LLM · RAG · Vector DB</div>
+        <div class="lt"><span>Embeddings</span><span>Retrieval</span><span>Agents</span></div>
+      </div>
+    </div>
+    <p class="archnote">Example: you photograph a crop → <b>the app</b> classifies it offline → <b>the backend</b> looks up matching guidance → <b>the AI</b> writes a plain-language answer with sources. I build all three layers.</p>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="wrap">
+    <div class="shead"><span class="num">04</span><h2>Technical stack</h2><span class="rule"></span></div>
+    <p class="sublead">Tap a category to focus it.</p>
+    <div class="filter" id="filter">
+      <button class="fbtn on" data-f="all">All</button>
+      <button class="fbtn" data-f="ai">AI Engineering</button>
+      <button class="fbtn" data-f="android">Android</button>
+      <button class="fbtn" data-f="backend">Backend</button>
+      <button class="fbtn" data-f="ml">ML / DL</button>
+      <button class="fbtn" data-f="core">Foundations</button>
+    </div>
+    <div class="spec glass" id="spec">
+      <div class="specrow" data-cat="core"><div class="cat">Languages</div><div class="chips"><span class="chip key">Kotlin</span><span class="chip key">Python</span><span class="chip">SQL</span></div></div>
+      <div class="specrow" data-cat="ai"><div class="cat">AI Engineering</div><div class="chips"><span class="chip key">LLMs</span><span class="chip key">RAG</span><span class="chip key">Agents / MCP</span><span class="chip">Prompt Engineering</span><span class="chip">Vector DBs · Chroma/FAISS/Pinecone</span><span class="chip">Embeddings</span><span class="chip">Evals &amp; Guardrails</span></div></div>
+      <div class="specrow" data-cat="android"><div class="cat">Android</div><div class="chips"><span class="chip key">Jetpack Compose</span><span class="chip">MVVM / MVI</span><span class="chip">Coroutines &amp; Flow</span><span class="chip">Room</span><span class="chip">Retrofit</span><span class="chip">Hilt (DI)</span><span class="chip">TensorFlow Lite / LiteRT</span><span class="chip">ML Kit</span></div></div>
+      <div class="specrow" data-cat="ml"><div class="cat">ML / DL</div><div class="chips"><span class="chip">PyTorch</span><span class="chip">scikit-learn</span><span class="chip">pandas · NumPy</span><span class="chip">CNNs</span><span class="chip">Transformers (concepts)</span></div></div>
+      <div class="specrow" data-cat="backend"><div class="cat">Backend</div><div class="chips"><span class="chip key">FastAPI</span><span class="chip">REST APIs</span><span class="chip">PostgreSQL</span><span class="chip">SQLAlchemy</span><span class="chip">JWT Auth</span></div></div>
+      <div class="specrow" data-cat="core"><div class="cat">Tooling</div><div class="chips"><span class="chip">Git / GitHub</span><span class="chip">Docker</span><span class="chip">CI/CD · GitHub Actions</span><span class="chip">Cloud Deploy</span><span class="chip">Linux / CLI</span></div></div>
+      <div class="specrow" data-cat="core"><div class="cat">CS Foundations</div><div class="chips"><span class="chip">Data Structures &amp; Algorithms</span><span class="chip">System Design (LLD + HLD)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="shead"><span class="num">05</span><h2>Selected work</h2><span class="rule"></span></div>
+    <p class="sublead">Each project targets a real skill. Status shows where it sits on my build roadmap — code links go live as each ships.</p>
+    <div class="grid">
+      <div class="tilt"><article class="card flag"><span class="shine"></span>
+        <div class="cardtop"><span class="kicker">Capstone</span><span class="status plan">Roadmap · M8</span></div>
+        <h3>FieldLens — on-device AI assistant</h3>
+        <p>An Android app that classifies a photo with an on-device model, then answers questions about it via a RAG pipeline — synced through my own FastAPI backend. One app, the whole stack.</p>
+        <div class="stack"><span>Compose</span><span>TFLite</span><span>FastAPI</span><span>RAG</span><span>Vector DB</span></div>
+        <div class="cardfoot"><span class="codesoon">◔ GitHub repo — on build</span></div>
+      </article></div>
+      <div class="tilt"><article class="card"><span class="shine"></span>
+        <div class="cardtop"><span class="kicker">AI Engineering</span><span class="status plan">Roadmap · M7</span></div>
+        <h3>DocuChat — RAG chatbot</h3>
+        <p>Ask questions over your own documents. Chunking, embeddings, vector search and grounded LLM answers with citations and basic evals for answer quality.</p>
+        <div class="stack"><span>Python</span><span>Embeddings</span><span>Chroma</span><span>LLM API</span></div>
+        <div class="cardfoot"><span class="codesoon">◔ GitHub repo — on build</span></div>
+      </article></div>
+      <div class="tilt"><article class="card"><span class="shine"></span>
+        <div class="cardtop"><span class="kicker">AI Engineering</span><span class="status plan">Roadmap · M7</span></div>
+        <h3>Toolsmith — an AI agent</h3>
+        <p>An agent that reasons, calls tools, and connects to data via MCP. Implements the ReAct loop with guardrails, streaming responses and cost/latency tracking.</p>
+        <div class="stack"><span>Agents</span><span>MCP</span><span>Function calling</span></div>
+        <div class="cardfoot"><span class="codesoon">◔ GitHub repo — on build</span></div>
+      </article></div>
+      <div class="tilt"><article class="card"><span class="shine"></span>
+        <div class="cardtop"><span class="kicker">Full-stack</span><span class="status plan">Roadmap · M4</span></div>
+        <h3>TaskFlow — app + API</h3>
+        <p>A Compose Android client talking to a FastAPI backend I built: JWT auth, PostgreSQL, Dockerised and deployed to the cloud with a CI/CD pipeline.</p>
+        <div class="stack"><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span><span>Retrofit</span></div>
+        <div class="cardfoot"><span class="codesoon">◔ GitHub repo — on build</span></div>
+      </article></div>
+      <div class="tilt"><article class="card"><span class="shine"></span>
+        <div class="cardtop"><span class="kicker">Android</span><span class="status plan">Roadmap · M3</span></div>
+        <h3>SkyCast — weather app</h3>
+        <p>Consumes a live REST API. MVVM architecture, Flow-based state, Hilt for DI, unit + Compose UI tests. My clean-architecture reference app.</p>
+        <div class="stack"><span>Compose</span><span>MVVM</span><span>Retrofit</span><span>Hilt</span></div>
+        <div class="cardfoot"><span class="codesoon">◔ GitHub repo — on build</span></div>
+      </article></div>
+      <div class="tilt"><article class="card"><span class="shine"></span>
+        <div class="cardtop"><span class="kicker">Android</span><span class="status plan">Roadmap · M2</span></div>
+        <h3>Notekeeper — notes app</h3>
+        <p>First shipped Android app: multi-screen navigation, local persistence with Room, and a clean Compose UI. Published to the Play Store.</p>
+        <div class="stack"><span>Compose</span><span>Room</span><span>Navigation</span></div>
+        <div class="cardfoot"><span class="codesoon">◔ GitHub repo — on build</span></div>
+      </article></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="shead"><span class="num">06</span><h2>How I work</h2><span class="rule"></span></div>
+    <p class="sublead">A simple, repeatable path from idea to shipped feature.</p>
+    <div class="proc">
+      <div class="pstep"><div class="pn">01</div><div class="pic"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h4>Understand</h4><p>Get clear on the problem and the user before writing code.</p></div>
+      <div class="pstep"><div class="pn">02</div><div class="pic"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div><h4>Design</h4><p>Sketch the screens, data and API before building.</p></div>
+      <div class="pstep"><div class="pn">03</div><div class="pic"><svg class="ico" viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></div><h4>Build</h4><p>Write clean, testable code across app, API and AI.</p></div>
+      <div class="pstep"><div class="pn">04</div><div class="pic"><svg class="ico" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Test</h4><p>Automated tests, plus evals for anything using AI.</p></div>
+      <div class="pstep"><div class="pn">05</div><div class="pic"><svg class="ico" viewBox="0 0 24 24"><path d="M4.5 16.5L3 21l4.5-1.5M14 4s4 0 6 2 2 6 2 6l-8 8-6-6z"/></svg></div><h4>Ship</h4><p>Deploy with Docker &amp; CI/CD, then measure and improve.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="shead"><span class="num">07</span><h2>Why work with me</h2><span class="rule"></span></div>
+    <div class="why" style="margin-top:24px">
+      <div class="wcard"><div class="wi"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><div><h4>Ships end-to-end</h4><p>App, backend and AI in one head — fewer hand-offs, features that actually connect.</p></div></div>
+      <div class="wcard"><div class="wi"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><div><h4>Production habits</h4><p>Testing, CI/CD, security and evaluation — not just code that runs on my laptop.</p></div></div>
+      <div class="wcard"><div class="wi"><svg class="ico" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H8l-4 4V5a2 2 0 012-2h13a2 2 0 012 2z"/></svg></div><div><h4>Clear communication</h4><p>I explain trade-offs in plain language — useful in reviews, standups and interviews.</p></div></div>
+      <div class="wcard"><div class="wi"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6"/></svg></div><div><h4>Strong CS foundations</h4><p>Data structures, algorithms and system design — ready for tough interview rounds.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="shead"><span class="num">08</span><h2>My build path</h2><span class="rule"></span></div>
+    <p class="sublead">An honest, public roadmap — each stage ships real projects that land on this page.</p>
+    <div class="road" id="road">
+      <div class="line"></div><div class="fill" id="fill"></div>
+      <div class="step"><span class="node"></span><span class="when">Month 1</span><b>Foundations + Kotlin</b><span class="d">Programming from first principles, Kotlin, Git &amp; GitHub, the command line.</span></div>
+      <div class="step"><span class="node"></span><span class="when">Month 2–3</span><b>Android · Jetpack Compose</b><span class="d">UI, state, MVVM/MVI, Room, Retrofit, Hilt, testing — two shipped apps.</span></div>
+      <div class="step"><span class="node"></span><span class="when">Month 4</span><b>Backend · Python + FastAPI</b><span class="d">REST APIs, SQL &amp; PostgreSQL, auth, Docker, CI/CD, cloud deploy.</span></div>
+      <div class="step"><span class="node"></span><span class="when">Month 5–6</span><b>ML &amp; Deep Learning foundations</b><span class="d">Data with pandas, scikit-learn, PyTorch, CNNs, on-device inference.</span></div>
+      <div class="step"><span class="node"></span><span class="when">Month 7</span><b>AI Engineering</b><span class="d">LLMs, RAG, vector DBs, agents, MCP, evaluation — the core specialisation.</span></div>
+      <div class="step"><span class="node"></span><span class="when">Month 8+</span><b>Capstone &amp; interview prep</b><span class="d">Flagship project, DSA, system design, mock interviews.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="shead"><span class="num">09</span><h2>Good to know</h2><span class="rule"></span></div>
+    <div class="faq" style="margin-top:24px">
+      <details class="qa"><summary>What's an "AI Engineer" (vs an ML Engineer)?<span class="plus">+</span></summary><div class="ans">An <b>ML Engineer</b> trains models from scratch (heavy math). An <b>AI Engineer</b> builds real products <b>on top of</b> existing models like GPT and Claude — using RAG, agents and vector databases. I'm the second kind: I make AI useful inside apps.</div></details>
+      <details class="qa"><summary>What does "on-device AI" mean?<span class="plus">+</span></summary><div class="ans">The AI model runs <b>directly on the phone</b> instead of a server — so it works offline, is fast, and keeps data private. I use TensorFlow Lite / LiteRT and ML Kit for this.</div></details>
+      <details class="qa"><summary>What is RAG?<span class="plus">+</span></summary><div class="ans">Retrieval-Augmented Generation. It lets an AI answer using <b>your</b> documents: it finds the relevant pieces first, then writes an answer grounded in them — with far fewer made-up facts.</div></details>
+      <details class="qa"><summary>Can you build the whole thing, front to back?<span class="plus">+</span></summary><div class="ans">Yes — the Android app, the backend API, and the AI layer. That's the point of this portfolio: one person, the full stack of an AI mobile feature.</div></details>
+      <details class="qa"><summary>Are you available for work?<span class="plus">+</span></summary><div class="ans"><b>Yes.</b> Open to AI Engineer and Android roles. The fastest way to reach me is email below.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow">10 — Contact</span>
+    <h2>Let's build something <span class="grad">intelligent</span>.</h2>
+    <p>Open to AI Engineer and Android roles. The fastest way to reach me is email.</p>
+    <div class="links">
+      <a class="btn primary mag" href="mailto:[you@email.com]">[ you@email.com ]</a>
+      <a class="btn ghost mag" href="https://github.com/[you]">GitHub</a>
+      <a class="btn ghost mag" href="https://linkedin.com/in/[you]">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Living portfolio · project status updates as each roadmap milestone ships · built by hand with HTML, CSS &amp; canvas</div></footer>
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prog=document.getElementById('prog'), top=document.getElementById('top');
+  var road=document.getElementById('road'), fill=document.getElementById('fill'), steps=[].slice.call(document.querySelectorAll('.step'));
+  function onScroll(){var st=document.documentElement.scrollTop||document.body.scrollTop;
+    var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    prog.style.width=(h>0?st/h*100:0)+'%';top.classList.toggle('show',st>600);
+    if(road){var r=road.getBoundingClientRect(),vh=window.innerHeight;
+      var p=Math.min(1,Math.max(0,(vh*0.7-r.top)/r.height));fill.style.height=(p*100)+'%';
+      steps.forEach(function(s){var sr=s.getBoundingClientRect();s.classList.toggle('lit',sr.top<vh*0.75)});}
+  }
+  top.onclick=function(){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'})};
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('section .shead, .sublead, .cap, .card, .step, .about > div, .spec, .filter, .layer, .pipe, .pstep, .wcard, .qa').forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=(i%5*40)+'ms';io.observe(el)});
+
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,to=+el.dataset.count,suf=el.dataset.suffix||'',t0=null;
+    if(reduce){el.textContent=to+suf;cio.unobserve(el);return;}
+    function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1100);var v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=v+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);cio.unobserve(el);})},{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});
+
+  var fbtns=[].slice.call(document.querySelectorAll('.fbtn')), rows=[].slice.call(document.querySelectorAll('.specrow'));
+  fbtns.forEach(function(b){b.onclick=function(){fbtns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');var f=b.dataset.f;
+    rows.forEach(function(r){r.classList.toggle('dim',f!=='all'&&r.dataset.cat!==f)});};});
+
+  // FAQ: close others when one opens (accordion)
+  var qas=[].slice.call(document.querySelectorAll('.qa'));
+  qas.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)qas.forEach(function(o){if(o!==d)o.open=false})})});
+
+  if(reduce) return;
+  var spot=document.getElementById('spot');
+  window.addEventListener('pointermove',function(e){spot.style.left=e.clientX+'px';spot.style.top=e.clientY+'px';},{passive:true});
+  document.querySelectorAll('.tilt').forEach(function(t){var card=t.querySelector('.card'),shine=t.querySelector('.shine');
+    t.addEventListener('pointermove',function(e){var r=t.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+      card.style.transform='rotateX('+((0.5-py)*9)+'deg) rotateY('+((px-0.5)*11)+'deg) translateY(-4px)';
+      shine.style.setProperty('--mx',(px*100)+'%');shine.style.setProperty('--my',(py*100)+'%');});
+    t.addEventListener('pointerleave',function(){card.style.transform='';});});
+  document.querySelectorAll('.mag').forEach(function(b){
+    b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*0.25)+'px,'+((e.clientY-r.top-r.height/2)*0.35)+'px)';});
+    b.addEventListener('pointerleave',function(){b.style.transform='';});});
+  var track=document.getElementById('track');track.innerHTML+=track.innerHTML;
+  var c=document.getElementById('net'), x=c.getContext('2d'), w,h,pts,raf;
+  function size(){var r=c.parentElement.getBoundingClientRect();w=c.width=r.width;h=c.height=r.height;var n=Math.min(70,Math.round(w*h/20000));pts=[];for(var i=0;i<n;i++){pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}}
+  function tick(){x.clearRect(0,0,w,h);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;}
+    for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);if(d<128){x.strokeStyle='rgba(140,160,255,'+(1-d/128)*.5+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}}}
+    for(var i=0;i<pts.length;i++){x.fillStyle='rgba(185,200,255,.9)';x.beginPath();x.arc(pts[i].x,pts[i].y,1.6,0,6.283);x.fill();}raf=requestAnimationFrame(tick);}
+  size();tick();window.addEventListener('resize',function(){cancelAnimationFrame(raf);size();tick();});
+  onScroll();
+})();
+</script>
+</body>
+</html>
