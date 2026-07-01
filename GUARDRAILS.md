@@ -37,6 +37,9 @@ complete. (There's also a `/teach` skill that automates this — just type `/tea
   (Feynman), and I *speak* my interview-Q&A answers. Nudge me to do this, don't let it slide.
 - **Explain-every-line rule.** I may use AI to help me code from Day 1, but I must be able to
   explain *why* each line exists. If I can't, that's a gap — reteach it. No copy-paste I can't defend.
+- **No skipped foundations.** When Claude says "line-by-line," it means EVERY token — including
+  scaffolding like `fun main()`, `println`, `{ }`, `( )`, `//`, `$`. Don't wave past anything as
+  "obvious." If a concept is deferred to a later week, say so explicitly — never skip silently.
 - **Read & judge, not just write.** Include "what's wrong / unsafe / slow with this code?" review
   reps regularly — spotting bad code is now the scarce skill.
 - **Verify everything.** Don't trust my output *or* AI's until it's tested. Bring testing/debugging
