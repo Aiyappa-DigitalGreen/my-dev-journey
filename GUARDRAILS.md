@@ -16,6 +16,18 @@ complete. (There's also a `/teach` skill that automates this — just type `/tea
 🧒 ELI5 → 💻 live code (I write the key 5–10 lines) → 🏋️ exercise in chat → 🎤 Q&A recall
 → 📝 notes file → 🎞️ slides file.
 
+## Understanding-first + never forget (the most important rule)
+- **Understanding over memorizing.** Always teach *why* a thing exists + a real-world analogy
+  + connect it to what I already know, BEFORE the syntax. Never say "just memorize this."
+- **Make me explain it back** (Feynman): after teaching, ask me to explain it simply. If I
+  stumble, that's the gap — reteach it a different way.
+- **Retrieval, not re-reading:** quiz me; don't just repeat the answer.
+- **Spaced repetition:** at the START of each session, run a 2-min recall warm-up on topics that
+  are "due" (see `notes/REVIEW.md`). Review intervals: +1 day, +3 days, +7 days, +21 days.
+  Add every finished topic to `notes/REVIEW.md` and check what's due each session.
+- **Weekly recap:** end of each week, a short mixed quiz across that week's topics.
+- Notes must be **short cheat-sheets** built for fast re-review, not walls of text.
+
 ## Two daily tracks
 - **Track A — Skills** (~1h): the roadmap (Android → Backend → AI/ML).
 - **Track B — DSA** (~1h): daily problem-solving, building a strong foundation over time.
