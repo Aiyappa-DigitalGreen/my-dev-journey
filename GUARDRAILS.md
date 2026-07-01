@@ -29,6 +29,12 @@ complete. (There's also a `/teach` skill that automates this — just type `/tea
 - Notes must be **short cheat-sheets** built for fast re-review, not walls of text.
 
 ## AI-era rules (added 2026-07-01)
+- **Two modes.** Train 🔴 AI-OFF (code from scratch, cold — interviews have no AI) *and* 🟢 AI-ON
+  (direct + judge AI). Every in-chat exercise is AI-OFF by default.
+- **Prompting basics.** Teach the fundamentals of giving AI good context (specific · examples ·
+  constraints · iterate) as part of spec-writing — not gimmicks.
+- **🗣️ English speaking, in the flow.** After each topic I explain it back *out loud in English*
+  (Feynman), and I *speak* my interview-Q&A answers. Nudge me to do this, don't let it slide.
 - **Explain-every-line rule.** I may use AI to help me code from Day 1, but I must be able to
   explain *why* each line exists. If I can't, that's a gap — reteach it. No copy-paste I can't defend.
 - **Read & judge, not just write.** Include "what's wrong / unsafe / slow with this code?" review

@@ -21,9 +21,12 @@
 > The whole plan below is aimed at making me the person who can **direct AI, catch its mistakes,
 > and own the outcome** — the profile that's valuable *because* of AI, not replaced by it.
 
-1. **AI writes it, I explain every line.** From Day 1 I may use AI to help me code — but the rule
-   is: if I can't explain *why* each line is there, I don't understand it yet. AI is a tutor and a
-   power tool, never a crutch. (No copy-paste I can't defend.)
+1. **Two modes — I train BOTH:**
+   - 🔴 **AI-OFF** — I code from scratch, cold, no help. *Interviews give me a blank editor and no AI.*
+     Every lesson's in-chat exercise is AI-OFF by default. This builds the raw muscle.
+   - 🟢 **AI-ON** — I use AI to build faster, then **direct + judge** its output. This is the day job.
+   Rule for both: **explain every line.** If I can't say *why* a line exists (mine or AI's), that's a
+   gap → reteach. No copy-paste I can't defend.
 2. **Reading & judging code > writing code.** When anyone can *generate* code, the scarce skill is
    spotting what's wrong with it. Every week includes "here's some code — what's broken / unsafe /
    slow about it?" review reps.
@@ -32,8 +35,12 @@
    bot, capstone) are the **real deliverable** — the lessons just get me there.
 4. **The moat = the skills AI is worst at:** system design, verification/testing, debugging,
    security judgement. These get strong, continuous emphasis.
-5. **Spec-writing is an engineering skill.** Breaking a fuzzy problem into a clear spec and giving
-   AI good context is now part of the job — I practise this, not just "prompting tricks."
+5. **Spec-writing + prompting basics.** Breaking a fuzzy problem into a clear spec and giving AI good
+   context (be specific · give examples · state constraints · iterate) is part of the job. I learn the
+   *fundamentals*, not gimmicks — and it doubles as clear-thinking practice.
+6. **English speaking, woven into the flow.** After each topic I explain it back **out loud in English**
+   (Feynman), and I **speak** my interview-Q&A answers instead of just reading them. Goal: explain
+   technical things clearly and confidently — the skill that decides interviews and standups.
 
 ⚠️ **Honest expectation:** I am **not** job-ready at 6 months. This is ~10–11 months, and even then
 entry-level is competitive. What gets me hired = **2–3 genuinely impressive shipped projects + being
@@ -73,7 +80,7 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 Legend: ⬜ not started · 🔄 in progress · ✅ done
 
 ### MONTH 1 — Programming Fundamentals + Kotlin
-- ⬜ W1: Variables, types, operators, I/O, conditionals (`if/else`, `when`) · **🤖 start using AI to code (explain-every-line rule)** · **👓 first "what's wrong with this code?" review reps**
+- ⬜ W1: Variables, types, operators, I/O, conditionals (`if/else`, `when`) · **🔴 AI-OFF code-from-scratch reps** · **🤖 first AI-ON rep + prompting basics (explain-every-line)** · **👓 first "what's wrong with this code?" review rep** · **🗣️ explain-back out loud in English**
 - ⬜ W2: Loops, functions, collections (List/Map/Set), null safety · code-reading reps continue
 - ⬜ W3: OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions · **✍️ spec-writing: break a fuzzy task into a clear spec for AI**
 - ⬜ W4: Coroutines intro, generics · **⭐ Git & GitHub** · **command line** · AI-assisted dev deep-dive (review + debug AI output) · console mini-project
@@ -153,11 +160,13 @@ Per-topic 🎤 Q&A every lesson · topic question banks in `notes/practice/` · 
 Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps basics** (Docker · CI/CD · cloud · secrets · logging/monitoring) · deployment · reading docs · building in public.
 
 **AI-era skills woven into every week (added 2026-07-01):**
-- **AI-assisted dev** — use AI to code from Day 1, *explain every line* (no crutch).
+- **AI-OFF coding muscle** — regular code-from-scratch reps (interviews have no AI); every in-chat exercise is AI-OFF.
+- **AI-ON dev** — use AI to build faster, then direct + judge it; *explain every line* (no crutch).
 - **Code reading & review** — "what's wrong / unsafe / slow about this code?" reps each week.
 - **Verification mindset** — never trust output (mine or AI's) until I've tested it; write tests early, not just in W12.
-- **Spec-writing** — decompose fuzzy problems into clear specs + good context for AI.
+- **Spec-writing + prompting basics** — decompose fuzzy problems into clear specs + good context for AI.
 - **Security judgement** — AI-generated code is often insecure; learn to spot the holes (grows through M3–M4).
+- **🗣️ English speaking** — explain each topic back out loud; speak interview answers; build clarity + confidence.
 
 ---
 
@@ -169,6 +178,7 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Notes written:** _(none yet)_
 
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-01** — Added **two-mode practice** (🔴 AI-OFF code-from-scratch for interviews + 🟢 AI-ON direct/judge), **prompting basics**, and **🗣️ English speaking** (explain-back out loud + spoken interview answers) woven into the flow.
 - **2026-07-01** — **AI-era realignment.** Added "How I learn in the AI era" principles (explain-every-line, read/judge > write, ship real projects, moat = system design/verification/debugging/security, spec-writing). Pulled AI-assisted coding + code-review reps forward to W1; made verification/security/spec-writing continuous cross-cutting skills. Honest expectation note added (not job-ready at 6mo; projects are the real deliverable; DSA = interview gate).
 - **2026-07-01** — Added a light **DevOps Basics** interlude after Month 4 (Linux/shell, secrets, Docker/compose, CI/CD, cloud deploy, logging) + built-in understanding-first & spaced-repetition method.
 - **2026-07-01** — Repo cleaned to a pure learning journey; portfolio kept local only.
