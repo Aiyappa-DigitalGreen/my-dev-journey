@@ -16,6 +16,33 @@
 
 ---
 
+## 🤖 HOW I LEARN IN THE AI ERA  (added 2026-07-01 — read this every session)
+> AI tools now write huge amounts of code. That means my value is **judgment**, not typing.
+> The whole plan below is aimed at making me the person who can **direct AI, catch its mistakes,
+> and own the outcome** — the profile that's valuable *because* of AI, not replaced by it.
+
+1. **AI writes it, I explain every line.** From Day 1 I may use AI to help me code — but the rule
+   is: if I can't explain *why* each line is there, I don't understand it yet. AI is a tutor and a
+   power tool, never a crutch. (No copy-paste I can't defend.)
+2. **Reading & judging code > writing code.** When anyone can *generate* code, the scarce skill is
+   spotting what's wrong with it. Every week includes "here's some code — what's broken / unsafe /
+   slow about it?" review reps.
+3. **Ship real, public projects.** Anyone can make a to-do app now. My differentiator is *shipped,
+   deployed, working* things I can talk about like an engineer. The projects (Notes, Weather, RAG
+   bot, capstone) are the **real deliverable** — the lessons just get me there.
+4. **The moat = the skills AI is worst at:** system design, verification/testing, debugging,
+   security judgement. These get strong, continuous emphasis.
+5. **Spec-writing is an engineering skill.** Breaking a fuzzy problem into a clear spec and giving
+   AI good context is now part of the job — I practise this, not just "prompting tricks."
+
+⚠️ **Honest expectation:** I am **not** job-ready at 6 months. This is ~10–11 months, and even then
+entry-level is competitive. What gets me hired = **2–3 genuinely impressive shipped projects + being
+able to reason about them**, not finishing a checklist. DSA (~300–400 problems) is an **interview
+gate** at MNCs — necessary to get in the door, but it's a hoop, not the daily job. Keep it moving,
+don't let it eat the plan.
+
+---
+
 ## 🔄 CONTINUE FROM ANY DEVICE
 This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 - **Start of session:** `git -C ~/Desktop/MyDevJourney pull`
@@ -46,10 +73,10 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 Legend: ⬜ not started · 🔄 in progress · ✅ done
 
 ### MONTH 1 — Programming Fundamentals + Kotlin
-- ⬜ W1: Variables, types, operators, I/O, conditionals (`if/else`, `when`)
-- ⬜ W2: Loops, functions, collections (List/Map/Set), null safety
-- ⬜ W3: OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions
-- ⬜ W4: Coroutines intro, generics · **⭐ Git & GitHub** · **command line** · using AI tools to code · console mini-project
+- ⬜ W1: Variables, types, operators, I/O, conditionals (`if/else`, `when`) · **🤖 start using AI to code (explain-every-line rule)** · **👓 first "what's wrong with this code?" review reps**
+- ⬜ W2: Loops, functions, collections (List/Map/Set), null safety · code-reading reps continue
+- ⬜ W3: OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions · **✍️ spec-writing: break a fuzzy task into a clear spec for AI**
+- ⬜ W4: Coroutines intro, generics · **⭐ Git & GitHub** · **command line** · AI-assisted dev deep-dive (review + debug AI output) · console mini-project
 
 ### MONTH 2 — Android + Jetpack Compose (Part 1)
 - ⬜ W5: Android Studio, project structure, Gradle basics, first Composable, Preview
@@ -123,7 +150,14 @@ Build to ~300–400 problems for a strong foundation. Log your count in the stat
 Per-topic 🎤 Q&A every lesson · topic question banks in `notes/practice/` · system design + advanced DSA in the advanced phase.
 
 ## 🧵 Cross-cutting throughout
-Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps basics** (Docker · CI/CD · cloud · secrets · logging/monitoring) · deployment · reading docs · AI-assisted dev · building in public.
+Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps basics** (Docker · CI/CD · cloud · secrets · logging/monitoring) · deployment · reading docs · building in public.
+
+**AI-era skills woven into every week (added 2026-07-01):**
+- **AI-assisted dev** — use AI to code from Day 1, *explain every line* (no crutch).
+- **Code reading & review** — "what's wrong / unsafe / slow about this code?" reps each week.
+- **Verification mindset** — never trust output (mine or AI's) until I've tested it; write tests early, not just in W12.
+- **Spec-writing** — decompose fuzzy problems into clear specs + good context for AI.
+- **Security judgement** — AI-generated code is often insecure; learn to spot the holes (grows through M3–M4).
 
 ---
 
@@ -135,6 +169,7 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Notes written:** _(none yet)_
 
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-01** — **AI-era realignment.** Added "How I learn in the AI era" principles (explain-every-line, read/judge > write, ship real projects, moat = system design/verification/debugging/security, spec-writing). Pulled AI-assisted coding + code-review reps forward to W1; made verification/security/spec-writing continuous cross-cutting skills. Honest expectation note added (not job-ready at 6mo; projects are the real deliverable; DSA = interview gate).
 - **2026-07-01** — Added a light **DevOps Basics** interlude after Month 4 (Linux/shell, secrets, Docker/compose, CI/CD, cloud deploy, logging) + built-in understanding-first & spaced-repetition method.
 - **2026-07-01** — Repo cleaned to a pure learning journey; portfolio kept local only.
 - **2026-07-01** — Synced to GitHub at github.com/Aiyappa-DigitalGreen/my-dev-journey. Resumable from any device via git pull/push.

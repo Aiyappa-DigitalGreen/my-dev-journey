@@ -28,6 +28,16 @@ complete. (There's also a `/teach` skill that automates this — just type `/tea
 - **Weekly recap:** end of each week, a short mixed quiz across that week's topics.
 - Notes must be **short cheat-sheets** built for fast re-review, not walls of text.
 
+## AI-era rules (added 2026-07-01)
+- **Explain-every-line rule.** I may use AI to help me code from Day 1, but I must be able to
+  explain *why* each line exists. If I can't, that's a gap — reteach it. No copy-paste I can't defend.
+- **Read & judge, not just write.** Include "what's wrong / unsafe / slow with this code?" review
+  reps regularly — spotting bad code is now the scarce skill.
+- **Verify everything.** Don't trust my output *or* AI's until it's tested. Bring testing/debugging
+  in early, not just in the testing week.
+- **Ship real projects.** Shipped, deployed, explainable projects are the real deliverable; be honest
+  that finishing lessons ≠ job-ready.
+
 ## Two daily tracks
 - **Track A — Skills** (~1h): the roadmap (Android → Backend → AI/ML).
 - **Track B — DSA** (~1h): daily problem-solving, building a strong foundation over time.
