@@ -16,10 +16,9 @@ lesson, and full roadmap.
 | `notes/` | Recap notes saved at the end of every topic |
 | `slides/` | Workshop slide decks per topic |
 | `exercises/` | My practice work |
-| `portfolio/` | My portfolio website + résumé |
 
 ## 🧭 The plan (≈10–11 months)
-**Android → Backend → AI/ML → AI Engineering → Capstone → Interviews**, with a daily
+**Android → Backend → AI/ML → AI Engineering → Capstone → Advanced practice**, with a daily
 Data-Structures-&-Algorithms track running in parallel.
 
 ## 🔄 Continue from any device

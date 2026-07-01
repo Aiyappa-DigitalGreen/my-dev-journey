@@ -1,3 +1,7 @@
+# Local-only — kept on my machine, NOT published to the repo
+portfolio/
+/index.html
+
 # macOS
 .DS_Store
 
