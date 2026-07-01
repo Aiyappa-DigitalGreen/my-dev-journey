@@ -121,6 +121,15 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · Docker ·
 - **DSA problems solved:** 0
 - **Notes written:** _(none yet)_
 
+## 🔄 CONTINUE FROM ANY DEVICE
+This folder is a public GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
+Live portfolio: **aiyappa-digitalgreen.github.io/my-dev-journey/**
+- **Start of session:** `git -C ~/Desktop/MyDevJourney pull`
+- Learn with Claude (`/teach` or "read PROGRESS.md and continue").
+- **End of session:** `git -C ~/Desktop/MyDevJourney add -A && git -C ~/Desktop/MyDevJourney commit -m "progress" && git -C ~/Desktop/MyDevJourney push`
+- **On a phone (no laptop):** open the Claude app, point it at the repo's PROGRESS.md, learn concepts/Q&A; update files next time you're on a laptop.
+
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-01** — Synced to GitHub (public) at github.com/Aiyappa-DigitalGreen/my-dev-journey + GitHub Pages live for the portfolio. Now resumable from any device via git pull/push.
 - **2026-07-01** — Privacy locked: everything LOCAL only, no cloud artifacts. Added `GUARDRAILS.md`, a `/teach` skill (auto-runs the course), a workshop `slides/_TEMPLATE.html`, and glowed-up standalone `portfolio/` (attractive dark animated hero, GitHub links activate as projects are built). Restored `Desktop/learning/` (pointer to here). Verified no other projects were lost.
 - **2026-07-01** — Moved plan to new folder `MyDevJourney/`. Added explicit **Git/GitHub**, dedicated **SQL deep dive** (W15) + SQL basics (W10), and **Excel→pandas** data on-ramp (W17). Confirmed flow Android→Backend→AI/ML. Plan finalized: AI Engineer+Android primary, Product/MNC target, two parallel daily tracks (Skills+DSA), ~10–11 months. Ready to start.
