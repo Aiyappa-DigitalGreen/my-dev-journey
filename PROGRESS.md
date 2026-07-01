@@ -32,6 +32,7 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 | **SQL** | M3 W10 + **M4 W15 (deep dive)** + ML data | Core backend + data skill |
 | **Excel / Spreadsheets** | M5 W17 (data on-ramp → pandas) | Gentlest intro to data thinking |
 | **Command line** | Month 1, W4 | Needed for Git, Python, deploy |
+| **DevOps basics** | Interlude after M4 (builds on M1 Git + M4 Docker/CI-CD/cloud) | Ship & run apps reliably |
 
 ---
 
@@ -67,6 +68,11 @@ Legend: ⬜ not started · 🔄 in progress · ✅ done
 - ⬜ W14: FastAPI — routes, request/response, JSON, REST design
 - ⬜ W15: **⭐ SQL deep dive** (joins, aggregation, indexes, normalization) + PostgreSQL + SQLAlchemy + auth (JWT) + security basics
 - ⬜ W16: Docker, CI/CD (GitHub Actions), cloud deploy, connect Android↔API → **Milestone: full-stack deployed**
+
+### 🔧 DEVOPS BASICS — interlude (~2 weeks, right after Month 4)
+*Just the essentials — not in depth. Consolidates the Git (M1) + Docker/CI-CD/cloud (M4) work into a clear mental model of "get code running reliably for real users."*
+- ⬜ D1: Linux/shell essentials · **environment variables & secrets** (`.env`, keeping API keys safe) · SSH basics · what a "server" really is
+- ⬜ D2: Docker deeper (images vs containers, `docker-compose`) · a full **CI/CD pipeline** (test → build → deploy) with GitHub Actions · **cloud deploy** + basic **logging & monitoring** · awareness of Infrastructure-as-Code · *(leads into "LLMOps" — deploying/serving AI models — in M7)*
 
 ### MONTH 5 — Data + ML Foundations  (AI/ML begins — foundation for Gen AI)
 - ⬜ W17: **⭐ Data handling — Excel/Spreadsheets → pandas + NumPy** (dataframes, cleaning, pivots, basic viz)
@@ -117,7 +123,7 @@ Build to ~300–400 problems for a strong foundation. Log your count in the stat
 Per-topic 🎤 Q&A every lesson · topic question banks in `notes/practice/` · system design + advanced DSA in the advanced phase.
 
 ## 🧵 Cross-cutting throughout
-Git/GitHub · command line · SQL · debugging/profiling · testing · Docker · CI/CD · cloud · deployment · reading docs · AI-assisted dev · building in public.
+Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps basics** (Docker · CI/CD · cloud · secrets · logging/monitoring) · deployment · reading docs · AI-assisted dev · building in public.
 
 ---
 
@@ -129,6 +135,7 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · Docker ·
 - **Notes written:** _(none yet)_
 
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-01** — Added a light **DevOps Basics** interlude after Month 4 (Linux/shell, secrets, Docker/compose, CI/CD, cloud deploy, logging) + built-in understanding-first & spaced-repetition method.
 - **2026-07-01** — Repo cleaned to a pure learning journey; portfolio kept local only.
 - **2026-07-01** — Synced to GitHub at github.com/Aiyappa-DigitalGreen/my-dev-journey. Resumable from any device via git pull/push.
 - **2026-07-01** — Plan finalized: AI Engineer + Android focus; two parallel daily tracks (Skills + DSA); ~10–11 months.
