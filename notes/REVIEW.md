@@ -12,7 +12,7 @@ due date. When all four are ticked ✅, the concept is durable.
 
 | Topic | Learned | +1 day | +3 days | +7 days | +21 days |
 |-------|---------|:------:|:-------:|:-------:|:--------:|
-| _(topics will be added here as we finish each lesson)_ | | ⬜ | ⬜ | ⬜ | ⬜ |
+| Kotlin variables (`val`/`var`, `$` interpolation) | 2026-07-01 | ⬜ (due 07-02) | ⬜ (due 07-04) | ⬜ (due 07-08) | ⬜ (due 07-22) |
 
 ---
 ### Quick recall log (optional)

@@ -80,7 +80,7 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 Legend: ⬜ not started · 🔄 in progress · ✅ done
 
 ### MONTH 1 — Programming Fundamentals + Kotlin
-- ⬜ W1: Variables, types, operators, I/O, conditionals (`if/else`, `when`) · **🔴 AI-OFF code-from-scratch reps** · **🤖 first AI-ON rep + prompting basics (explain-every-line)** · **👓 first "what's wrong with this code?" review rep** · **🗣️ explain-back out loud in English**
+- 🔄 W1: Variables, types, operators, I/O, conditionals (`if/else`, `when`) · **🔴 AI-OFF code-from-scratch reps** · **🤖 first AI-ON rep + prompting basics (explain-every-line)** · **👓 first "what's wrong with this code?" review rep** · **🗣️ explain-back out loud in English**
 - ⬜ W2: Loops, functions, collections (List/Map/Set), null safety · code-reading reps continue
 - ⬜ W3: OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions · **✍️ spec-writing: break a fuzzy task into a clear spec for AI**
 - ⬜ W4: Coroutines intro, generics · **⭐ Git & GitHub** · **command line** · AI-assisted dev deep-dive (review + debug AI output) · console mini-project
@@ -172,12 +172,13 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 
 ## 📍 CURRENT STATUS
 - **Phase:** Month 1 · Week 1 (both tracks begin together)
-- **Last completed:** _(nothing yet — plan finalized)_
-- **Next action:** **Track A** → W1 L1: Variables in Kotlin (play.kotlinlang.org). **Track B** → DSA: Big-O + arrays intro.
+- **Last completed:** ✅ Track A W1 L1 — Kotlin variables (`val`/`var`, `$` interpolation). Exercise passed.
+- **Next action:** **Track A** → W1 L2: types, operators & I/O (`readLine`). **Track B** → DSA: Big-O + arrays intro (starting now).
 - **DSA problems solved:** 0
-- **Notes written:** _(none yet)_
+- **Notes written:** `01-kotlin-variables.md` (+ slide `01-kotlin-variables.html`)
 
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-01** — ✅ Track A W1 L1: Kotlin variables done — learner wrote a correct `val`/`var` + `$` program first try. Added a **3-layer interview-answer format** (simple → professional → glossary) per learner request to sound technical in interviews. Logged topic to REVIEW.md (due 07-02/04/08/22). Next: Track B DSA Big-O + arrays.
 - **2026-07-01** — Added **two-mode practice** (🔴 AI-OFF code-from-scratch for interviews + 🟢 AI-ON direct/judge), **prompting basics**, and **🗣️ English speaking** (explain-back out loud + spoken interview answers) woven into the flow.
 - **2026-07-01** — **AI-era realignment.** Added "How I learn in the AI era" principles (explain-every-line, read/judge > write, ship real projects, moat = system design/verification/debugging/security, spec-writing). Pulled AI-assisted coding + code-review reps forward to W1; made verification/security/spec-writing continuous cross-cutting skills. Honest expectation note added (not job-ready at 6mo; projects are the real deliverable; DSA = interview gate).
 - **2026-07-01** — Added a light **DevOps Basics** interlude after Month 4 (Linux/shell, secrets, Docker/compose, CI/CD, cloud deploy, logging) + built-in understanding-first & spaced-repetition method.
