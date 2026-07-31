@@ -10,9 +10,12 @@ at growing gaps (1 → 3 → 7 → 21 days) locks it into long-term memory.
 **How to read the table:** put the date learned, then tick each review as it's done on/after its
 due date. When all four are ticked ✅, the concept is durable.
 
+> ♻️ **CLEARED 2026-07-31 — fresh start.** The old Kotlin-variables row was removed because that
+> topic is being re-taught from scratch (see PROGRESS.md CURRENT STATUS). Nothing carries over.
+
 | Topic | Learned | +1 day | +3 days | +7 days | +21 days |
 |-------|---------|:------:|:-------:|:-------:|:--------:|
-| Kotlin variables (`val`/`var`, `$` interpolation) | 2026-07-01 | ⬜ (due 07-02) | ⬜ (due 07-04) | ⬜ (due 07-08) | ⬜ (due 07-22) |
+| *(empty — first row gets added after W1 L1)* | | | | | |
 
 ---
 ### Quick recall log (optional)

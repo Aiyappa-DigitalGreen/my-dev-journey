@@ -7,8 +7,18 @@
 ---
 
 ## 👤 Who I am
-- **Total beginner**, coding from zero. Teach me **like I'm 10** — simple words, analogies, explain all jargon.
-- **Every topic:** 🧒 ELI5 → 💻 live code → 🏋️ exercise (in chat) → 🎤 Q&A recall → 📝 notes file in `notes/`.
+> ⚠️ **TWO SEPARATE FACTS. BOTH TRUE. NEVER COLLAPSE THEM INTO ONE.**
+> Conflating these is what produced a junior-targeted plan on 2026-07-31. Read both, every session.
+
+- **🧒 TEACHING BASELINE = ABSOLUTE ZERO.** Teach me as if I have never programmed. I don't know what
+  `println` is, what `fun main()` means, or what `{ }` do. Every token explained, nothing assumed.
+  *(Why: I've shipped for years but on shaky foundations — I want them rebuilt properly, not patched.)*
+- **🎓 PROFESSIONAL LEVEL = 5 YEARS Android experience.** Real shipping experience. This is my
+  **resume**, my interview level, and my **destination** — not my starting explanation level.
+- **🎯 THEREFORE:** start at the floor, **end at mid/senior**. By Dec 31 I should hold the knowledge of
+  a **5-year Android developer + the AI layer on top** — not a junior who finished a course.
+  Every phase below has a **🎓 SENIOR LAYER** for exactly this reason. Don't skip those items.
+- **Every topic:** 🧒 ELI5 → 💻 live code → **🧭 WHERE & WHEN (+ when NOT to)** → 🏋️ exercise (in chat) → 🎤 Q&A recall → 📝 notes file in `notes/`.
 - Math rusty → teach through code + intuition. Machine: 16GB RAM (Colab for heavy training).
 - **Target focus (T-shaped):** PRIMARY = **AI Engineer + Android combo** ("mobile / on-device AI" niche); broad in Backend. ML + Deep Learning + Gen AI are learned as **foundations for AI Engineering**.
 - **Ambition level:** aiming high (product/MNC standard) → so **DSA + System Design get strong emphasis**.
@@ -16,18 +26,29 @@
 
 ### 🎯 TARGET LOCKED (set 2026-07-31): **JOB IN DECEMBER 2026**
 - **Runway:** 2026-08-01 → 2026-12-31 = **22 weeks**. Compressed from the original 10–11 months.
-- **⚠️ The real deadline is 2026-09-30, not December.** Indian hiring cycles run 4–8 weeks from
-  application to offer. To have an offer in December, applications go out **from Oct 1**.
-  → **Whatever is in my portfolio on Sept 30 is what I apply with.** Everything after Oct 1
-  improves *interviews*, not *callbacks*.
+- **🚨 APPLICATIONS START NOW — W1, AUGUST. NOT OCTOBER.**
+  The old plan gated applications on a portfolio because it assumed a beginner with no history.
+  **With 5 years of Android experience, my resume already earns callbacks.** Waiting until October
+  throws away two months of pipeline for no reason.
+  → Learning path's job is no longer *"earn the right to apply."* It is **"close the gaps that get
+  me rejected in interviews I'm already getting."**
+  → Roles like the **ANSR MedTech Senior Android** posting (5–8 yrs, job code INSSK002) are **live
+  targets this week**, not a map to read.
+  → ❓ *Assumption:* the 5 years is **employed / professional** work I can put on a resume. If it's
+  self-taught side-project time instead, revert to the old gate (apply from Oct 1, portfolio first).
+  **Nothing else in the plan changes either way.**
+- **Sept 30 still matters — but for a different reason.** It's no longer the callback gate; it's the
+  date my **rebuilt fundamentals + 2 shipped apps** are ready, so interviews stop being a gamble.
 - **Intensity required:** ~**5–6 hrs/day, 6 days/week** (was 2 hrs/day). This is the "at any cost" lever.
   There is no version of this timeline at 2 hrs/day.
 - **📛 NO PRIOR PROJECTS COUNT (my call, 2026-07-31).** Any app I have in progress — Tutr, KodaguBus,
   RationSmart, anything else — is **out of scope until interview-prep time (W20+)**. Do not plan
   around them, do not count them in the portfolio, do not use them to compress any phase.
   Everything in the portfolio gets built **from zero inside this plan**.
-  → *Honest cost:* the Oct 1 portfolio is therefore **exactly 2 apps + 1 AI feature**, all built
-  Sept. That's thinner than it could be, and it's the trade I chose. It makes W5–W9 non-negotiable.
+  → *Honest cost:* the Sept 30 portfolio is therefore **exactly 2 apps + 1 AI feature**, built in
+  Sept. Thinner than it could be — the trade I chose. It makes W5–W9 non-negotiable.
+  → *(My 5 years of professional work still goes on the **resume**. This rule is about the
+  **learning path and portfolio**, not about hiding my experience from employers.)*
 
 ### 🧒 TEACHING BASELINE: **ABSOLUTE ZERO** (set 2026-07-31 — read every session)
 > **Assume I know nothing. Not "beginner-friendly" — literally zero.**
@@ -80,15 +101,21 @@ trade-offs are real and I want them written down, not hidden:
   a topic.
 - **What I did NOT give up:** shipped projects, testing/debugging, and the ability to explain every
   line. Those *are* the hire. Cutting them to cover more syllabus would defeat the whole point.
-- **The honest odds:** a first dev job 5 months from near-zero is hard, and December is a slow
-  hiring month in India (holidays + budget freeze). Realistic good outcome = **offers landing
-  Dec–Feb**, with December live if the Oct applications hit. Plan for December, don't collapse if
-  it's January.
-- **What actually gets me hired:** **2–3 shipped, deployed apps I can reason about like an engineer**
-  — plus the differentiator almost no junior has: **AI running inside an Android app**. DSA is an
-  interview *gate*, a hoop, not the job. Keep it moving; don't let it eat the plan.
-- **The fallback that is not failure:** if December doesn't land, I am not back at zero — I'm a
-  developer with a portfolio, applying in January from a much stronger position.
+- **The honest odds (revised UP on 2026-07-31 — I have 5 years of experience, not zero):** this is
+  **not** a "beginner tries to get hired in 5 months" story. It's an **experienced Android dev
+  rebuilding foundations and adding a specialisation while already interviewing.** That is a
+  credible December outcome, and a strong one. The remaining risks are honest but ordinary:
+  December is a slow hiring month in India (holidays + budget freeze), and mid/senior interviews
+  probe *depth* — which is exactly what the 🎓 SENIOR LAYER items exist to fix.
+- **What actually gets me hired at this level:** not "I finished a course." It's **(a)** being able to
+  explain *why* behind every decision, **(b)** crash-triage / debugging / testing judgement — what the
+  ANSR posting leads with, **(c)** 2 shipped apps I can defend line-by-line, and **(d)** the
+  differentiator almost nobody at any level has: **AI running inside an Android app.**
+  At senior level, **system design > DSA**. DSA is still a gate at product MNCs — keep it moving,
+  don't let it eat the plan.
+- **The fallback that is not failure:** if December slips to January, I'm not back at zero — I'm an
+  experienced dev with rebuilt fundamentals, 2 shipped apps and an AI specialisation, interviewing
+  from a far stronger position than I am today.
 
 ---
 
@@ -118,14 +145,18 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 > ⚠️ Raised from 2 hrs/day on 2026-07-31 for the December target. This number IS the plan.
 - **Track A — SKILLS (~4 hrs/day):** the weekly curriculum below.
 - **Track B — DSA (~1.5 hrs/day):** pattern-focused problem-solving, every day from Day 1.
-- **Track C — JOB SEARCH + INTERVIEW PREP (~1 hr/day, starts Oct 1):**
-  - **Oct:** applications daily · referrals/LinkedIn outreach · **project deep-dive drills** — explain
-    Notes + Weather + the AI feature out loud, line-by-line, as if to an interviewer
-  - **Nov:** **weekly timed mock interview (🔴 AI-OFF)** · Kotlin/Android rapid-fire Q&A · behavioural
-    stories · keep the interview Q&A bank growing after every lesson
-  - **Dec:** 2–3 mocks/week · system design reps · offer negotiation · **close**
-  - ⚠️ Interview prep is **not** a December activity. With no prior projects to fall back on, the
-    only thing being tested is what I built Aug–Nov — so I start rehearsing it in October.
+- **Track C — JOB SEARCH + INTERVIEW PREP (~1 hr/day, STARTS W1 — AUGUST):**
+  - **Aug (W1–4):** 📤 **resume + LinkedIn rewritten for 5 yrs Android → applications going out from
+    week one.** Target mid/senior Android roles (ANSR MedTech INSSK002 and similar). Referrals +
+    outreach. Every rejection/interview is **free diagnostic data on which gap to close next.**
+  - **Sep (W5–9):** weekly timed mock (🔴 AI-OFF) · **crash-triage & debugging drills** — the senior
+    screen · Kotlin/Android rapid-fire Q&A · rehearse projects out loud line-by-line
+  - **Oct–Nov (W10–19):** 2 mocks/week · **system design** reps (weighted heavier than DSA at senior
+    level) · start pitching the **AI-in-Android** angle once W14+ lands — that's the differentiator
+  - **Dec (W20–22):** 3 mocks/week · offer negotiation · **close**
+  - ⚠️ Interview prep is **not** a December activity, and applications are **not** an October activity.
+    Interviews I fail in August tell me exactly what to study in September. That feedback loop is
+    worth more than any amount of studying in the dark.
 
 ---
 
@@ -135,7 +166,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 
 ### 🅰️ PHASE 1 — KOTLIN · W1–W4 · Aug 1–28
 *Goal: write Kotlin cold, from a blank editor, and explain every line.*
-- 🔄 **W1 (Aug 1–7):** **start from the absolute floor** — what a program even is · `fun main()`, `{ }`, `println` explained token-by-token · re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud**
+- ⬜ **W1 (Aug 1–7):** **start from the absolute floor** — what a program even is · `fun main()`, `{ }`, `println` explained token-by-token · re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud**
 - ⬜ **W2 (Aug 8–14):** functions, collections (List/Map/Set), null safety, exceptions/error handling · code-reading reps
 - ⬜ **W3 (Aug 15–21):** OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions, generics · **✍️ spec-writing**
 - ⬜ **W4 (Aug 22–28):** Coroutines + Flow (properly — Android depends on it) · **⭐ Git & GitHub** · **⭐ command line** · console mini-project → **🚪 GATE: can I write a non-trivial Kotlin program cold?**
@@ -157,7 +188,24 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
     that quietly kills the timeline if left to the last week.
 - ⬜ **W7 (Sep 12–18):** MVVM + MVI, ViewModel, StateFlow/Flow deeply, Clean Architecture + repository pattern · Room + **⭐ SQL basics**
 - ⬜ **W8 (Sep 19–25):** HTTP/REST/JSON, Retrofit, Hilt (DI) · Testing (unit + Compose UI), debugging, profiling → **📦 Project: Weather app**
-- ⬜ **W9 (Sep 26–30 — SHORT WEEK, hard stop Sept 30):** **⭐ ML Kit vision slice** (OCR / barcode / image labeling — runs on *every* device) → add a real AI feature to an app · **⭐ Legacy-code literacy**: XML Views basics, RxJava→Flow mental map, recognise Realm · **🏁 PUBLISH TO PLAY STORE** · resume + GitHub + LinkedIn ready
+- ⬜ **W9 (Sep 26–30 — SHORT WEEK, hard stop Sept 30):** **⭐ ML Kit vision slice** (OCR / barcode / image labeling — runs on *every* device) → add a real AI feature to an app · **🏁 PUBLISH TO PLAY STORE** · resume + GitHub + LinkedIn ready
+
+> #### 🎓 SENIOR LAYER — Phase 2 *(this is what makes me a 5-year dev, not a course finisher)*
+> Sourced from the real **ANSR MedTech Senior Android** requirements (5–8 yrs, INSSK002) — the exact
+> level I'm targeting. Weave these into W5–W9; they are **not optional extras**.
+> - **🔥 Crash triage & field debugging** *(the #1 thing that posting leads with, and it's invisible in
+>   most junior courses)*: read a stack trace properly · Crashlytics/Play Console crash reports ·
+>   `adb logcat` and Android log analysis · ANRs vs crashes · reproduce → root-cause → verify-the-fix
+>   loop · writing a bug report a senior would respect
+> - **Legacy-code literacy** — most Bengaluru enterprise Android is NOT Compose: **XML Views + layouts**,
+>   `findViewById`/ViewBinding, Activity/Fragment lifecycle, **RxJava → Flow mental map**, recognise **Realm**
+> - **Connectivity & network debugging** — retries, timeouts, offline queues, flaky-network reproduction
+>   *(the posting calls this out by name)*
+> - **Testing that counts** — unit + Compose UI + what's actually worth testing, and test plans that
+>   verify a fix rather than just pass
+> - **Performance** — profiler basics, memory leaks, recomposition cost, startup time
+> - **Architecture judgement** — MVVM **vs** MVI, when Clean Architecture is overkill, multi-module
+>   basics, **why** a pattern, not just how
 
 > 🚨 **Oct 1 = applications open.** Portfolio at this point — **built entirely from zero in this plan**:
 > **Notes app** (Compose + navigation) · **Weather app** (MVVM + Room + Retrofit + Hilt + tests) ·
@@ -171,6 +219,13 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 - ⬜ **W12 (Oct 17–23):** Auth (JWT), security basics, env vars & secrets · connect **Android ↔ my own API**
 - ⬜ **W13 (Oct 24–30):** **⭐ DevOps folded in** — Docker + compose, CI/CD (GitHub Actions), cloud deploy, logging/monitoring → **🏁 full-stack deployed**
 
+> #### 🎓 SENIOR LAYER — Phase 3
+> - **API design judgement** — versioning, pagination, idempotency, error contracts (what a senior
+>   argues about in review, not just "make an endpoint")
+> - **Where the boundary goes** — what the client owns vs the server owns, and why. This is the
+>   question mid/senior mobile interviews actually probe.
+> - **Reading someone else's backend** — enough to debug across the stack instead of filing a ticket
+
 ### 🅳 PHASE 4 — AI *INSIDE* ANDROID · W14–W16 · Oct 31 – Nov 20 🔥 *my differentiator*
 *Goal: the "mobile / on-device AI" niche — the thing almost no junior can show.*
 - ⬜ **W14 (Oct 31 – Nov 6):** The 4 tiers & why device reach decides everything · **ML Kit vision + MediaPipe** deeper (the tier that runs everywhere) · when AI is the wrong answer
@@ -182,6 +237,15 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 - ⬜ **W17 (Nov 21–27):** LLM internals (tokens/embeddings/context/temperature) · prompt engineering · **structured output + function calling**
 - ⬜ **W18 (Nov 28 – Dec 4):** Embeddings + vector DBs (Chroma/FAISS) → semantic search · **RAG** end-to-end (chunk → index → retrieve → generate) → **📦 RAG over my own docs**
 - ⬜ **W19 (Dec 5–11):** Agents (tool use, ReAct) · **MCP & connectors — both sides: agent-side AND Android-side (AppFunctions / ADK for Android)** · evals, guardrails, streaming, cost → **🏗️ Capstone v2: agent feature**
+
+> #### 🎓 SENIOR LAYER — Phases 4 & 5 *(this is the part almost nobody at ANY level has)*
+> - **Say no to AI credibly** — when a deterministic `filter{}` beats an LLM, and being able to argue
+>   it in a design review. Senior signal; juniors add AI everywhere.
+> - **Cost & latency budgets** — per-user cost of a feature, p95 latency, what breaks at 10k users
+> - **Failure design** — what the app does when the model is wrong, slow, or unreachable
+> - **Privacy & regulated data** — on-device vs cloud as a *compliance* decision (HIPAA/DPDP);
+>   why MedTech companies care, and the rule that a model never makes an unreviewed clinical call
+> - **Evals** — how you know the AI feature actually works, beyond "it looked right"
 
 ### 🅵 PHASE 6 — CLOSE · W20–W22 · Dec 12–31
 - ⬜ **W20 (Dec 12–18):** Capstone deploy + docs + demo video · portfolio site · building in public
@@ -220,18 +284,27 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 ---
 
 ## 📍 CURRENT STATUS
-- **Phase:** Phase 1 (Kotlin) · **W1 of 22** · target: job in **December 2026**
-- **Days to Oct 1 (applications open):** ~61 · **Days to Dec 31:** ~153
-- **Last completed:** ✅ W1 L1 — Kotlin variables (`val`/`var`, `$` interpolation). Exercise passed. **(2026-07-01 — 30-day gap since)**
-- **⚠️ GAP PROTOCOL ACTIVE:** 30 days since last lesson → **compressed re-teach of L1 BEFORE moving on.** Do not cold-quiz.
-- **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println` and every token. No "obviously". See TEACHING BASELINE section.
+> ♻️ **PROGRESS CLEARED & RESTARTED 2026-07-31.** Nothing carried over. Everything starts from zero,
+> including topics previously marked done — they get taught again, properly, from the floor.
+
+- **Phase:** Phase 1 (Kotlin) · **W1 of 22** · **Day 0** · target: **mid/senior Android + AI job, December 2026**
+- **Days to Dec 31:** ~153
+- **Last completed:** *nothing — fresh start*
+- **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
+- **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
-- **Next action:** **Track A** → compressed re-teach of L1 (variables), then W1 L2: types, operators & I/O (`readLine`). **Track B** → DSA: Big-O + arrays.
+- **Next action:** **Track A** → **W1 L1 from absolute scratch**: what a program is → `fun main()` → `{ }` → `println` → then `val`/`var`. **Track B** → DSA: what Big-O even means. **Track C** → rewrite resume/LinkedIn for 5 yrs Android, first applications out.
 - **DSA problems solved:** 0 / ~150–180
-- **Apps live on Play Store:** 0 / 2 *(deadline: Sept 30)*
-- **Notes written:** `01-kotlin-variables.md` (+ slide `01-kotlin-variables.html`)
+- **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
+- **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
+- **Notes written:** *none — starting fresh*
 
 ## 📓 PROGRESS LOG (newest at top)
+> ♻️ **Progress cleared 2026-07-31.** All ✅/🔄 reset to ⬜, DSA count 0, `notes/REVIEW.md` emptied.
+> **The decision entries below are kept on purpose** — they're the record of *why* the plan looks
+> like this, not progress. (Say the word if you want them wiped too.)
+
+- **2026-07-31** — ♻️🎓 **FRESH START + LEVEL CORRECTED TO MID/SENIOR.** Two things I clarified: **(1) I have 5 years of professional Android experience** — "complete beginner" was only ever about the *teaching format*, never my level. PROGRESS.md now splits these into **two explicit facts that must never be collapsed**: teaching baseline = absolute zero, professional level = 5 yrs, destination = **5-year Android dev + AI**. **(2) Cleared all progress** and restarted from Day 0 — every topic gets re-taught from the floor. Consequences: **applications now start in W1/August, not October** (my resume already earns callbacks — the old Oct gate assumed a beginner with no history; the ANSR MedTech senior role INSSK002 is a live target now, not a map). Track C runs from week one so **August interview rejections become free diagnostics for what to study in September**. Added a **🎓 SENIOR LAYER to every phase**, built from the real INSSK002 requirements rather than a generic list — headline addition is **crash triage / logcat / stack-trace / root-cause / reproduce-and-verify**, which that posting leads with and which was completely absent from my plan. Added mandatory **🧭 WHERE & WHEN** step to the topic format (where it shows up · when to reach for it · **when NOT to + what instead** · how to start from scratch) — "when not to" is the senior signal. Honest-expectation note **revised UP**: this is an experienced dev rebuilding foundations while interviewing, not a beginner gamble. **Cut to pay for the senior layer:** RAG chatbot as a separate side project (folded into the capstone), Chroma/FAISS breadth (one vector DB only), and DSA stays capped at ~150–180 — at senior level system design outranks it.
 - **2026-07-31** — 🧒 **RULE ZERO + no-prior-projects set (my call).** (1) **Teaching baseline reset to ABSOLUTE ZERO** — assume I don't know what `println` or `fun main()` is; every token explained; "obviously/simply/just/as you know" banned. Added as TEACHING BASELINE in this file and **RULE ZERO** at the top of `GUARDRAILS.md` so `/teach` enforces it every session. (2) **📛 All in-progress projects (Tutr, KodaguBus, RationSmart) excluded until W20** — they don't count toward the portfolio and must never be used to skip a topic or compress a phase. Oct 1 portfolio is now exactly **Notes app + Weather app + 1 ML Kit AI feature, built from zero**. (3) **Interview prep moved earlier** — Track C now has a month-by-month breakdown starting Oct (project deep-dive drills), Nov (weekly timed AI-OFF mocks), Dec (2–3 mocks/week + system design + close), because with no fallback projects the only thing being tested is what I build Aug–Nov. (4) Speed comes from **hours, not shortcuts** — depth of explanation is fixed.
 - **2026-07-31** — 🎯 **DECEMBER TARGET LOCKED. Plan recompressed 10–11 months → 22 weeks (Aug 1–Dec 31).** Reordered to Kotlin → Android → Backend → AI-in-Android → AI Engineering per my call. Key changes: (1) **Sept 30 is the real deadline** — applications open Oct 1, so Phase 2 ends with 2 apps live on Play Store; (2) **ML Kit vision pulled forward to W9** so the AI differentiator exists *before* I apply, not after; (3) **W15 expanded** with ML Kit GenAI APIs (Gemini Nano/AICore: Prompt, Summarization, Proofreading, Rewriting, Image Description, Speech Recognition) + Firebase AI Logic **hybrid inference** 4 modes + device-fragmentation reality; (4) **legacy-code literacy added (W9)** — XML Views/RxJava/Realm, because real Bengaluru enterprise Android (e.g. ANSR MedTech role INSSK002) is not Compose; (5) **MCP now taught from both sides** in W19 (agent-side + Android AppFunctions/ADK); (6) hours **2 → 5–6/day**; (7) DSA **300–400 → ~150–180** pattern-focused; (8) **cut:** Excel/pandas on-ramp, math-for-ML, PyTorch/CNN training, DevOps interlude (folded into W13), buffer weeks. Honest-expectation note rewritten, not deleted — realistic outcome is offers **Dec–Feb**.
 - **2026-07-01** — ✅ Track A W1 L1: Kotlin variables done — learner wrote a correct `val`/`var` + `$` program first try. Added a **3-layer interview-answer format** (simple → professional → glossary) per learner request to sound technical in interviews. Logged topic to REVIEW.md (due 07-02/04/08/22). Next: Track B DSA Big-O + arrays.

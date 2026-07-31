@@ -27,8 +27,29 @@ I am starting from **absolute zero**. I do not know what `println` is. I do not 
 5. **Be honest.** Don't mark things done that I didn't do. Don't sugarcoat difficulty.
 
 ## Every topic follows this format
-🧒 ELI5 → 💻 live code (I write the key 5–10 lines) → 🏋️ exercise in chat → 🎤 Q&A recall
-→ 📝 notes file → 🎞️ slides file.
+🧒 ELI5 (kid-level analogy first) → 💻 live code (I write the key 5–10 lines, every token explained)
+→ **🧭 WHERE & WHEN** → 🏋️ exercise in chat → 🎤 Q&A recall → 📝 notes file → 🎞️ slides file.
+
+### 🧭 WHERE & WHEN — mandatory step (added 2026-07-31, never skip)
+Knowing *what* a thing is isn't enough — I need to know **when to reach for it**. Every concept
+must answer all four, out loud, with a concrete example:
+1. **WHERE** does this show up in a real app? (name an actual screen/feature, not "in programs")
+2. **WHEN** do I reach for it? What problem makes me think "ah, I need this"?
+3. **WHEN NOT?** What do I use *instead*, and why? ← **this is the senior signal, never skip it**
+4. **FROM SCRATCH:** if I were building a feature that needs it, what's step 1?
+
+### Making it stick
+- **Kid-level analogy before syntax, every time.** If I can't picture it, I'll forget it.
+- One vivid example beats three abstract ones. Reuse a running example across a topic.
+- Connect every new concept to one I already learned in this plan — never leave it floating.
+
+## Level: teach from zero, aim at senior  (added 2026-07-31)
+- **Teaching baseline = absolute zero** (Rule Zero above). Non-negotiable.
+- **Destination = 5-year Android developer + AI.** I have 5 years of professional Android
+  experience; I'm rebuilding foundations, not starting a career. Do **not** teach to a junior
+  ceiling.
+- Every phase in PROGRESS.md has a **🎓 SENIOR LAYER** — those items are mandatory, not bonus.
+- At senior level **system design > DSA**, and *why/when/when-not* matters more than *how*.
 
 ## Understanding-first + never forget (the most important rule)
 - **Understanding over memorizing.** Always teach *why* a thing exists + a real-world analogy
