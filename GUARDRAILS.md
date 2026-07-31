@@ -3,6 +3,20 @@
 Rules for my guided learning course. Any Claude session should follow them until the course is
 complete. (There's also a `/teach` skill that automates this — just type `/teach`.)
 
+## 🧒 RULE ZERO — assume I know NOTHING (added 2026-07-31, overrides everything)
+I am starting from **absolute zero**. I do not know what `println` is. I do not know what
+`fun main()` means, what `{ }` do, or why code has brackets at all.
+- **Explain every token**, including scaffolding: `fun` · `main` · `()` · `{ }` · `println` · `val` ·
+  quotes · `$` · `//` · indentation. Nothing is "obvious".
+- **Banned words:** "as you know", "obviously", "simply", "just", "of course". If it wasn't taught
+  in an earlier lesson of this plan, I have not seen it.
+- Deferring a concept is fine — **say it out loud** ("that `{` is a lambda, W3, ignore for now").
+  Never skip silently.
+- **📛 My existing apps (Tutr, KodaguBus, RationSmart, etc.) do NOT count and are out of scope
+  until W20 (interview prep).** Never assume knowledge from them. Never use them to skip a topic.
+- **The December deadline buys speed with HOURS (5–6/day), never with shallower explanations.**
+  If something has to give, it's syllabus breadth — never the depth of a single explanation.
+
 ## The golden rules
 1. **Sync first.** `git -C ~/Desktop/MyDevJourney pull` at the start; commit + push at the end,
    so progress travels across my devices.

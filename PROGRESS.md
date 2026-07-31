@@ -22,10 +22,25 @@
   improves *interviews*, not *callbacks*.
 - **Intensity required:** ~**5–6 hrs/day, 6 days/week** (was 2 hrs/day). This is the "at any cost" lever.
   There is no version of this timeline at 2 hrs/day.
-- **Assumption to confirm:** this plan assumes I'm a genuine beginner (per the line above). If I can
-  explain the Kotlin in my existing Technothrive apps (Tutr / KodaguBus / RationSmart) **line-by-line,
-  cold**, Phase 1 compresses to ~2 weeks and the Oct portfolio becomes *hardened real apps* instead of
-  tutorial apps — a much stronger application. Test this in W1, then adjust.
+- **📛 NO PRIOR PROJECTS COUNT (my call, 2026-07-31).** Any app I have in progress — Tutr, KodaguBus,
+  RationSmart, anything else — is **out of scope until interview-prep time (W20+)**. Do not plan
+  around them, do not count them in the portfolio, do not use them to compress any phase.
+  Everything in the portfolio gets built **from zero inside this plan**.
+  → *Honest cost:* the Oct 1 portfolio is therefore **exactly 2 apps + 1 AI feature**, all built
+  Sept. That's thinner than it could be, and it's the trade I chose. It makes W5–W9 non-negotiable.
+
+### 🧒 TEACHING BASELINE: **ABSOLUTE ZERO** (set 2026-07-31 — read every session)
+> **Assume I know nothing. Not "beginner-friendly" — literally zero.**
+> I do not know what `println` is. I do not know what `fun main()` means, what `{ }` do,
+> what a semicolon is for, or why code has brackets at all.
+- **Explain every single token**, including the scaffolding everyone else calls obvious:
+  `fun` · `main` · `()` · `{ }` · `println` · `val` · `"` quotes · `$` · `//` · indentation.
+- **Never** say "as you know", "obviously", "simply", or "just". If I haven't been taught it in a
+  previous lesson in this plan, I have not seen it.
+- If a concept must wait for a later week, **say so out loud** ("this `{` is a lambda — W3, ignore
+  it for now"). Never skip silently.
+- **Speed comes from hours per day, NOT from skipping explanations.** 5–6 hrs/day is the lever.
+  Compressing the timeline must never compress the depth of a single explanation.
 
 ---
 
@@ -103,7 +118,14 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 > ⚠️ Raised from 2 hrs/day on 2026-07-31 for the December target. This number IS the plan.
 - **Track A — SKILLS (~4 hrs/day):** the weekly curriculum below.
 - **Track B — DSA (~1.5 hrs/day):** pattern-focused problem-solving, every day from Day 1.
-- **Track C — JOB SEARCH (~1 hr/day, starts Oct 1):** applications, referrals, mock interviews.
+- **Track C — JOB SEARCH + INTERVIEW PREP (~1 hr/day, starts Oct 1):**
+  - **Oct:** applications daily · referrals/LinkedIn outreach · **project deep-dive drills** — explain
+    Notes + Weather + the AI feature out loud, line-by-line, as if to an interviewer
+  - **Nov:** **weekly timed mock interview (🔴 AI-OFF)** · Kotlin/Android rapid-fire Q&A · behavioural
+    stories · keep the interview Q&A bank growing after every lesson
+  - **Dec:** 2–3 mocks/week · system design reps · offer negotiation · **close**
+  - ⚠️ Interview prep is **not** a December activity. With no prior projects to fall back on, the
+    only thing being tested is what I built Aug–Nov — so I start rehearsing it in October.
 
 ---
 
@@ -113,7 +135,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 
 ### 🅰️ PHASE 1 — KOTLIN · W1–W4 · Aug 1–28
 *Goal: write Kotlin cold, from a blank editor, and explain every line.*
-- 🔄 **W1 (Aug 1–7):** re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud** · **🔎 Technothrive-app self-test (see assumption above)**
+- 🔄 **W1 (Aug 1–7):** **start from the absolute floor** — what a program even is · `fun main()`, `{ }`, `println` explained token-by-token · re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud**
 - ⬜ **W2 (Aug 8–14):** functions, collections (List/Map/Set), null safety, exceptions/error handling · code-reading reps
 - ⬜ **W3 (Aug 15–21):** OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions, generics · **✍️ spec-writing**
 - ⬜ **W4 (Aug 22–28):** Coroutines + Flow (properly — Android depends on it) · **⭐ Git & GitHub** · **⭐ command line** · console mini-project → **🚪 GATE: can I write a non-trivial Kotlin program cold?**
@@ -128,15 +150,19 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
     would blow the Sept 30 milestone if started in W9. So: set up the Play Console account and
     push Notes app to closed testing the day it runs — the clock ticks in the background while I
     keep learning.
-  - ❓ **CHECK FIRST (may make this moot):** does **Technothrive already have a Play Console
-    account with a published app**? If yes → no 14-day gate, publishing is a matter of days.
-    If it's an **organisation** account → exempt from the tester requirement entirely.
+  - ℹ️ *Account logistics only (not a project):* if a Play Console account **already exists**, the
+    14-day gate may not apply — and **organisation** accounts are exempt from the tester
+    requirement entirely. Otherwise assume a new personal account and start the clock in W6.
+  - 🧪 **Line up 12 testers now** (friends, family, college/workshop contacts) — this is the part
+    that quietly kills the timeline if left to the last week.
 - ⬜ **W7 (Sep 12–18):** MVVM + MVI, ViewModel, StateFlow/Flow deeply, Clean Architecture + repository pattern · Room + **⭐ SQL basics**
 - ⬜ **W8 (Sep 19–25):** HTTP/REST/JSON, Retrofit, Hilt (DI) · Testing (unit + Compose UI), debugging, profiling → **📦 Project: Weather app**
 - ⬜ **W9 (Sep 26–30 — SHORT WEEK, hard stop Sept 30):** **⭐ ML Kit vision slice** (OCR / barcode / image labeling — runs on *every* device) → add a real AI feature to an app · **⭐ Legacy-code literacy**: XML Views basics, RxJava→Flow mental map, recognise Realm · **🏁 PUBLISH TO PLAY STORE** · resume + GitHub + LinkedIn ready
 
-> 🚨 **Oct 1 = applications open.** Portfolio at this point: Notes app · Weather app · 1 AI feature ·
-> hardened Technothrive apps (Tutr / KodaguBus / RationSmart). This is the pitch.
+> 🚨 **Oct 1 = applications open.** Portfolio at this point — **built entirely from zero in this plan**:
+> **Notes app** (Compose + navigation) · **Weather app** (MVVM + Room + Retrofit + Hilt + tests) ·
+> **1 real AI feature** (ML Kit vision), all live on Play Store, all explainable line-by-line.
+> That is the whole pitch. Nothing else counts. → **W5–W9 cannot slip.**
 
 ### 🅲 PHASE 3 — BACKEND · W10–W13 · Oct 3–30 *(job search runs in parallel)*
 *Goal: be full-stack, not just a UI dev. This is what separates me from bootcamp juniors.*
@@ -198,12 +224,15 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Days to Oct 1 (applications open):** ~61 · **Days to Dec 31:** ~153
 - **Last completed:** ✅ W1 L1 — Kotlin variables (`val`/`var`, `$` interpolation). Exercise passed. **(2026-07-01 — 30-day gap since)**
 - **⚠️ GAP PROTOCOL ACTIVE:** 30 days since last lesson → **compressed re-teach of L1 BEFORE moving on.** Do not cold-quiz.
-- **Next action:** **Track A** → re-teach L1, then W1 L2: types, operators & I/O (`readLine`). **Track B** → DSA: Big-O + arrays. **Also W1:** the Technothrive line-by-line self-test (decides whether Phase 1 compresses).
+- **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println` and every token. No "obviously". See TEACHING BASELINE section.
+- **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
+- **Next action:** **Track A** → compressed re-teach of L1 (variables), then W1 L2: types, operators & I/O (`readLine`). **Track B** → DSA: Big-O + arrays.
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(deadline: Sept 30)*
 - **Notes written:** `01-kotlin-variables.md` (+ slide `01-kotlin-variables.html`)
 
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-31** — 🧒 **RULE ZERO + no-prior-projects set (my call).** (1) **Teaching baseline reset to ABSOLUTE ZERO** — assume I don't know what `println` or `fun main()` is; every token explained; "obviously/simply/just/as you know" banned. Added as TEACHING BASELINE in this file and **RULE ZERO** at the top of `GUARDRAILS.md` so `/teach` enforces it every session. (2) **📛 All in-progress projects (Tutr, KodaguBus, RationSmart) excluded until W20** — they don't count toward the portfolio and must never be used to skip a topic or compress a phase. Oct 1 portfolio is now exactly **Notes app + Weather app + 1 ML Kit AI feature, built from zero**. (3) **Interview prep moved earlier** — Track C now has a month-by-month breakdown starting Oct (project deep-dive drills), Nov (weekly timed AI-OFF mocks), Dec (2–3 mocks/week + system design + close), because with no fallback projects the only thing being tested is what I build Aug–Nov. (4) Speed comes from **hours, not shortcuts** — depth of explanation is fixed.
 - **2026-07-31** — 🎯 **DECEMBER TARGET LOCKED. Plan recompressed 10–11 months → 22 weeks (Aug 1–Dec 31).** Reordered to Kotlin → Android → Backend → AI-in-Android → AI Engineering per my call. Key changes: (1) **Sept 30 is the real deadline** — applications open Oct 1, so Phase 2 ends with 2 apps live on Play Store; (2) **ML Kit vision pulled forward to W9** so the AI differentiator exists *before* I apply, not after; (3) **W15 expanded** with ML Kit GenAI APIs (Gemini Nano/AICore: Prompt, Summarization, Proofreading, Rewriting, Image Description, Speech Recognition) + Firebase AI Logic **hybrid inference** 4 modes + device-fragmentation reality; (4) **legacy-code literacy added (W9)** — XML Views/RxJava/Realm, because real Bengaluru enterprise Android (e.g. ANSR MedTech role INSSK002) is not Compose; (5) **MCP now taught from both sides** in W19 (agent-side + Android AppFunctions/ADK); (6) hours **2 → 5–6/day**; (7) DSA **300–400 → ~150–180** pattern-focused; (8) **cut:** Excel/pandas on-ramp, math-for-ML, PyTorch/CNN training, DevOps interlude (folded into W13), buffer weeks. Honest-expectation note rewritten, not deleted — realistic outcome is offers **Dec–Feb**.
 - **2026-07-01** — ✅ Track A W1 L1: Kotlin variables done — learner wrote a correct `val`/`var` + `$` program first try. Added a **3-layer interview-answer format** (simple → professional → glossary) per learner request to sound technical in interviews. Logged topic to REVIEW.md (due 07-02/04/08/22). Next: Track B DSA Big-O + arrays.
 - **2026-07-01** — Added **two-mode practice** (🔴 AI-OFF code-from-scratch for interviews + 🟢 AI-ON direct/judge), **prompting basics**, and **🗣️ English speaking** (explain-back out loud + spoken interview answers) woven into the flow.
