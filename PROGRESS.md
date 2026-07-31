@@ -145,6 +145,12 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 > ⚠️ Raised from 2 hrs/day on 2026-07-31 for the December target. This number IS the plan.
 - **Track A — SKILLS (~4 hrs/day):** the weekly curriculum below.
 - **Track B — DSA (~1.5 hrs/day):** pattern-focused problem-solving, every day from Day 1.
+- **🧠 GEN AI LITERACY THREAD (~20 min, once a week, from W1 — NOT a phase, a drip):**
+  One Gen AI concept per week **in conversation only** — no code, no project, just understanding
+  it well enough to explain out loud. List A of the GEN AI CONCEPTS block (Phase 4) is the syllabus.
+  **Why from W1:** I'm interviewing from August and AI-in-Android is my differentiator. I have to be
+  able to *talk* about tokens, context windows, RAG and on-device trade-offs months before I *build*
+  them in November. Costs ~20 min/week; buys the whole story early.
 - **Track C — JOB SEARCH + INTERVIEW PREP (~1 hr/day, STARTS W1 — AUGUST):**
   - **Aug (W1–4):** 📤 **resume + LinkedIn rewritten for 5 yrs Android → applications going out from
     week one.** Target mid/senior Android roles (ANSR MedTech INSSK002 and similar). Referrals +
@@ -232,6 +238,36 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 - ⬜ **W15 (Nov 7–13):** **⭐ LiteRT (ex-TensorFlow Lite)** — convert a **pre-trained** model (no training needed — PyTorch/CNN training is cut) & run it inside Android · **⭐ ML Kit GenAI APIs** (Gemini Nano via AICore): Summarization · Proofreading · Rewriting · Image Description · Speech Recognition · **Prompt API** · **⭐ Firebase AI Logic hybrid inference** — `PREFER_ON_DEVICE` / `PREFER_CLOUD` / `ONLY_ON_DEVICE` / `ONLY_CLOUD` and *why the fallback exists* (Nano = flagships only) · **⚠️ device-fragmentation reality: my users are on ₹10–15k phones**
 - ⬜ **W16 (Nov 14–20):** Cloud AI from Android (call an LLM properly): streaming, latency & cost budgets, offline behaviour, error/fallback UX · **the boundary rule — the model interprets & explains, deterministic code owns the decision** → **🏗️ Capstone v1: AI feature shipped in a real app**
 
+> #### 🧠 GEN AI CONCEPTS FOR ANDROID *(added 2026-07-31 — taught across W14–W19)*
+>
+> **A · The vocabulary — learn EARLY (see the W1 literacy thread below), not in November.**
+> I need to *talk* about this in August interviews long before I *build* it in November.
+> - **token** · **context window** · **embedding** · **temperature / top-p** · **system prompt**
+> - **hallucination** vs **grounding** · **RAG** · **agent / tool use** · **eval**
+> - **LLM vs SLM** · **quantization** & **distillation** (why a model fits on a phone at all)
+> - **The decision that gets asked in interviews:** **prompting vs RAG vs fine-tuning** — which
+>   problem each one actually solves, and why fine-tuning is almost never the first answer
+>
+> **B · The Android-specific engineering — this is the part generic AI courses skip.**
+> - **🔒 API-key security — the #1 mobile GenAI mistake.** An APK is decompilable, so an LLM key
+>   shipped inside it **is a public key**. Calls go through *my* backend, never direct from the app.
+>   *(This alone is a senior-level interview answer.)*
+> - **Streaming into Compose** — `Flow<String>`, token-by-token rendering, partial state,
+>   **cancellation** when the user leaves the screen (leak + cost bug if you get it wrong)
+> - **Latency perception** — 2s is forever on mobile: skeletons, optimistic UI, streaming as a UX
+>   tool, and knowing a p95 latency budget
+> - **Structured output → Kotlin** — JSON schema → `@Serializable` data class, and handling the
+>   model returning malformed output (it will)
+> - **Conversation state on-device** — persisting history in Room, context-window truncation,
+>   token budgeting per user
+> - **Multimodal input from Android** — CameraX frame → model · mic → speech-to-text
+> - **Prompt management** — prompts are *config, not code*: never hardcode in the APK (can't hotfix
+>   a bad prompt without a Play release), version them, serve them remotely
+> - **Cost per user** — what a feature costs at 10k users; caching + prefix caching
+> - **Failure & degradation UX** — timeout, retry, rate-limit, offline, and *what the screen shows*
+> - **Safety on user input** — guardrails when real users type into my app
+> - **Evals** — how I *know* the feature works beyond "it looked right in the demo"
+
 ### 🅴 PHASE 5 — AI ENGINEERING · W17–W19 · Nov 21 – Dec 11 🔥
 *Goal: build the AI, not just call it.*
 - ⬜ **W17 (Nov 21–27):** LLM internals (tokens/embeddings/context/temperature) · prompt engineering · **structured output + function calling**
@@ -300,9 +336,8 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Notes written:** *none — starting fresh*
 
 ## 📓 PROGRESS LOG (newest at top)
-> ♻️ **Progress cleared 2026-07-31.** All ✅/🔄 reset to ⬜, DSA count 0, `notes/REVIEW.md` emptied.
-> **The decision entries below are kept on purpose** — they're the record of *why* the plan looks
-> like this, not progress. (Say the word if you want them wiped too.)
+- **2026-07-31** — 🧠 **Gen AI concepts for Android added.** New **GEN AI CONCEPTS** block in Phase 4, split in two: **(A) vocabulary** (token, context window, embedding, temperature/top-p, system prompt, hallucination vs grounding, RAG, agent/tool use, eval, LLM vs SLM, quantization/distillation, and the interview favourite **prompting vs RAG vs fine-tuning**) and **(B) the Android-specific engineering that generic AI courses skip** — **API-key security (an APK is decompilable, so a shipped LLM key is a public key → always proxy via my backend)**, streaming into Compose with `Flow` + cancellation, latency perception & p95 budgets, structured output → `@Serializable` data classes incl. malformed responses, conversation state in Room + context truncation, multimodal input via CameraX/mic, **prompts as remote config not hardcoded APK strings** (can't hotfix a bad prompt without a Play release), cost-per-user & caching, failure/degradation UX, safety guardrails, evals. Also added a **🧠 Gen AI literacy thread from W1** — one concept per week, 20 min, conversation only — because I'm interviewing from August and need to *talk* about this months before I *build* it in November. **Cut to pay for it:** MediaPipe reduced to awareness-only (ML Kit covers the same ground for my use cases), and the W17 prompt-engineering block absorbs the literacy thread instead of being taught twice.
+- **2026-07-31** — ♻️ **Progress cleared.** All ✅/🔄 reset to ⬜, DSA count 0, `notes/REVIEW.md` emptied. The decision entries below are kept on purpose — they record *why* the plan looks like this, which is not progress. (Say the word if they should be wiped too.)
 
 - **2026-07-31** — ♻️🎓 **FRESH START + LEVEL CORRECTED TO MID/SENIOR.** Two things I clarified: **(1) I have 5 years of professional Android experience** — "complete beginner" was only ever about the *teaching format*, never my level. PROGRESS.md now splits these into **two explicit facts that must never be collapsed**: teaching baseline = absolute zero, professional level = 5 yrs, destination = **5-year Android dev + AI**. **(2) Cleared all progress** and restarted from Day 0 — every topic gets re-taught from the floor. Consequences: **applications now start in W1/August, not October** (my resume already earns callbacks — the old Oct gate assumed a beginner with no history; the ANSR MedTech senior role INSSK002 is a live target now, not a map). Track C runs from week one so **August interview rejections become free diagnostics for what to study in September**. Added a **🎓 SENIOR LAYER to every phase**, built from the real INSSK002 requirements rather than a generic list — headline addition is **crash triage / logcat / stack-trace / root-cause / reproduce-and-verify**, which that posting leads with and which was completely absent from my plan. Added mandatory **🧭 WHERE & WHEN** step to the topic format (where it shows up · when to reach for it · **when NOT to + what instead** · how to start from scratch) — "when not to" is the senior signal. Honest-expectation note **revised UP**: this is an experienced dev rebuilding foundations while interviewing, not a beginner gamble. **Cut to pay for the senior layer:** RAG chatbot as a separate side project (folded into the capstone), Chroma/FAISS breadth (one vector DB only), and DSA stays capped at ~150–180 — at senior level system design outranks it.
 - **2026-07-31** — 🧒 **RULE ZERO + no-prior-projects set (my call).** (1) **Teaching baseline reset to ABSOLUTE ZERO** — assume I don't know what `println` or `fun main()` is; every token explained; "obviously/simply/just/as you know" banned. Added as TEACHING BASELINE in this file and **RULE ZERO** at the top of `GUARDRAILS.md` so `/teach` enforces it every session. (2) **📛 All in-progress projects (Tutr, KodaguBus, RationSmart) excluded until W20** — they don't count toward the portfolio and must never be used to skip a topic or compress a phase. Oct 1 portfolio is now exactly **Notes app + Weather app + 1 ML Kit AI feature, built from zero**. (3) **Interview prep moved earlier** — Track C now has a month-by-month breakdown starting Oct (project deep-dive drills), Nov (weekly timed AI-OFF mocks), Dec (2–3 mocks/week + system design + close), because with no fallback projects the only thing being tested is what I build Aug–Nov. (4) Speed comes from **hours, not shortcuts** — depth of explanation is fixed.
