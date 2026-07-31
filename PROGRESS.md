@@ -122,9 +122,18 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 *Goal: 2 shipped apps + one AI feature, live on Play Store, BEFORE applications open.*
 - ⬜ **W5 (Aug 29 – Sep 4):** Android Studio, project structure, Gradle, Composables, Preview, layouts, modifiers, theming
 - ⬜ **W6 (Sep 5–11):** State & recomposition, user input, LazyColumn, Navigation, multi-screen → **📦 Project: Notes app**
+  - 🚨 **ALSO IN W6 — START THE PLAY STORE CLOCK, NOT IN W9.** A *new personal* Play developer
+    account needs identity verification **+ a closed test with 12+ testers running 14 continuous
+    days** before production access is even granted. That is a 3–4 week external dependency that
+    would blow the Sept 30 milestone if started in W9. So: set up the Play Console account and
+    push Notes app to closed testing the day it runs — the clock ticks in the background while I
+    keep learning.
+  - ❓ **CHECK FIRST (may make this moot):** does **Technothrive already have a Play Console
+    account with a published app**? If yes → no 14-day gate, publishing is a matter of days.
+    If it's an **organisation** account → exempt from the tester requirement entirely.
 - ⬜ **W7 (Sep 12–18):** MVVM + MVI, ViewModel, StateFlow/Flow deeply, Clean Architecture + repository pattern · Room + **⭐ SQL basics**
 - ⬜ **W8 (Sep 19–25):** HTTP/REST/JSON, Retrofit, Hilt (DI) · Testing (unit + Compose UI), debugging, profiling → **📦 Project: Weather app**
-- ⬜ **W9 (Sep 26 – Oct 2):** **⭐ ML Kit vision slice** (OCR / barcode / image labeling — runs on *every* device) → add a real AI feature to an app · **⭐ Legacy-code literacy**: XML Views basics, RxJava→Flow mental map, recognise Realm · **🏁 PUBLISH TO PLAY STORE** · resume + GitHub + LinkedIn ready
+- ⬜ **W9 (Sep 26–30 — SHORT WEEK, hard stop Sept 30):** **⭐ ML Kit vision slice** (OCR / barcode / image labeling — runs on *every* device) → add a real AI feature to an app · **⭐ Legacy-code literacy**: XML Views basics, RxJava→Flow mental map, recognise Realm · **🏁 PUBLISH TO PLAY STORE** · resume + GitHub + LinkedIn ready
 
 > 🚨 **Oct 1 = applications open.** Portfolio at this point: Notes app · Weather app · 1 AI feature ·
 > hardened Technothrive apps (Tutr / KodaguBus / RationSmart). This is the pitch.
@@ -139,7 +148,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 ### 🅳 PHASE 4 — AI *INSIDE* ANDROID · W14–W16 · Oct 31 – Nov 20 🔥 *my differentiator*
 *Goal: the "mobile / on-device AI" niche — the thing almost no junior can show.*
 - ⬜ **W14 (Oct 31 – Nov 6):** The 4 tiers & why device reach decides everything · **ML Kit vision + MediaPipe** deeper (the tier that runs everywhere) · when AI is the wrong answer
-- ⬜ **W15 (Nov 7–13):** **⭐ LiteRT (ex-TensorFlow Lite)** — convert a model & run it inside Android · **⭐ ML Kit GenAI APIs** (Gemini Nano via AICore): Summarization · Proofreading · Rewriting · Image Description · Speech Recognition · **Prompt API** · **⭐ Firebase AI Logic hybrid inference** — `PREFER_ON_DEVICE` / `PREFER_CLOUD` / `ONLY_ON_DEVICE` / `ONLY_CLOUD` and *why the fallback exists* (Nano = flagships only) · **⚠️ device-fragmentation reality: my users are on ₹10–15k phones**
+- ⬜ **W15 (Nov 7–13):** **⭐ LiteRT (ex-TensorFlow Lite)** — convert a **pre-trained** model (no training needed — PyTorch/CNN training is cut) & run it inside Android · **⭐ ML Kit GenAI APIs** (Gemini Nano via AICore): Summarization · Proofreading · Rewriting · Image Description · Speech Recognition · **Prompt API** · **⭐ Firebase AI Logic hybrid inference** — `PREFER_ON_DEVICE` / `PREFER_CLOUD` / `ONLY_ON_DEVICE` / `ONLY_CLOUD` and *why the fallback exists* (Nano = flagships only) · **⚠️ device-fragmentation reality: my users are on ₹10–15k phones**
 - ⬜ **W16 (Nov 14–20):** Cloud AI from Android (call an LLM properly): streaming, latency & cost budgets, offline behaviour, error/fallback UX · **the boundary rule — the model interprets & explains, deterministic code owns the decision** → **🏗️ Capstone v1: AI feature shipped in a real app**
 
 ### 🅴 PHASE 5 — AI ENGINEERING · W17–W19 · Nov 21 – Dec 11 🔥
