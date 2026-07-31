@@ -26,9 +26,31 @@ I am starting from **absolute zero**. I do not know what `println` is. I do not 
 4. **Teach like I'm 10.** Simple language, analogies, define every jargon word.
 5. **Be honest.** Don't mark things done that I didn't do. Don't sugarcoat difficulty.
 
+## 🖐️ THE 5 P's — the pattern for EVERY concept (added 2026-07-31)
+> **Never start with syntax.** A concept learned as *the answer to a problem* sticks, because that's
+> also how it gets retrieved later — real work arrives as problems, not as syntax.
+
+| | Step | Ask |
+|---|------|-----|
+| 1️⃣ | **PROBLEM** | What was broken *before* this existed? What pain made someone invent it? |
+| 2️⃣ | **PICTURE** | What's it like? A concrete analogy from real life (pen vs pencil, not "a container") |
+| 3️⃣ | **PROOF** | The smallest thing that works — every token explained (Rule Zero) |
+| 4️⃣ | **PLACE** | Where in a real app · when to reach for it · **when NOT to + what instead** |
+| 5️⃣ | **PASS IT ON** | I explain it back out loud, no notes. If I stumble → that's the gap → reteach differently |
+
+**Rules for using it:**
+- Steps 1 and 2 come **before** any code appears on screen. Ever.
+- Step 4 is where senior-level judgement lives — **never skip "when NOT to."**
+- Step 5 is the only real test. Me saying "got it" is not step 5.
+- One concept at a time through all five. Never run two concepts in parallel.
+- **Remembering is separate:** the 5 P's make me *understand*; spaced repetition
+  (1 → 3 → 7 → 21 days, `notes/REVIEW.md`) makes me *keep* it. Both are required.
+
 ## Every topic follows this format
-🧒 ELI5 (kid-level analogy first) → 💻 live code (I write the key 5–10 lines, every token explained)
-→ **🧭 WHERE & WHEN** → 🏋️ exercise in chat → 🎤 Q&A recall → 📝 notes file → 🎞️ slides file.
+**🖐️ The 5 P's above ARE the lesson.** They map onto the session flow like this:
+🧒 ELI5 = P1+P2 → 💻 live code (I write the key 5–10 lines, every token explained) = P3
+→ **🧭 WHERE & WHEN** = P4 → 🏋️ exercise in chat + 🎤 Q&A recall = P5
+→ 📝 notes file → 🎞️ slides file.
 
 ### 🧭 WHERE & WHEN — mandatory step (added 2026-07-31, never skip)
 Knowing *what* a thing is isn't enough — I need to know **when to reach for it**. Every concept

@@ -18,7 +18,12 @@
 - **🎯 THEREFORE:** start at the floor, **end at mid/senior**. By Dec 31 I should hold the knowledge of
   a **5-year Android developer + the AI layer on top** — not a junior who finished a course.
   Every phase below has a **🎓 SENIOR LAYER** for exactly this reason. Don't skip those items.
-- **Every topic:** 🧒 ELI5 → 💻 live code → **🧭 WHERE & WHEN (+ when NOT to)** → 🏋️ exercise (in chat) → 🎤 Q&A recall → 📝 notes file in `notes/`.
+- **🖐️ HOW I LEARN — THE 5 P's (every concept, every time; full rules in GUARDRAILS.md):**
+  **1 PROBLEM** (what was broken before this existed) → **2 PICTURE** (real-life analogy) →
+  **3 PROOF** (smallest working example, every token explained) → **4 PLACE** (where/when to use it,
+  **and when NOT to**) → **5 PASS IT ON** (I explain it back out loud, no notes).
+  *Never start with syntax. Steps 1–2 come before any code appears.*
+  → **5 P's = understand it. Spaced repetition (1/3/7/21 days) = keep it.** Both required.
 - Math rusty → teach through code + intuition. Machine: 16GB RAM (Colab for heavy training).
 - **Target focus (T-shaped):** PRIMARY = **AI Engineer + Android combo** ("mobile / on-device AI" niche); broad in Backend. ML + Deep Learning + Gen AI are learned as **foundations for AI Engineering**.
 - **Ambition level:** aiming high (product/MNC standard) → so **DSA + System Design get strong emphasis**.
