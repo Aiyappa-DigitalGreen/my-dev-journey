@@ -12,7 +12,20 @@
 - Math rusty → teach through code + intuition. Machine: 16GB RAM (Colab for heavy training).
 - **Target focus (T-shaped):** PRIMARY = **AI Engineer + Android combo** ("mobile / on-device AI" niche); broad in Backend. ML + Deep Learning + Gen AI are learned as **foundations for AI Engineering**.
 - **Ambition level:** aiming high (product/MNC standard) → so **DSA + System Design get strong emphasis**.
-- **Learning flow:** **Android → Backend → AI/ML**.
+- **Learning flow:** **Kotlin → Android → Backend → AI-in-Android → AI Engineering**.
+
+### 🎯 TARGET LOCKED (set 2026-07-31): **JOB IN DECEMBER 2026**
+- **Runway:** 2026-08-01 → 2026-12-31 = **22 weeks**. Compressed from the original 10–11 months.
+- **⚠️ The real deadline is 2026-09-30, not December.** Indian hiring cycles run 4–8 weeks from
+  application to offer. To have an offer in December, applications go out **from Oct 1**.
+  → **Whatever is in my portfolio on Sept 30 is what I apply with.** Everything after Oct 1
+  improves *interviews*, not *callbacks*.
+- **Intensity required:** ~**5–6 hrs/day, 6 days/week** (was 2 hrs/day). This is the "at any cost" lever.
+  There is no version of this timeline at 2 hrs/day.
+- **Assumption to confirm:** this plan assumes I'm a genuine beginner (per the line above). If I can
+  explain the Kotlin in my existing Technothrive apps (Tutr / KodaguBus / RationSmart) **line-by-line,
+  cold**, Phase 1 compresses to ~2 weeks and the Oct portfolio becomes *hardened real apps* instead of
+  tutorial apps — a much stronger application. Test this in W1, then adjust.
 
 ---
 
@@ -42,11 +55,25 @@
    (Feynman), and I **speak** my interview-Q&A answers instead of just reading them. Goal: explain
    technical things clearly and confidently — the skill that decides interviews and standups.
 
-⚠️ **Honest expectation:** I am **not** job-ready at 6 months. This is ~10–11 months, and even then
-entry-level is competitive. What gets me hired = **2–3 genuinely impressive shipped projects + being
-able to reason about them**, not finishing a checklist. DSA (~300–400 problems) is an **interview
-gate** at MNCs — necessary to get in the door, but it's a hoop, not the daily job. Keep it moving,
-don't let it eat the plan.
+⚠️ **Honest expectation (rewritten 2026-07-31 for the December target — do NOT delete this):**
+The original plan said ~10–11 months and "not job-ready at 6 months." I have chosen **5 months**.
+That decision is mine and the plan below is built to give it the best possible shot — but the
+trade-offs are real and I want them written down, not hidden:
+
+- **What I gave up:** ML theory depth (no training CNNs from scratch, no math-heavy ML), DSA volume
+  (300–400 → **~150–180 pattern-focused**), and slack. There is no buffer week. One lost week costs
+  a topic.
+- **What I did NOT give up:** shipped projects, testing/debugging, and the ability to explain every
+  line. Those *are* the hire. Cutting them to cover more syllabus would defeat the whole point.
+- **The honest odds:** a first dev job 5 months from near-zero is hard, and December is a slow
+  hiring month in India (holidays + budget freeze). Realistic good outcome = **offers landing
+  Dec–Feb**, with December live if the Oct applications hit. Plan for December, don't collapse if
+  it's January.
+- **What actually gets me hired:** **2–3 shipped, deployed apps I can reason about like an engineer**
+  — plus the differentiator almost no junior has: **AI running inside an Android app**. DSA is an
+  interview *gate*, a hoop, not the job. Keep it moving; don't let it eat the plan.
+- **The fallback that is not failure:** if December doesn't land, I am not back at zero — I'm a
+  developer with a portfolio, applying in January from a much stronger position.
 
 ---
 
@@ -62,94 +89,81 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
 ## 🧭 WHERE KEY TOOLS LIVE
 | Topic | Where | Why there |
 |-------|-------|-----------|
-| **Git & GitHub** | Month 1, W4 (used every week after) | Version control habit + this repo |
-| **SQL** | M3 W10 + **M4 W15 (deep dive)** + ML data | Core backend + data skill |
-| **Excel / Spreadsheets** | M5 W17 (data on-ramp → pandas) | Gentlest intro to data thinking |
-| **Command line** | Month 1, W4 | Needed for Git, Python, deploy |
-| **DevOps basics** | Interlude after M4 (builds on M1 Git + M4 Docker/CI-CD/cloud) | Ship & run apps reliably |
+| **Git & GitHub** | W4 (used every week after) | Version control habit + this repo |
+| **Command line** | W4 | Needed for Git, Python, deploy |
+| **SQL** | W7 (basics w/ Room) + **W11 (deep dive)** | Core backend + data skill |
+| **ML Kit vision (AI slice)** | **W9 — pulled forward on purpose** | Oct applications need the AI differentiator *present* |
+| **Legacy-code literacy** | W9 (XML Views · RxJava→Flow · Realm) | Most Bengaluru enterprise Android is NOT Compose |
+| **DevOps basics** | W13 (folded into Backend, not a separate interlude) | No room for an interlude in 22 weeks |
+| **Cut for this timeline** | Excel/pandas on-ramp · math-for-ML · PyTorch/CNN training | Not on the path to a first Android+AI job |
 
 ---
 
-## 🏋️ TWO PARALLEL DAILY TRACKS (~2 hrs/day)
-- **Track A — SKILLS (~1 hr/day):** the monthly curriculum below.
-- **Track B — DSA (~1 hr/day):** systematic problem-solving from Day 1, a strong foundation built over time.
+## 🏋️ TWO PARALLEL DAILY TRACKS (~5–6 hrs/day, 6 days/week)
+> ⚠️ Raised from 2 hrs/day on 2026-07-31 for the December target. This number IS the plan.
+- **Track A — SKILLS (~4 hrs/day):** the weekly curriculum below.
+- **Track B — DSA (~1.5 hrs/day):** pattern-focused problem-solving, every day from Day 1.
+- **Track C — JOB SEARCH (~1 hr/day, starts Oct 1):** applications, referrals, mock interviews.
 
 ---
 
-## 📅 TRACK A — SKILLS ROADMAP  (flow: Android → Backend → AI/ML)
+## 📅 TRACK A — SKILLS ROADMAP · 22 WEEKS · Aug 1 → Dec 31 2026
 Legend: ⬜ not started · 🔄 in progress · ✅ done
+Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 
-### MONTH 1 — Programming Fundamentals + Kotlin
-- 🔄 W1: Variables, types, operators, I/O, conditionals (`if/else`, `when`) · **🔴 AI-OFF code-from-scratch reps** · **🤖 first AI-ON rep + prompting basics (explain-every-line)** · **👓 first "what's wrong with this code?" review rep** · **🗣️ explain-back out loud in English**
-- ⬜ W2: Loops, functions, collections (List/Map/Set), null safety · code-reading reps continue
-- ⬜ W3: OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions · **✍️ spec-writing: break a fuzzy task into a clear spec for AI**
-- ⬜ W4: Coroutines intro, generics · **⭐ Git & GitHub** · **command line** · AI-assisted dev deep-dive (review + debug AI output) · console mini-project
+### 🅰️ PHASE 1 — KOTLIN · W1–W4 · Aug 1–28
+*Goal: write Kotlin cold, from a blank editor, and explain every line.*
+- 🔄 **W1 (Aug 1–7):** re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud** · **🔎 Technothrive-app self-test (see assumption above)**
+- ⬜ **W2 (Aug 8–14):** functions, collections (List/Map/Set), null safety, exceptions/error handling · code-reading reps
+- ⬜ **W3 (Aug 15–21):** OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions, generics · **✍️ spec-writing**
+- ⬜ **W4 (Aug 22–28):** Coroutines + Flow (properly — Android depends on it) · **⭐ Git & GitHub** · **⭐ command line** · console mini-project → **🚪 GATE: can I write a non-trivial Kotlin program cold?**
 
-### MONTH 2 — Android + Jetpack Compose (Part 1)
-- ⬜ W5: Android Studio, project structure, Gradle basics, first Composable, Preview
-- ⬜ W6: Compose UI — layouts, modifiers, text/images/buttons, theming
-- ⬜ W7: State & recomposition, user input, lists (LazyColumn)
-- ⬜ W8: Navigation, multi-screen → **Project: Notes app**
+### 🅱️ PHASE 2 — ANDROID · W5–W9 · Aug 29 – Oct 2 🔥 *the employable core*
+*Goal: 2 shipped apps + one AI feature, live on Play Store, BEFORE applications open.*
+- ⬜ **W5 (Aug 29 – Sep 4):** Android Studio, project structure, Gradle, Composables, Preview, layouts, modifiers, theming
+- ⬜ **W6 (Sep 5–11):** State & recomposition, user input, LazyColumn, Navigation, multi-screen → **📦 Project: Notes app**
+- ⬜ **W7 (Sep 12–18):** MVVM + MVI, ViewModel, StateFlow/Flow deeply, Clean Architecture + repository pattern · Room + **⭐ SQL basics**
+- ⬜ **W8 (Sep 19–25):** HTTP/REST/JSON, Retrofit, Hilt (DI) · Testing (unit + Compose UI), debugging, profiling → **📦 Project: Weather app**
+- ⬜ **W9 (Sep 26 – Oct 2):** **⭐ ML Kit vision slice** (OCR / barcode / image labeling — runs on *every* device) → add a real AI feature to an app · **⭐ Legacy-code literacy**: XML Views basics, RxJava→Flow mental map, recognise Realm · **🏁 PUBLISH TO PLAY STORE** · resume + GitHub + LinkedIn ready
 
-### MONTH 3 — Android Part 2: Architecture, Data, Networking (DEPTH — primary role)
-- ⬜ W9: MVVM + MVI, ViewModel, StateFlow/Flow deeply, Clean Architecture + repository pattern
-- ⬜ W10: Room database + **⭐ SQL basics**
-- ⬜ W11: HTTP/REST/JSON, Retrofit, Dependency Injection (Hilt) → **Project: Weather app**
-- ⬜ W12: Testing (unit + Compose UI), debugging/profiling, publish to Play Store → **Milestone: app live**
+> 🚨 **Oct 1 = applications open.** Portfolio at this point: Notes app · Weather app · 1 AI feature ·
+> hardened Technothrive apps (Tutr / KodaguBus / RationSmart). This is the pitch.
 
-### MONTH 4 — Backend with Python + FastAPI
-- ⬜ W13: Python crash course (fast)
-- ⬜ W14: FastAPI — routes, request/response, JSON, REST design
-- ⬜ W15: **⭐ SQL deep dive** (joins, aggregation, indexes, normalization) + PostgreSQL + SQLAlchemy + auth (JWT) + security basics
-- ⬜ W16: Docker, CI/CD (GitHub Actions), cloud deploy, connect Android↔API → **Milestone: full-stack deployed**
+### 🅲 PHASE 3 — BACKEND · W10–W13 · Oct 3–30 *(job search runs in parallel)*
+*Goal: be full-stack, not just a UI dev. This is what separates me from bootcamp juniors.*
+- ⬜ **W10 (Oct 3–9):** Python crash course (fast) → FastAPI: routes, request/response, JSON, REST design
+- ⬜ **W11 (Oct 10–16):** **⭐ SQL deep dive** (joins, aggregation, indexes, normalization) + PostgreSQL + SQLAlchemy
+- ⬜ **W12 (Oct 17–23):** Auth (JWT), security basics, env vars & secrets · connect **Android ↔ my own API**
+- ⬜ **W13 (Oct 24–30):** **⭐ DevOps folded in** — Docker + compose, CI/CD (GitHub Actions), cloud deploy, logging/monitoring → **🏁 full-stack deployed**
 
-### 🔧 DEVOPS BASICS — interlude (~2 weeks, right after Month 4)
-*Just the essentials — not in depth. Consolidates the Git (M1) + Docker/CI-CD/cloud (M4) work into a clear mental model of "get code running reliably for real users."*
-- ⬜ D1: Linux/shell essentials · **environment variables & secrets** (`.env`, keeping API keys safe) · SSH basics · what a "server" really is
-- ⬜ D2: Docker deeper (images vs containers, `docker-compose`) · a full **CI/CD pipeline** (test → build → deploy) with GitHub Actions · **cloud deploy** + basic **logging & monitoring** · awareness of Infrastructure-as-Code · *(leads into "LLMOps" — deploying/serving AI models — in M7)*
+### 🅳 PHASE 4 — AI *INSIDE* ANDROID · W14–W16 · Oct 31 – Nov 20 🔥 *my differentiator*
+*Goal: the "mobile / on-device AI" niche — the thing almost no junior can show.*
+- ⬜ **W14 (Oct 31 – Nov 6):** The 4 tiers & why device reach decides everything · **ML Kit vision + MediaPipe** deeper (the tier that runs everywhere) · when AI is the wrong answer
+- ⬜ **W15 (Nov 7–13):** **⭐ LiteRT (ex-TensorFlow Lite)** — convert a model & run it inside Android · **⭐ ML Kit GenAI APIs** (Gemini Nano via AICore): Summarization · Proofreading · Rewriting · Image Description · Speech Recognition · **Prompt API** · **⭐ Firebase AI Logic hybrid inference** — `PREFER_ON_DEVICE` / `PREFER_CLOUD` / `ONLY_ON_DEVICE` / `ONLY_CLOUD` and *why the fallback exists* (Nano = flagships only) · **⚠️ device-fragmentation reality: my users are on ₹10–15k phones**
+- ⬜ **W16 (Nov 14–20):** Cloud AI from Android (call an LLM properly): streaming, latency & cost budgets, offline behaviour, error/fallback UX · **the boundary rule — the model interprets & explains, deterministic code owns the decision** → **🏗️ Capstone v1: AI feature shipped in a real app**
 
-### MONTH 5 — Data + ML Foundations  (AI/ML begins — foundation for Gen AI)
-- ⬜ W17: **⭐ Data handling — Excel/Spreadsheets → pandas + NumPy** (dataframes, cleaning, pivots, basic viz)
-- ⬜ W18: Math for ML (intuition): vectors/matrices, gradients, probability/stats — via code
-- ⬜ W19: ML foundations + scikit-learn (workflow, train/test, regression, classification)
-- ⬜ W20: Model evaluation + full ML mini-project → **Project: predictor / spam classifier**
+### 🅴 PHASE 5 — AI ENGINEERING · W17–W19 · Nov 21 – Dec 11 🔥
+*Goal: build the AI, not just call it.*
+- ⬜ **W17 (Nov 21–27):** LLM internals (tokens/embeddings/context/temperature) · prompt engineering · **structured output + function calling**
+- ⬜ **W18 (Nov 28 – Dec 4):** Embeddings + vector DBs (Chroma/FAISS) → semantic search · **RAG** end-to-end (chunk → index → retrieve → generate) → **📦 RAG over my own docs**
+- ⬜ **W19 (Dec 5–11):** Agents (tool use, ReAct) · **MCP & connectors — both sides: agent-side AND Android-side (AppFunctions / ADK for Android)** · evals, guardrails, streaming, cost → **🏗️ Capstone v2: agent feature**
 
-### MONTH 6 — Deep Learning + On-device AI
-- ⬜ W21: Neural networks explained + PyTorch basics (Colab)
-- ⬜ W22: CNN image classifier (train + evaluate)
-- ⬜ W23: Sequence models + the Transformer idea
-- ⬜ W24: On-device AI (TensorFlow Lite/LiteRT, ML Kit) — run a model INSIDE Android
-
-### MONTH 7 — AI Engineering (PRIMARY — go DEEP) 🔥
-- ⬜ W25: LLM internals (tokens/embeddings/context/temperature) + prompt engineering + structured output
-- ⬜ W26: Embeddings + Vector DBs (Chroma/FAISS/Pinecone) — semantic search
-- ⬜ W27: RAG (chunking→index→retrieve→generate) → **build a RAG chatbot over my docs**
-- ⬜ W28: Agents (tool use, ReAct) + Agentic AI + MCP & connectors + evals/guardrails/streaming/cost → **build an AI agent**
-
-### MONTH 8 — Capstone (the centerpiece project)
-- ⬜ W29: Capstone part 1 — Android app + FastAPI + on-device model + a RAG/agent feature
-- ⬜ W30: Capstone part 2 — deploy everything, write docs
-- ⬜ W31: Portfolio + GitHub + LinkedIn presence
-- ⬜ W32: Buffer / polish / open-source contribution
-
-### MONTHS 9–11 — ADVANCED PRACTICE & SYSTEM DESIGN
-- ⬜ W33–36: System Design — LLD (SOLID, design patterns) + HLD (scaling, caching, DBs, queues, CAP) + mobile/API/LLM design
-- ⬜ W37–40: Advanced DSA — hard timed sets, pattern drills, mixed problems
-- ⬜ W41–44: Capstone polish + portfolio + building in public + start applying to roles
+### 🅵 PHASE 6 — CLOSE · W20–W22 · Dec 12–31
+- ⬜ **W20 (Dec 12–18):** Capstone deploy + docs + demo video · portfolio site · building in public
+- ⬜ **W21 (Dec 19–25):** **System Design crash** — LLD (SOLID, design patterns) + HLD (scaling, caching, queues, CAP) + mobile/API/LLM design
+- ⬜ **W22 (Dec 26–31):** Mock interviews (🔴 AI-OFF, timed) · behavioural + project deep-dives spoken aloud · **close offers**
 
 ---
 
-## 📈 TRACK B — DSA ROADMAP (daily, ~1 hr, starts Day 1)
-Build to ~300–400 problems for a strong foundation. Log your count in the status section.
-- ⬜ M1: Big-O, arrays, strings, two-pointers, hashmaps
-- ⬜ M2: sliding window, stacks, queues, linked lists
-- ⬜ M3: recursion, backtracking, binary search
-- ⬜ M4: trees, BST, traversals (BFS/DFS)
-- ⬜ M5: heaps/priority queues, tries, intervals
-- ⬜ M6: graphs (BFS/DFS, topological sort, union-find, Dijkstra)
-- ⬜ M7: dynamic programming (1D/2D, knapsack, LIS), greedy
-- ⬜ M8: advanced DP, bit manipulation, pattern review
-- ⬜ M9–11: hard mixed sets, timed practice, pattern mastery
+## 📈 TRACK B — DSA ROADMAP (daily, ~1.5 hrs, from Day 1)
+Target cut for the December timeline: **~150–180 problems, pattern-focused** (was 300–400).
+Depth of pattern beats volume when the runway is short. Log the count in CURRENT STATUS.
+- ⬜ **Aug (W1–4):** Big-O · arrays · strings · two-pointers · hashmaps · sliding window
+- ⬜ **Sep (W5–9):** stacks · queues · linked lists · recursion · binary search
+- ⬜ **Oct (W10–13):** trees · BST · traversals (BFS/DFS) · heaps/priority queues · intervals
+- ⬜ **Nov (W14–19):** graphs (BFS/DFS, topological sort, union-find) · DP (1D/2D, knapsack, LIS) · greedy
+- ⬜ **Dec (W20–22):** timed mixed sets · pattern review · mock-interview problems
+- ✂️ **Cut:** advanced DP · bit manipulation · tries · Dijkstra (revisit only if a target company demands it)
 
 ---
 
@@ -171,13 +185,17 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 ---
 
 ## 📍 CURRENT STATUS
-- **Phase:** Month 1 · Week 1 (both tracks begin together)
-- **Last completed:** ✅ Track A W1 L1 — Kotlin variables (`val`/`var`, `$` interpolation). Exercise passed.
-- **Next action:** **Track A** → W1 L2: types, operators & I/O (`readLine`). **Track B** → DSA: Big-O + arrays intro (starting now).
-- **DSA problems solved:** 0
+- **Phase:** Phase 1 (Kotlin) · **W1 of 22** · target: job in **December 2026**
+- **Days to Oct 1 (applications open):** ~61 · **Days to Dec 31:** ~153
+- **Last completed:** ✅ W1 L1 — Kotlin variables (`val`/`var`, `$` interpolation). Exercise passed. **(2026-07-01 — 30-day gap since)**
+- **⚠️ GAP PROTOCOL ACTIVE:** 30 days since last lesson → **compressed re-teach of L1 BEFORE moving on.** Do not cold-quiz.
+- **Next action:** **Track A** → re-teach L1, then W1 L2: types, operators & I/O (`readLine`). **Track B** → DSA: Big-O + arrays. **Also W1:** the Technothrive line-by-line self-test (decides whether Phase 1 compresses).
+- **DSA problems solved:** 0 / ~150–180
+- **Apps live on Play Store:** 0 / 2 *(deadline: Sept 30)*
 - **Notes written:** `01-kotlin-variables.md` (+ slide `01-kotlin-variables.html`)
 
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-31** — 🎯 **DECEMBER TARGET LOCKED. Plan recompressed 10–11 months → 22 weeks (Aug 1–Dec 31).** Reordered to Kotlin → Android → Backend → AI-in-Android → AI Engineering per my call. Key changes: (1) **Sept 30 is the real deadline** — applications open Oct 1, so Phase 2 ends with 2 apps live on Play Store; (2) **ML Kit vision pulled forward to W9** so the AI differentiator exists *before* I apply, not after; (3) **W15 expanded** with ML Kit GenAI APIs (Gemini Nano/AICore: Prompt, Summarization, Proofreading, Rewriting, Image Description, Speech Recognition) + Firebase AI Logic **hybrid inference** 4 modes + device-fragmentation reality; (4) **legacy-code literacy added (W9)** — XML Views/RxJava/Realm, because real Bengaluru enterprise Android (e.g. ANSR MedTech role INSSK002) is not Compose; (5) **MCP now taught from both sides** in W19 (agent-side + Android AppFunctions/ADK); (6) hours **2 → 5–6/day**; (7) DSA **300–400 → ~150–180** pattern-focused; (8) **cut:** Excel/pandas on-ramp, math-for-ML, PyTorch/CNN training, DevOps interlude (folded into W13), buffer weeks. Honest-expectation note rewritten, not deleted — realistic outcome is offers **Dec–Feb**.
 - **2026-07-01** — ✅ Track A W1 L1: Kotlin variables done — learner wrote a correct `val`/`var` + `$` program first try. Added a **3-layer interview-answer format** (simple → professional → glossary) per learner request to sound technical in interviews. Logged topic to REVIEW.md (due 07-02/04/08/22). Next: Track B DSA Big-O + arrays.
 - **2026-07-01** — Added **two-mode practice** (🔴 AI-OFF code-from-scratch for interviews + 🟢 AI-ON direct/judge), **prompting basics**, and **🗣️ English speaking** (explain-back out loud + spoken interview answers) woven into the flow.
 - **2026-07-01** — **AI-era realignment.** Added "How I learn in the AI era" principles (explain-every-line, read/judge > write, ship real projects, moat = system design/verification/debugging/security, spec-writing). Pulled AI-assisted coding + code-review reps forward to W1; made verification/security/spec-writing continuous cross-cutting skills. Honest expectation note added (not job-ready at 6mo; projects are the real deliverable; DSA = interview gate).

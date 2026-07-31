@@ -47,10 +47,24 @@ complete. (There's also a `/teach` skill that automates this — just type `/tea
 - **Ship real projects.** Shipped, deployed, explainable projects are the real deliverable; be honest
   that finishing lessons ≠ job-ready.
 
-## Two daily tracks
-- **Track A — Skills** (~1h): the roadmap (Android → Backend → AI/ML).
-- **Track B — DSA** (~1h): daily problem-solving, building a strong foundation over time.
-- One lesson at a time; wait for me before moving on.
+## Gap protocol (added 2026-07-10)
+Forgetting has turned out to be caused by **long gaps between sessions**, not the teaching
+format — confirmed after a 9-day gap between the first lesson and the next touch.
+- At the start of a session, check how many days passed since the last dated entry in
+  `notes/REVIEW.md` / the PROGRESS LOG.
+- If the gap is roughly **>5-7 days**: say so plainly, then do a **compressed re-teach** of the
+  last topic (ELI5 + the one worked example, faster this time) BEFORE quizzing or moving to new
+  material. A big gap is expected decay, not a personal failure — don't just cold-quiz and shrug.
+- Don't silently let a big gap pass unmentioned.
+- On a busy stretch, a short touch beats skipping entirely — even just re-reading a `notes/`
+  cheat sheet and explaining it out loud for 5 minutes keeps a topic alive.
+
+## Two daily tracks  (updated 2026-07-31 for the December target)
+- **Track A — Skills** (~4h): the roadmap (Kotlin → Android → Backend → AI-in-Android → AI Engineering).
+- **Track B — DSA** (~1.5h): daily problem-solving, pattern-focused (~150–180 problems).
+- **Track C — Job search** (~1h, from Oct 1): applications, referrals, mock interviews.
+- One lesson at a time; wait for me before moving on. **Compressed timeline does NOT mean
+  skipping the explain-back or the exercise** — pace goes up, method does not change.
 
 ## After each topic (bookkeeping)
 - Save notes → `notes/<NN>-<slug>.md`
@@ -58,9 +72,12 @@ complete. (There's also a `/teach` skill that automates this — just type `/tea
 - Update `PROGRESS.md` (tick item, update status + next action, add dated log line, DSA count)
 - Commit & push.
 
-## Goal (context)
+## Goal (context)  (updated 2026-07-31)
 Target focus: **AI Engineer + Android** (primary), broad in Backend. Aiming at a high
-(product/MNC) standard → DSA + system design get strong emphasis. Timeline: ~10–11 months at ~2h/day.
+(product/MNC) standard → DSA + system design get strong emphasis.
+**Timeline: 22 weeks, 2026-08-01 → 2026-12-31, at ~5–6h/day — target is a job in December 2026.**
+The hard internal deadline is **Sept 30** (portfolio complete), because applications open **Oct 1**.
+See the TARGET LOCKED + honest-expectation sections in `PROGRESS.md`.
 
 ## Notes
 - The `portfolio/` folder is kept **local only** (not in this repo) — update it as projects ship.
