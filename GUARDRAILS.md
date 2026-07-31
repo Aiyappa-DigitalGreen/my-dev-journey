@@ -72,6 +72,30 @@ must answer all four, out loud, with a concrete example:
   ceiling.
 - Every phase in PROGRESS.md has a **🎓 SENIOR LAYER** — those items are mandatory, not bonus.
 - At senior level **system design > DSA**, and *why/when/when-not* matters more than *how*.
+  → Which is why system design runs as the 🏛️ weekly drip **from W3**, not as one crash week in
+  December. Scope it to what mid/senior **Android** candidates get asked (app architecture,
+  client↔server boundary, offline sync, API contracts, AI-feature design) — **not** "design Instagram."
+
+## 🏛️ THE DRIP RULE — how extra subjects get added without making me worse (added 2026-07-31)
+> I asked for system design in the plan, **and** asked that adding subjects must not leave me
+> mediocre at everything. Both are satisfied by *how* it's added, not by how little is added.
+
+A **drip** (the 🧠 Gen AI thread, the 🏛️ Design Sense thread) is not a subject. It is a weekly
+20–25 min **conversation** with four hard constraints. Any Claude session running a drip obeys all four:
+
+1. **ONE idea per week.** Not two. Same one-concept-at-a-time law as a normal lesson.
+2. **RETROSPECTIVE ONLY.** The idea must be a *"why did I build it that way?"* layer over code I
+   have **already written and can already explain**. If it needs new code, a new library, or a new
+   project, it is **not a drip** — it's a phase, and it doesn't belong in the thread.
+   → This is the whole anti-dilution mechanism: a retrospective drip is **spaced repetition on my
+   own code**, so it *strengthens* the week's topic instead of competing with it.
+3. **⛔ FOUNDATIONS WIN — the drip is SKIPPED if this week's Track A topic isn't solid.** Ask before
+   dripping: *can he explain this week's main topic out loud, unaided?* If no → skip the drip, spend
+   the time reteaching. **A skipped drip is not a debt.** Never trade Rule Zero depth for breadth.
+4. **NO NEW HOURS.** It comes out of the weekly recall/explain-back slot (which is what it already
+   is), never out of DSA and never bolted on top. Daily total stays 5–6 hrs.
+
+**If a drip ever starts feeling like a fifth subject, it has broken rule 2 or 3.** Say so and fix it.
 
 ## Understanding-first + never forget (the most important rule)
 - **Understanding over memorizing.** Always teach *why* a thing exists + a real-world analogy
@@ -119,7 +143,10 @@ format — confirmed after a 9-day gap between the first lesson and the next tou
 ## Two daily tracks  (updated 2026-07-31 for the December target)
 - **Track A — Skills** (~4h): the roadmap (Kotlin → Android → Backend → AI-in-Android → AI Engineering).
 - **Track B — DSA** (~1.5h): daily problem-solving, pattern-focused (~150–180 problems).
-- **Track C — Job search** (~1h, from Oct 1): applications, referrals, mock interviews.
+- **Track C — Job search** (~1h, **from W1 / August** — not October; October is when *applications
+  to Tier 2 companies* open. See PROGRESS.md's Track C block): applications, referrals, mock interviews.
+- **Drips (no extra hours, see THE DRIP RULE above):** 🧠 Gen AI literacy ~20 min/wk from W1 ·
+  🏛️ Design Sense ~25 min/wk from W3.
 - One lesson at a time; wait for me before moving on. **Compressed timeline does NOT mean
   skipping the explain-back or the exercise** — pace goes up, method does not change.
 

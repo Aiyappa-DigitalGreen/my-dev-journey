@@ -156,6 +156,30 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
   **Why from W1:** I'm interviewing from August and AI-in-Android is my differentiator. I have to be
   able to *talk* about tokens, context windows, RAG and on-device trade-offs months before I *build*
   them in November. Costs ~20 min/week; buys the whole story early.
+- **🏛️ DESIGN SENSE THREAD (~25 min, once a week, from W3 — NOT a phase, a drip):**
+  System design & architecture, taught the same way as the Gen AI thread: **one idea a week, in
+  conversation, zero new code, zero new projects.**
+  **The rule that makes it free: it is always RETROSPECTIVE.** Every design idea attaches to the week
+  I *just built the thing* — so it's a "why did I build it that way?" layer over code I can already
+  explain line-by-line. It is never new material. That is why it can't dilute anything: it is
+  **spaced repetition on my own code, wearing a senior hat.**
+  - **⛔ If this week's Track A topic isn't solid yet, the drip is SKIPPED.** Foundations always win.
+    A skipped week is not a debt to repay — the next attachment point comes around anyway.
+  - **Scope = what mid/senior *Android* candidates actually get asked:** app architecture, the
+    client↔server boundary, offline sync, API contracts, and AI-feature design.
+    **NOT** "design Instagram for 500M users." No distributed-systems trivia.
+  - **Architecture *building* = boxes and arrows, not builds.** e.g. "redraw the Weather app as boxes
+    and arrows, then mark what breaks when the phone is offline." 10 minutes on paper, no repo.
+  - **Where the 25 min comes from:** the weekly recall/explain-back slot (which is what this *is*),
+    **not** DSA. Daily total stays 5–6 hrs.
+  - Attachment map: **W3** SOLID/single-responsibility · **W7** layering + dependency direction ·
+    **W8** client/server boundary + DI as inversion · **W10–12** API contracts (versioning,
+    pagination, idempotency, error contracts) + indexes/read path · **W13** the HLD skeleton (load
+    balancer, horizontal scale, queue, cache, monitoring) · **W16** latency/cost budgets + fallback
+    design · **W18–19** retrieval architecture + eval harness · **W21** consolidation + whiteboard reps.
+  - **🚪 The check that this worked:** by **W10** I can hold a mobile-flavoured design conversation
+    using only what dripped through W9 — SOLID + layering + client/server boundary + API contracts.
+    If I can't, the drip was too thin and W21 has to carry more.
 - **Track C — JOB SEARCH + INTERVIEW PREP (~1 hr/day, STARTS W1 — AUGUST):**
   - **Aug (W1–4):** 📤 **resume + LinkedIn rewritten for 5 yrs Android → applications going out from
     week one.** Referrals + outreach. Every rejection/interview is **free diagnostic data on which
@@ -180,7 +204,11 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
   - **Sep (W5–9):** weekly timed mock (🔴 AI-OFF) · **crash-triage & debugging drills** — the senior
     screen · Kotlin/Android rapid-fire Q&A · rehearse projects out loud line-by-line
   - **Oct–Nov (W10–19):** 2 mocks/week · **system design** reps (weighted heavier than DSA at senior
-    level) · start pitching the **AI-in-Android** angle once W14+ lands — that's the differentiator
+    level) — ✅ *these now stand on real ground: the 🏛️ design drip has been running since W3, so by
+    W10 I already have SOLID + layering + client/server boundary + API contracts. Before 2026-07-31
+    this line scheduled ten weeks of design reps on material that wasn't taught until W21 (December) —
+    that ordering bug is fixed.* · start pitching the **AI-in-Android** angle once W14+ lands — that's
+    the differentiator
   - **Dec (W20–22):** 3 mocks/week · offer negotiation · **close**
   - ⚠️ Interview prep is **not** a December activity, and applications are **not** an October activity.
     Interviews I fail in August tell me exactly what to study in September. That feedback loop is
@@ -196,7 +224,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 *Goal: write Kotlin cold, from a blank editor, and explain every line.*
 - ⬜ **W1 (Aug 1–7):** **start from the absolute floor** — what a program even is · `fun main()`, `{ }`, `println` explained token-by-token · re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud**
 - ⬜ **W2 (Aug 8–14):** functions, collections (List/Map/Set), null safety, exceptions/error handling · code-reading reps
-- ⬜ **W3 (Aug 15–21):** OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions, generics · **✍️ spec-writing**
+- ⬜ **W3 (Aug 15–21):** OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions, generics · **✍️ spec-writing** · 🏛️ **design drip starts:** single responsibility — *why an interface here instead of one big class?*
 - ⬜ **W4 (Aug 22–28):** Coroutines + Flow (properly — Android depends on it) · **⭐ Git & GitHub** · **⭐ command line** · console mini-project → **🚪 GATE: can I write a non-trivial Kotlin program cold?**
 
 ### 🅱️ PHASE 2 — ANDROID · W5–W9 · Aug 29 – Oct 2 🔥 *the employable core*
@@ -214,8 +242,8 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
     requirement entirely. Otherwise assume a new personal account and start the clock in W6.
   - 🧪 **Line up 12 testers now** (friends, family, college/workshop contacts) — this is the part
     that quietly kills the timeline if left to the last week.
-- ⬜ **W7 (Sep 12–18):** MVVM + MVI, ViewModel, StateFlow/Flow deeply, Clean Architecture + repository pattern · Room + **⭐ SQL basics**
-- ⬜ **W8 (Sep 19–25):** HTTP/REST/JSON, Retrofit, Hilt (DI) · Testing (unit + Compose UI), debugging, profiling → **📦 Project: Weather app**
+- ⬜ **W7 (Sep 12–18):** MVVM + MVI, ViewModel, StateFlow/Flow deeply, Clean Architecture + repository pattern · Room + **⭐ SQL basics** · 🏛️ **design drip:** layering & which way dependencies point — *when Clean Architecture is overkill*
+- ⬜ **W8 (Sep 19–25):** HTTP/REST/JSON, Retrofit, Hilt (DI) · Testing (unit + Compose UI), debugging, profiling → **📦 Project: Weather app** · 🏛️ **design drip:** the client↔server boundary (what the app owns vs the API) + DI as dependency *inversion* — *draw the Weather app as boxes & arrows, mark what breaks offline*
 - ⬜ **W9 (Sep 26–30 — SHORT WEEK, hard stop Sept 30):** **⭐ ML Kit vision slice** (OCR / barcode / image labeling — runs on *every* device) → add a real AI feature to an app · **🏁 PUBLISH TO PLAY STORE** · resume + GitHub + LinkedIn ready
 
 > #### 🎓 SENIOR LAYER — Phase 2 *(this is what makes me a 5-year dev, not a course finisher)*
@@ -242,10 +270,10 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 
 ### 🅲 PHASE 3 — BACKEND · W10–W13 · Oct 3–30 *(job search runs in parallel)*
 *Goal: be full-stack, not just a UI dev. This is what separates me from bootcamp juniors.*
-- ⬜ **W10 (Oct 3–9):** Python crash course (fast) → FastAPI: routes, request/response, JSON, REST design
-- ⬜ **W11 (Oct 10–16):** **⭐ SQL deep dive** (joins, aggregation, indexes, normalization) + PostgreSQL + SQLAlchemy
-- ⬜ **W12 (Oct 17–23):** Auth (JWT), security basics, env vars & secrets · connect **Android ↔ my own API**
-- ⬜ **W13 (Oct 24–30):** **⭐ DevOps folded in** — Docker + compose, CI/CD (GitHub Actions), cloud deploy, logging/monitoring → **🏁 full-stack deployed**
+- ⬜ **W10 (Oct 3–9):** Python crash course (fast) → FastAPI: routes, request/response, JSON, REST design · 🏛️ **design drip:** API contracts — versioning & error contracts
+- ⬜ **W11 (Oct 10–16):** **⭐ SQL deep dive** (joins, aggregation, indexes, normalization) + PostgreSQL + SQLAlchemy · 🏛️ **design drip:** indexes → the read path — *why one query is 5ms and its twin is 5s*
+- ⬜ **W12 (Oct 17–23):** Auth (JWT), security basics, env vars & secrets · connect **Android ↔ my own API** · 🏛️ **design drip:** pagination & idempotency — *what happens when the user taps "pay" twice on a flaky network*
+- ⬜ **W13 (Oct 24–30):** **⭐ DevOps folded in** — Docker + compose, CI/CD (GitHub Actions), cloud deploy, logging/monitoring → **🏁 full-stack deployed** · 🏛️ **design drip — the one HLD week:** the 6-box skeleton every design answer starts from (client → load balancer → app servers → cache → DB → queue) + where monitoring plugs in. *I'll have just deployed each box myself, so this is naming what I built, not new theory.*
 
 > #### 🎓 SENIOR LAYER — Phase 3
 > - **API design judgement** — versioning, pagination, idempotency, error contracts (what a senior
@@ -258,7 +286,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 *Goal: the "mobile / on-device AI" niche — the thing almost no junior can show.*
 - ⬜ **W14 (Oct 31 – Nov 6):** The 4 tiers & why device reach decides everything · **ML Kit vision + MediaPipe** deeper (the tier that runs everywhere) · when AI is the wrong answer
 - ⬜ **W15 (Nov 7–13):** **⭐ LiteRT (ex-TensorFlow Lite)** — convert a **pre-trained** model (no training needed — PyTorch/CNN training is cut) & run it inside Android · **⭐ ML Kit GenAI APIs** (Gemini Nano via AICore): Summarization · Proofreading · Rewriting · Image Description · Speech Recognition · **Prompt API** · **⭐ Firebase AI Logic hybrid inference** — `PREFER_ON_DEVICE` / `PREFER_CLOUD` / `ONLY_ON_DEVICE` / `ONLY_CLOUD` and *why the fallback exists* (Nano = flagships only) · **⚠️ device-fragmentation reality: my users are on ₹10–15k phones**
-- ⬜ **W16 (Nov 14–20):** Cloud AI from Android (call an LLM properly): streaming, latency & cost budgets, offline behaviour, error/fallback UX · **the boundary rule — the model interprets & explains, deterministic code owns the decision** → **🏗️ Capstone v1: AI feature shipped in a real app**
+- ⬜ **W16 (Nov 14–20):** Cloud AI from Android (call an LLM properly): streaming, latency & cost budgets, offline behaviour, error/fallback UX · **the boundary rule — the model interprets & explains, deterministic code owns the decision** → **🏗️ Capstone v1: AI feature shipped in a real app** · 🏛️ **design drip:** latency & cost budgets as a *design* constraint + fallback design
 
 > #### 🧠 GEN AI CONCEPTS FOR ANDROID *(added 2026-07-31 — taught across W14–W19)*
 >
@@ -293,8 +321,8 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 ### 🅴 PHASE 5 — AI ENGINEERING · W17–W19 · Nov 21 – Dec 11 🔥
 *Goal: build the AI, not just call it.*
 - ⬜ **W17 (Nov 21–27):** LLM internals (tokens/embeddings/context/temperature) · prompt engineering · **structured output + function calling**
-- ⬜ **W18 (Nov 28 – Dec 4):** Embeddings + vector DBs (Chroma/FAISS) → semantic search · **RAG** end-to-end (chunk → index → retrieve → generate) → **📦 RAG over my own docs**
-- ⬜ **W19 (Dec 5–11):** Agents (tool use, ReAct) · **MCP & connectors — both sides: agent-side AND Android-side (AppFunctions / ADK for Android)** · evals, guardrails, streaming, cost → **🏗️ Capstone v2: agent feature**
+- ⬜ **W18 (Nov 28 – Dec 4):** Embeddings + vector DBs (Chroma/FAISS) → semantic search · **RAG** end-to-end (chunk → index → retrieve → generate) → **📦 RAG over my own docs** · 🏛️ **design drip:** retrieval architecture — *draw the RAG pipeline as boxes, mark the failure point at each arrow*
+- ⬜ **W19 (Dec 5–11):** Agents (tool use, ReAct) · **MCP & connectors — both sides: agent-side AND Android-side (AppFunctions / ADK for Android)** · evals, guardrails, streaming, cost → **🏗️ Capstone v2: agent feature** · 🏛️ **design drip:** designing an eval harness — *how a design answer proves it works*
 
 > #### 🎓 SENIOR LAYER — Phases 4 & 5 *(this is the part almost nobody at ANY level has)*
 > - **Say no to AI credibly** — when a deterministic `filter{}` beats an LLM, and being able to argue
@@ -307,7 +335,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 
 ### 🅵 PHASE 6 — CLOSE · W20–W22 · Dec 12–31
 - ⬜ **W20 (Dec 12–18):** Capstone deploy + docs + demo video · portfolio site · building in public
-- ⬜ **W21 (Dec 19–25):** **System Design crash** — LLD (SOLID, design patterns) + HLD (scaling, caching, queues, CAP) + mobile/API/LLM design
+- ⬜ **W21 (Dec 19–25):** **System Design — CONSOLIDATION, not first exposure** *(~2 days, was a full week; the 🏛️ drip since W3 already covered the material — this is the cut that pays for the thread)*: stitch the drip into whole answers · **whiteboard reps out loud, timed** — design a mobile feature end-to-end, defend the trade-offs · the 2 gaps the drip can't cover retrospectively (design patterns beyond what I used · CAP in one sentence) · **rest of W21 → freed for mocks + portfolio polish**
 - ⬜ **W22 (Dec 26–31):** Mock interviews (🔴 AI-OFF, timed) · behavioural + project deep-dives spoken aloud · **close offers**
 
 ---
@@ -325,7 +353,7 @@ Depth of pattern beats volume when the runway is short. Log the count in CURRENT
 ---
 
 ## 🧠 Practice & recall (continuous)
-Per-topic 🎤 Q&A every lesson · topic question banks in `notes/practice/` · system design + advanced DSA in the advanced phase.
+Per-topic 🎤 Q&A every lesson · topic question banks in `notes/practice/` · **system design is NOT saved for the end** — it runs as the 🏛️ weekly design drip from W3 and consolidates in W21 (advanced DSA still lands late).
 
 ## 🧵 Cross-cutting throughout
 Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps basics** (Docker · CI/CD · cloud · secrets · logging/monitoring) · deployment · reading docs · building in public.
@@ -351,6 +379,7 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
+- **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
 - **Next action:** **Track A** → **W1 L1 from absolute scratch**: what a program is → `fun main()` → `{ }` → `println` → then `val`/`var`. **Track B** → DSA: what Big-O even means. **Track C** → rewrite resume/LinkedIn for 5 yrs Android, first applications out.
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
@@ -358,6 +387,7 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Notes written:** *none — starting fresh*
 
 ## 📓 PROGRESS LOG (newest at top)
+- **2026-07-31** — 🏛️ **System design & architecture added as a weekly DRIP, not a phase.** I asked for design/architecture in the path "not in depth", and asked that adding subjects must not leave me mediocre at all of them. Resolved by *how* it's added: a **🏛️ DESIGN SENSE THREAD**, ~25 min/week from **W3**, conversation only, **zero new code and zero new projects**, sitting next to the existing 🧠 Gen AI drip. **The reframe that matters:** most of this was already in the file, unlabelled and out of order — Phase 2's SENIOR LAYER already says "*architecture judgement — MVVM vs MVI, when Clean is overkill, **why** a pattern*", Phase 3's already says "*API design judgement — versioning, pagination, idempotency, error contracts*" and "*where the boundary goes*", Phases 4–5 already say "*cost & latency budgets, p95, what breaks at 10k users*" and "*failure design*". So this is **not a new subject — it's a name and a sequence for judgement calls already scattered across my plan.** **The anti-dilution mechanism (now THE DRIP RULE in GUARDRAILS.md):** every design idea is **retrospective** — attached to the week I *just built the thing*, so it's a "why did I build it that way?" layer over code I can already explain. That makes it **spaced repetition on my own code**, which *strengthens* the week's topic instead of competing with it. Plus: one idea/week · **skipped entirely if that week's Track A topic isn't solid** (foundations win, a skipped drip is not a debt) · no new hours (comes from the weekly recall slot, **never** DSA). **🐛 Real bug this fixed:** Track C scheduled "system design reps, weighted heavier than DSA" for **W10–W19 (Oct–Nov)**, while the only instruction was **W21 (Dec 19–25)** — ten weeks of reps on material taught two months later. The drip now front-loads SOLID + layering + client/server boundary + API contracts **before W10**, so those October mocks stand on real ground. **Cut that pays for it:** W21's full "System Design crash" **week shrinks to ~2 days** of consolidation + timed whiteboard reps (the drip already taught the material), freeing the rest of W21 for mocks and portfolio polish. **Scope guard:** mobile-flavoured design only — app architecture, client↔server boundary, offline sync, API contracts, AI-feature design. **Not** "design Instagram for 500M users." **"Architecture building" = boxes and arrows on paper** (e.g. "draw the Weather app, mark what breaks offline"), never a new build artifact — I already have 2 Play Store apps, a full-stack deploy and 2 capstones, and adding a third build would break both "not in depth" *and* the anti-dilution constraint. Also fixed a stale line in Practice & recall that still said system design was saved for "the advanced phase", and GUARDRAILS.md's Track C start (said Oct 1, actually W1/August).
 - **2026-07-31** — 🧠 **Gen AI concepts for Android added.** New **GEN AI CONCEPTS** block in Phase 4, split in two: **(A) vocabulary** (token, context window, embedding, temperature/top-p, system prompt, hallucination vs grounding, RAG, agent/tool use, eval, LLM vs SLM, quantization/distillation, and the interview favourite **prompting vs RAG vs fine-tuning**) and **(B) the Android-specific engineering that generic AI courses skip** — **API-key security (an APK is decompilable, so a shipped LLM key is a public key → always proxy via my backend)**, streaming into Compose with `Flow` + cancellation, latency perception & p95 budgets, structured output → `@Serializable` data classes incl. malformed responses, conversation state in Room + context truncation, multimodal input via CameraX/mic, **prompts as remote config not hardcoded APK strings** (can't hotfix a bad prompt without a Play release), cost-per-user & caching, failure/degradation UX, safety guardrails, evals. Also added a **🧠 Gen AI literacy thread from W1** — one concept per week, 20 min, conversation only — because I'm interviewing from August and need to *talk* about this months before I *build* it in November. **Cut to pay for it:** MediaPipe reduced to awareness-only (ML Kit covers the same ground for my use cases), and the W17 prompt-engineering block absorbs the literacy thread instead of being taught twice.
 - **2026-07-31** — ♻️ **Progress cleared.** All ✅/🔄 reset to ⬜, DSA count 0, `notes/REVIEW.md` emptied. The decision entries below are kept on purpose — they record *why* the plan looks like this, which is not progress. (Say the word if they should be wiped too.)
 
