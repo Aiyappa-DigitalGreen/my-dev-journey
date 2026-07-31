@@ -377,6 +377,20 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 > including topics previously marked done — they get taught again, properly, from the floor.
 
 - **Phase:** Phase 1 (Kotlin) · **W1 of 22** · **Day 0** · target: **mid/senior Android + AI job, December 2026**
+- **💰 COMPENSATION TARGET (set 2026-07-31): ₹30 LPA minimum.**
+  - **Honest read:** real but **top-slice** for 5 yrs Android in India (typical band ₹18–28 LPA).
+    ₹30+ lives at **product companies / foreign GCCs / well-funded startups** — Google, Microsoft,
+    Uber, Atlassian, Swiggy, Zomato, Razorpay, PhonePe, Salesforce. It **does not** exist at service
+    companies (TCS/Infosys/Wipro/Cognizant) at 5 yrs, regardless of skill.
+  - **Therefore the bar is not "get a job" — it is "clear a product-company panel."** Consequences:
+    **(a) DSA is a hard gate, not optional** — the 150–180 target is the real number.
+    **(b) System design outranks DSA at this level** — the 🏛️ drip from W3 is the mechanism, protect it.
+    **(c) Target list = product/GCC/funded-startup only.** Service-company applications don't serve this goal.
+  - **⚠️ Timing correction:** December is a *slow* month to **receive** offers in India (budget freezes,
+    holidays). An offer in hand by Dec 31 means **interviewing in October** → the **Sept 30 hard stop
+    just got more serious, not less.**
+  - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
+    and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
 - **Days to Dec 31:** ~153
 - **Last completed:** *nothing — fresh start*
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
@@ -390,6 +404,30 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Notes written:** *none — starting fresh*
 
 ## 📓 PROGRESS LOG (newest at top)
+
+- **2026-07-31** — 💰 **₹30 LPA compensation target locked** (see CURRENT STATUS for the full honest read).
+  I asked for a guaranteed ₹30 LPA job in December. **No guarantee was given — deliberately**, because a
+  false yes costs five months. What was given instead is a **calibration**: ₹30 LPA is achievable but
+  **top-slice** for 5 yrs Android in India (typical ₹18–28 LPA), and it exists **only** at product
+  companies / foreign GCCs / well-funded startups — **not** at service companies at this experience level.
+  **The reframe that matters:** the goal changed from *"get a job"* to *"clear a product-company panel"*,
+  which raises three things from nice-to-have to mandatory — **DSA as a hard gate** (150–180 is the real
+  number), **system design above DSA** (protect the 🏛️ W3 drip), and a **target list restricted to
+  product/GCC/funded startups**. **Timing bug caught:** December is a slow month to *receive* Indian offers
+  (budget freezes + holidays), so an offer by Dec 31 requires **interviewing in October** — the Sept 30
+  hard stop is now load-bearing, not aspirational. **Uncontrollable vs controllable, stated plainly:** who's
+  hiring, which panel, day-of performance = not controllable; hours in (5–6/day, 6 days/wk), depth of
+  foundations, interview reps = controllable. No plan structure changed — the 22-week path already aimed here.
+- **2026-07-31** — ▶️ **Course restarted for real.** Learner opened the session saying he'd learned nothing
+  in 5 years and didn't know Kotlin basics. Diagnosed as the **documented gap protocol**, not incapability:
+  last logged lesson **2026-07-01**, a **30-day gap**. Handled per GUARDRAILS gap protocol — named the gap
+  out loud, **no cold quiz** (REVIEW.md was empty anyway after the 07-31 clear, so nothing was actually
+  forgotten — he is at genuine Day 0). Also corrected the conflation PROGRESS.md warns about: he collapsed
+  *teaching baseline = zero* with *professional level = 5 yrs* into "I know nothing." **W1 L1 started from
+  the true floor** — Concept 1 = *what a program even is* (Madikeri-bus-stand directions analogy), taught
+  with **zero code on screen**, per the 5 P's rule that PROBLEM + PICTURE precede syntax. Discovery format
+  (he answers first) per the discovery-learning feedback. 🧠 **W1 Gen AI drip deliberately SKIPPED** — drip
+  rule 3, foundations win on Day 0; logged as *not a debt*, will not be stacked next week.
 - **2026-07-31** — 🏛️ **System design & architecture added as a weekly DRIP, not a phase.** I asked for design/architecture in the path "not in depth", and asked that adding subjects must not leave me mediocre at all of them. Resolved by *how* it's added: a **🏛️ DESIGN SENSE THREAD**, ~25 min/week from **W3**, conversation only, **zero new code and zero new projects**, sitting next to the existing 🧠 Gen AI drip. **The reframe that matters:** most of this was already in the file, unlabelled and out of order — Phase 2's SENIOR LAYER already says "*architecture judgement — MVVM vs MVI, when Clean is overkill, **why** a pattern*", Phase 3's already says "*API design judgement — versioning, pagination, idempotency, error contracts*" and "*where the boundary goes*", Phases 4–5 already say "*cost & latency budgets, p95, what breaks at 10k users*" and "*failure design*". So this is **not a new subject — it's a name and a sequence for judgement calls already scattered across my plan.** **The anti-dilution mechanism (now THE DRIP RULE in GUARDRAILS.md):** every design idea is **retrospective** — attached to the week I *just built the thing*, so it's a "why did I build it that way?" layer over code I can already explain. That makes it **spaced repetition on my own code**, which *strengthens* the week's topic instead of competing with it. Plus: one idea/week · **skipped entirely if that week's Track A topic isn't solid** (foundations win, a skipped drip is not a debt) · no new hours (comes from the weekly recall slot, **never** DSA). **🐛 Real bug this fixed:** Track C scheduled "system design reps, weighted heavier than DSA" for **W10–W19 (Oct–Nov)**, while the only instruction was **W21 (Dec 19–25)** — ten weeks of reps on material taught two months later. The drip now front-loads **4 ideas before W10** — SOLID (W3), who owns state (W6), layering + dependency direction (W7), client↔server boundary + DI (W8) — so those October mocks stand on real ground. *(Honest caveat kept in-file: **API contracts land W10–12, inside the rep window**, so the first October reps are app-architecture reps and the API flavour arrives a fortnight in. W6 was added specifically because 3 drips wasn't enough to clear the W10 gate.)* **Cut that pays for it:** W21's full "System Design crash" **week shrinks to ~2 days** of consolidation + timed whiteboard reps (the drip already taught the material), freeing the rest of W21 for mocks and portfolio polish. **Scope guard:** mobile-flavoured design only — app architecture, client↔server boundary, offline sync, API contracts, AI-feature design. **Not** "design Instagram for 500M users." **"Architecture building" = boxes and arrows on paper** (e.g. "draw the Weather app, mark what breaks offline"), never a new build artifact — I already have 2 Play Store apps, a full-stack deploy and 2 capstones, and adding a third build would break both "not in depth" *and* the anti-dilution constraint. **🔧 Also fixed, so the plan actually *executes* the thread instead of just documenting it:** the `/teach` skill enumerated its own session steps and mentioned **neither** drip — so both threads would have silently never fired while this file claimed coverage I didn't have. It now has a **STEP 0 drip check + a DRIPS section carrying all four constraints**. While there, corrected its stale numbers (said Track A ~1h / Track B ~1h with no Track C; now 4h/1.5h/1h) and stale flow (said "Android → Backend → AI/ML"; now the real Kotlin→Android→Backend→AI-in-Android→AI-Engineering→Close), and pointed it at Rule Zero / the 5 P's / WHERE & WHEN / SENIOR LAYER. Plus two stale lines here: Practice & recall still said system design was saved for "the advanced phase", and GUARDRAILS.md said Track C starts Oct 1 when it starts W1/August. **⚠️ Watch:** W21 is now ~2 days holding consolidation + 2 uncovered gaps + timed whiteboard reps — if that's tight, say so out loud and take the time, don't compress the reps.
 - **2026-07-31** — 🧠 **Gen AI concepts for Android added.** New **GEN AI CONCEPTS** block in Phase 4, split in two: **(A) vocabulary** (token, context window, embedding, temperature/top-p, system prompt, hallucination vs grounding, RAG, agent/tool use, eval, LLM vs SLM, quantization/distillation, and the interview favourite **prompting vs RAG vs fine-tuning**) and **(B) the Android-specific engineering that generic AI courses skip** — **API-key security (an APK is decompilable, so a shipped LLM key is a public key → always proxy via my backend)**, streaming into Compose with `Flow` + cancellation, latency perception & p95 budgets, structured output → `@Serializable` data classes incl. malformed responses, conversation state in Room + context truncation, multimodal input via CameraX/mic, **prompts as remote config not hardcoded APK strings** (can't hotfix a bad prompt without a Play release), cost-per-user & caching, failure/degradation UX, safety guardrails, evals. Also added a **🧠 Gen AI literacy thread from W1** — one concept per week, 20 min, conversation only — because I'm interviewing from August and need to *talk* about this months before I *build* it in November. **Cut to pay for it:** MediaPipe reduced to awareness-only (ML Kit covers the same ground for my use cases), and the W17 prompt-engineering block absorbs the literacy thread instead of being taught twice.
 - **2026-07-31** — ♻️ **Progress cleared.** All ✅/🔄 reset to ⬜, DSA count 0, `notes/REVIEW.md` emptied. The decision entries below are kept on purpose — they record *why* the plan looks like this, which is not progress. (Say the word if they should be wiped too.)
