@@ -153,8 +153,25 @@ This folder is a GitHub repo: **github.com/Aiyappa-DigitalGreen/my-dev-journey**
   them in November. Costs ~20 min/week; buys the whole story early.
 - **Track C — JOB SEARCH + INTERVIEW PREP (~1 hr/day, STARTS W1 — AUGUST):**
   - **Aug (W1–4):** 📤 **resume + LinkedIn rewritten for 5 yrs Android → applications going out from
-    week one.** Target mid/senior Android roles (ANSR MedTech INSSK002 and similar). Referrals +
-    outreach. Every rejection/interview is **free diagnostic data on which gap to close next.**
+    week one.** Referrals + outreach. Every rejection/interview is **free diagnostic data on which
+    gap to close next.**
+    > ### ❓ "How can I apply in August if I start learning in August?"
+    > **Because I'm not applying with the learning path — I'm applying with my 5 years.**
+    > These are two independent things and I keep conflating them:
+    > - **Track C (applying)** runs on my **existing resume**, which is already true today. It gets
+    >   me *interviews*. Zero lessons required.
+    > - **Track A/B (learning)** rebuilds my foundations. It gets me *through* those interviews.
+    >
+    > Waiting until December means learning **blind** for four months, guessing which gaps matter.
+    > Applying in August means **each interview tells me exactly what to study next week.** That
+    > feedback loop cannot be bought any other way.
+    - **🎯 TIER MY APPLICATIONS — don't spend every company at once:**
+      - **Tier 3 (Aug):** companies I don't care about → **pure interview practice.** Expect to fail.
+        The point is data: which questions expose gaps. Log every one in the interview Q&A bank.
+      - **Tier 2 (Sept–Oct):** decent companies → applied once foundations + 2 shipped apps exist.
+      - **Tier 1 (Nov–Dec):** dream roles — ANSR MedTech (INSSK002) and similar → applied when
+        fundamentals are rebuilt **and** the AI-in-Android differentiator (W14–16) is real.
+      - ⚠️ **Do NOT apply to Tier 1 in August.** They're the roles worth waiting to be sharp for.
   - **Sep (W5–9):** weekly timed mock (🔴 AI-OFF) · **crash-triage & debugging drills** — the senior
     screen · Kotlin/Android rapid-fire Q&A · rehearse projects out loud line-by-line
   - **Oct–Nov (W10–19):** 2 mocks/week · **system design** reps (weighted heavier than DSA at senior
