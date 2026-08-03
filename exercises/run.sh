@@ -26,6 +26,13 @@ fi
 
 OUT=".build"
 
+# 🐛 BUG FIX 2026-08-03. Without this line, .build KEEPS every class ever
+# compiled. The "find ... | head -1" below then picks whichever it stumbles
+# on first — which can be an OLD program. Symptom: you run 04_templates.kt
+# and watch 03_workshop.kt's output appear, with no error to warn you.
+# Wiping the folder first guarantees only today's file is in there.
+rm -rf "$OUT"
+
 echo "→ translating $FILE ..."
 kotlinc "$FILE" -d "$OUT"
 

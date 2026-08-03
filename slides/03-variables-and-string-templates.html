@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>val / var &amp; String Templates — Slides</title>
+<!-- Track A · W1 · L1 · Concepts 4-5. Navigate: → / ← / Space. Press F for fullscreen. Fully local. -->
+<style>
+  :root{
+    --ink:#0B0D14;--ink2:#141827;--text:#EDEFF5;--muted:#9AA2B6;
+    --accent:#3A5BFF;--accent-2:#7C4DFF;--line:rgba(255,255,255,.12);
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);overflow:hidden}
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:8vh 10vw;background:radial-gradient(120% 120% at 85% -10%,#1A2140 0%,var(--ink) 60%)}
+  .slide.active{display:flex;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+    color:#8AA0FF;margin-bottom:20px}
+  h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin:0;max-width:18ch;text-wrap:balance}
+  h1 .grad{background:linear-gradient(90deg,#8AA0FF,#C6A2FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h2{font-size:clamp(1.55rem,3.8vw,2.7rem);letter-spacing:-.02em;margin:0 0 26px;max-width:22ch}
+  ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:15px;max-width:64ch}
+  li{font-size:clamp(1rem,2.15vw,1.4rem);color:#D6DAE6;padding-left:30px;position:relative;line-height:1.4}
+  li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .lead{font-size:clamp(1.08rem,2.45vw,1.6rem);color:#B8BFD0;max-width:54ch;line-height:1.5}
+  pre{background:#0E1120;border:1px solid var(--line);border-radius:12px;padding:20px 22px;overflow:auto;
+    font-family:var(--mono);font-size:clamp(.8rem,1.5vw,1.02rem);line-height:1.6;color:#D9E0F5;max-width:74ch}
+  code{font-family:var(--mono);color:#BFCBFF}
+  .tag{display:inline-block;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+    color:#BFCBFF;background:rgba(58,91,255,.14);border:1px solid rgba(122,150,255,.35);padding:6px 13px;border-radius:100px}
+  .bar{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .3s ease;z-index:5}
+  .ctrl{position:fixed;bottom:22px;right:26px;display:flex;gap:10px;z-index:6}
+  .ctrl button{font-family:var(--mono);font-size:1rem;width:44px;height:44px;border-radius:10px;cursor:pointer;
+    background:rgba(255,255,255,.06);color:#E6E9F2;border:1px solid var(--line)}
+  .ctrl button:hover{background:rgba(255,255,255,.14)}
+  .count{position:fixed;bottom:26px;left:26px;font-family:var(--mono);font-size:.8rem;color:var(--muted);z-index:6}
+  @media(prefers-reduced-motion:reduce){.slide.active{animation:none}}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="slide active">
+    <div class="kicker">Track A · W1 · Topic 03</div>
+    <h1>Jars with <span class="grad">labels</span>.</h1>
+    <p class="lead" style="margin-top:24px"><code>val</code> · <code>var</code> · <code>$</code> — how a program remembers things, and why the sealed jar is the one you should reach for.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide">
+    <div class="kicker">1️⃣ The problem</div>
+    <h2>Hardcoded facts, and no memory</h2>
+    <ul>
+      <li><b>Nothing has a single home.</b> A name in 20 of 200 lines = 20 edits and one miss. Twenty copies of a fact are twenty chances to be wrong.</li>
+      <li><b>The program can't remember.</b> Real programs <i>discover</i> things while running — what the user typed, what the server said. With no jars, it evaporates before the next line.</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <div class="kicker">2️⃣ The picture</div>
+    <h2>Jars with paper labels</h2>
+    <p class="lead">You don't carry two kilos of rice around the kitchen. You pour it into a jar, write <b>rice</b> on the label, and from then on you say <i>"pass me the rice."</i><br><br>
+    <b>jar</b> = variable · <b>label</b> = name · <b>contents</b> = value</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <div class="kicker">⚠️ The token everyone gets wrong</div>
+    <h2><code>=</code> is not "equals"</h2>
+    <pre>val name = "Aiyappa"</pre>
+    <p class="lead" style="margin-top:24px">In school <code>=</code> states a fact, true in both directions.<br><br>
+    <b>In code it is an arrow pointing left:</b> take the thing on the RIGHT and put it INTO the jar on the LEFT.<br><br>
+    An action, not a fact. Its real name is <b>assignment</b>.</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <div class="kicker">👀 The quotes rule, doing new work</div>
+    <h2>One character changes everything</h2>
+    <pre>println("name")   // → name       the four letters
+println(name)     // → Aiyappa    the contents of the jar</pre>
+    <p class="lead" style="margin-top:24px"><b>Quotes ON</b> = don't interpret, it's plain text.<br>
+    <b>Quotes OFF</b> = interpret it as a label, go fetch what's inside.</p>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide">
+    <div class="kicker">The two jars</div>
+    <h2>Sealed vs refillable</h2>
+    <pre>val score = 0
+score = 10        // ❌ error: 'val' cannot be reassigned.
+
+var score = 0
+score = 10        // ✅  no `var` on line 2 — var CREATES the jar, once</pre>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <div class="kicker">⭐ The senior idea</div>
+    <h2>Why does <code>val</code> exist at all?</h2>
+    <p class="lead"><code>var</code> can do everything <code>val</code> can, plus more. So why ever seal a jar?<br><br>
+    <b>Because most bugs are something changing when you didn't expect it to.</b><br><br>
+    A phone number in a <code>var</code>, in a 3,000-line app. One line you've never read quietly changes it. Now the SMS goes to the wrong person.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <div class="kicker">⭐ The rule</div>
+    <h2>Default to <code>val</code></h2>
+    <ul>
+      <li>A <code>val</code> makes that entire class of bug <b>impossible</b> — not unlikely. The compiler proves it before the program runs.</li>
+      <li><b>A <code>val</code> is a promise the compiler enforces:</b> <i>this will not change from under you.</i></li>
+      <li>Reach for <code>var</code> only when you can <b>name the reason</b> it must change. "Might need it later" is a guess — converting costs one keystroke.</li>
+      <li><b>🔥 Android:</b> shared mutable state is the #1 source of mobile bugs. Compose is built around controlling who may change what.</li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide">
+    <div class="kicker">🎓 One layer deeper</div>
+    <h2>Should this be stored at all?</h2>
+    <p class="lead"><code>seatsLeft</code> as a <code>val</code>? Correct here. In a real app, a <code>var</code>?<br>
+    Better: <b>don't store it</b> — compute <code>totalSeats - registered</code>, so it can never disagree with reality.<br><br>
+    <b>Two facts that must match are two facts that will eventually disagree.</b></p>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <div class="kicker">2️⃣ Templates — the picture</div>
+    <h2>A pre-printed certificate</h2>
+    <p class="lead"><i>This certifies that __________ completed __________ on __________.</i><br><br>
+    The sentence is printed once and stays readable. The <b>blanks</b> get filled per student.<br><br>
+    <b><code>$</code> marks a blank.</b></p>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide">
+    <div class="kicker">💻 String templates</div>
+    <h2>Punching a hole in the quotes rule</h2>
+    <pre>println("Workshop: $name")      // → Workshop: Aiyappa
+
+println("$cityworkshop")        // ❌ hunts for jar "cityworkshop"
+println("${city}workshop")      // ✅ Madikeriworkshop
+
+println("Next year: ${count + 1}")   // more than a bare fetch
+println("Price: \$500")              // a literal dollar sign</pre>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide">
+    <div class="kicker">🧭 When NOT to — senior signals</div>
+    <h2>Two places templates are dangerous</h2>
+    <ul>
+      <li><b>🔒 Never build a database query with them.</b> A user types something that isn't a name, and the database runs it — <b>SQL injection</b>, still one of the most common serious breaches worldwide. Use parameterised queries.</li>
+      <li><b>📱 Never for user-facing Android text.</b> UI text belongs in string resources with placeholders, so the app can be translated. A template hardcodes English forever.</li>
+      <li>Don't stuff calculations inside <code>${ }</code> — compute into a <code>val</code> first.</li>
+    </ul>
+  </section>
+
+  <!-- 13 -->
+  <section class="slide">
+    <div class="kicker">🐛 Real bug, day one</div>
+    <h2>The stale build</h2>
+    <pre>04_templates.kt printed 03_workshop.kt's output — no error at all.
+
+.build kept EVERY class ever compiled, and the script did:
+   find . -name "*Kt.class" | head -1     ← "grab the first one"</pre>
+    <p class="lead" style="margin-top:22px">Which property failed? <b>COMPLETE</b> — a missing step, exactly like never writing "turn on the stove."<br>
+    <span style="color:#8AA0FF">This is why Android Studio has <b>Build → Clean Project</b>.</span></p>
+  </section>
+
+  <!-- 14 -->
+  <section class="slide">
+    <div class="kicker">Recap</div>
+    <h2>What we locked in</h2>
+    <ul>
+      <li><code>=</code> is an arrow pointing left, not "equals".</li>
+      <li>Quotes on = plain text. Quotes off = fetch the jar.</li>
+      <li><b>Default to <code>val</code>.</b> A sealed jar is a bug that can't happen.</li>
+      <li><code>$</code> = a blank in a pre-printed sentence. Never in a query, never in UI text.</li>
+      <li><b>Next:</b> types — what <i>kind</i> of thing is in the jar.</li>
+    </ul>
+    <p class="lead" style="margin-top:24px"><span class="tag">End of topic</span></p>
+  </section>
+
+</div>
+
+<div class="bar" id="bar"></div>
+<div class="count" id="count">1 / 14</div>
+<div class="ctrl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+
+<script>
+  var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
+  var bar=document.getElementById('bar'), count=document.getElementById('count');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    bar.style.width=((i+1)/slides.length*100)+'%';count.textContent=(i+1)+' / '+slides.length;}
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1)}
+    else if(e.key==='ArrowLeft'){show(i-1)}
+    else if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}});
+  show(0);
+</script>
+</body>
+</html>

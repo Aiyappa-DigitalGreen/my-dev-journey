@@ -17,6 +17,7 @@ due date. When all four are ticked ✅, the concept is durable.
 |-------|---------|:------:|:-------:|:-------:|:--------:|
 | **01 · What is a program?** (exact · complete · ordered) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **02 · `println` + `fun main() { }`** (hatch · front door · walls) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
+| **03 · `val`/`var` + string templates `$`** (jars · default to val · certificate) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 
 ---
 ### Quick recall log (optional)
