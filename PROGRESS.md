@@ -346,7 +346,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 ## 📈 TRACK B — DSA ROADMAP (daily, ~1.5 hrs, from Day 1)
 Target cut for the December timeline: **~150–180 problems, pattern-focused** (was 300–400).
 Depth of pattern beats volume when the runway is short. Log the count in CURRENT STATUS.
-- ⬜ **Aug (W1–4):** Big-O · arrays · strings · two-pointers · hashmaps · sliding window
+- 🔄 **Aug (W1–4):** **Big-O 🔄 (intuition ✅ 08-03, symbols not solid — reopen)** · arrays · strings · two-pointers · hashmaps · sliding window
 - ⬜ **Sep (W5–9):** stacks · queues · linked lists · recursion · binary search
 - ⬜ **Oct (W10–13):** trees · BST · traversals (BFS/DFS) · heaps/priority queues · intervals
 - ⬜ **Nov (W14–19):** graphs (BFS/DFS, topological sort, union-find) · DP (1D/2D, knapsack, LIS) · greedy
@@ -392,19 +392,82 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
   - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
     and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
 - **Days to Dec 31:** ~150
-- **Last completed:** ✅ **W1 L1 · Concepts 1–3** — what a program is (exact · complete · ordered) · `println` · `fun main() { }`. First working Kotlin program written + run: `exercises/w1/02_output.kt`. 2026-08-03
+- **Last completed:** ✅ **W1 L1 · Concepts 1–5** — what a program is (exact · complete · ordered) · `println` · `fun main() { }` · `val`/`var` · string templates `$`. 4 working programs in `exercises/w1/`. Plus 👓 code-review rep (3/3) and 🔄 **Track B day 1: Big-O — intuition landed, symbols did not.** 2026-08-03
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Track A** → ⚠️ **FIRST: finish the open 👓 code-review rep** (3 broken programs — `println` outside braces · missing `}` · no `main`; see REVIEW.md), **THEN** Concept 4 = `val`/`var` + `$`. **Track B** → DSA: what Big-O even means (**not started — 0 days in**). **Track C** → rewrite resume/LinkedIn for 5 yrs Android, first applications out (**not started — 0 days in**).
+- **Next action:** **Track A** → W1 Concept 6 = **types** (`Int`, `String`, `Boolean` — what *kind* of thing is in the jar), then operators → `readLine` → `if/else`/`when` → loops. **Track B** → ⚠️ **re-open Big-O first** (see REVIEW.md — the already-sorted = `O(1)` point is still wrong in his head), then arrays. **Track C** → resume/LinkedIn rewrite for 5 yrs Android + first Tier-3 applications (**still not started — 0 days in, flag this every session**).
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** 2 — `notes/01-what-is-a-program.md` · `notes/02-println-and-main.md` (+ matching slide decks)
+- **Notes written:** 4 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` (+ 4 matching slide decks)
 
 ## 📓 PROGRESS LOG (newest at top)
 
+- **2026-08-03** — 📈 **TRACK B STARTED · DSA Day 1 — Big-O. Honest outcome: intuition ✅, notation ❌.**
+  Taught with **zero code** (correct — his Kotlin doesn't reach loops yet). Frame: *"two methods both
+  work — which is better?"*, then the **workshop register** (500 students, "is Priya here?"): read every
+  name = 500 looks vs halve-it = 9 looks; then a million names = 1,000,000 vs 20. **He computed 500 / 9 /
+  1,000,000 / 20 himself, correctly.** Also grounded *why not use a clock* — seconds depend on the
+  laptop, steps don't.
+  ⚠️ **Then I broke my own rule and he called it out: *"i seriously did not understand anything."***
+  Cause was **delivery, not ability** — I dropped a 5-row formula table plus the word "logarithm" on top
+  of a brand-new abstract idea, which is exactly the dense-table failure mode logged in his feedback
+  memories. **Recovery that worked:** deleted the table, one sentence (*"some methods fall apart when
+  the job gets bigger, some barely notice"*), one plain-English question about a shop with one counter →
+  he got it instantly, then **produced his own examples unprompted: one bus-ticket counter (`O(n)`) and
+  a restaurant seating people (`O(1)`)**. Retaught all five as **one scene each** (nearest student /
+  guess-my-number / attendance / line up by height / everyone greets everyone) with counts at 10 vs 20,
+  plus **the single identification tool — "double the crowd, what happens to the work?"** — which is
+  what he actually asked for and what should have been taught first.
+  🎓 **Reframe that mattered:** he asked *"when do I use `O(n)`?"* — corrected to **Big-O is a price tag,
+  not a menu.** You choose a *method*; the notation is the label describing it.
+  ❌ **Still wrong in his head, do not let this slide:** he believes already-sorted data costs
+  `O(n log n)`. It's `O(1)` to take the last item — `O(n log n)` is the price of *doing* the sort.
+  The trap is worth keeping: sorting to answer ONE question means paying `O(n log n)` to avoid `O(n)`,
+  i.e. making it worse. Written into note 04 and flagged in REVIEW.md.
+  📝 Note 04 + 15-slide deck written, both in the plain-English form that worked, not the form that
+  failed. Marked 🔄 not ✅ in REVIEW.md and the Track B roadmap — **honest status, per the never-mark-
+  it-done-if-he-didn't rule.**
+  **📌 Method note for every future session: dense tables lose him. One scene at a time, his own
+  examples first, symbols only after the intuition carries weight.**
+- **2026-08-03** — ✅ **W1 L1 · Concepts 4 & 5 — `val`/`var` and string templates. Plus a real bug in his own toolchain.**
+  👓 **Opened with the carried-over code-review rep: 3/3 correct**, and on the no-`main` case he reasoned
+  *past* what he'd been taught — *"greet is not called so nowhere it will work"* — arriving at
+  "defining a job ≠ doing the job" (a W2 idea) on his own. Showed him the **real compiler output** for
+  all three, which introduced the **compile-time vs runtime error** distinction (a compile error is a
+  friend — the machine catching it before a user can) and the fact that the no-`main` file **compiles
+  cleanly and fails only at launch**.
+  `val`/`var` taught via **jars with paper labels**; the token that gets sharpened hardest was **`=` is
+  not "equals", it's an arrow pointing left** (assignment, an action, not a fact). The quotes rule from
+  Concept 2 did new work: `println("name")` vs `println(name)` → **quotes ON = don't interpret, quotes
+  OFF = fetch the jar.** ⭐ **The senior idea, taught as the actual lesson:** `var` can do everything
+  `val` can, so why does `val` exist? *Because most bugs are something changing when you didn't expect
+  it to* — a `val` makes that class of bug **impossible**, proven by the compiler. Rule: **default to
+  `val`; reach for `var` only when you can name the reason it must change.** Tied forward to Compose
+  (W5) being built around who is allowed to change what.
+  He wrote `03_workshop.kt` correctly and **used `$` unprompted — a token never taught in this restarted
+  course.** Per the explain-every-line rule, refused to count it as his until he explained it; he did
+  (*"combine variable name inside quotes or else it will be considered as string"*), then it was taught
+  properly as **string templates** = a **pre-printed certificate with blanks**, incl. `${ }` for
+  ambiguous boundaries and `\$` escaping. **WHEN NOT covered:** 🔒 never build a DB query by gluing user
+  input (**SQL injection**) · 📱 never for user-facing Android text (**string resources**, or the app
+  can never be translated). He then hit the `${ }` boundary case correctly in `04_templates.kt`.
+  🐛 **A REAL BUG SURFACED — best moment of the day.** `04_templates.kt` printed **`03_workshop.kt`'s
+  output, with no error at all.** Cause: `run.sh` compiled into `.build` but **never emptied it**, so
+  every class ever compiled piled up and `find . -name "*Kt.class" | head -1` grabbed a stale program.
+  **His own Concept-1 lesson diagnosed it: the failing property was COMPLETE** — a missing step, exactly
+  like never writing "turn on the stove." Fixed with `rm -rf "$OUT"` (disclosed to him line by line —
+  it's his repo). Named it a **stale build** and connected it to **Android Studio's Build → Clean
+  Project**, which exists for precisely this.
+  ⚠️ **Habit gap named out loud, twice:** he pasted code both times **without running it**. Had he run
+  it he'd have found this bug instead of me. Agreed a workflow: **he writes code in chat, Claude creates
+  and runs the file — but he must PREDICT the output first.** Keeps the verification muscle alive
+  without the file-handling friction.
+  🎓 Also flagged the layer under `val`/`var`: `seatsLeft` as a `val` is right *here*, but in a real app
+  it shouldn't be **stored** at all — compute `totalSeats - registered`. *Two facts that must match are
+  two facts that will eventually disagree.*
 - **2026-08-03** — ✅ **W1 L1 · Concepts 2 & 3 — `println` and `fun main() { }`. First working Kotlin program, written and run.**
   `println` taught as **the serving hatch** on a windowless kitchen (a computer working makes no sound —
   the work is invisible until you tell it to speak). Every token: `println` (`print` from 1960s paper

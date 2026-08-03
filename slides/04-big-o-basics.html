@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big-O for Absolute Beginners — Slides</title>
+<!-- Track B · DSA Day 1. Navigate: → / ← / Space. Press F for fullscreen. Fully local. -->
+<style>
+  :root{
+    --ink:#0B0D14;--ink2:#141827;--text:#EDEFF5;--muted:#9AA2B6;
+    --accent:#3A5BFF;--accent-2:#7C4DFF;--line:rgba(255,255,255,.12);
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);overflow:hidden}
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:8vh 10vw;background:radial-gradient(120% 120% at 85% -10%,#1A2140 0%,var(--ink) 60%)}
+  .slide.active{display:flex;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+    color:#8AA0FF;margin-bottom:20px}
+  h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin:0;max-width:18ch;text-wrap:balance}
+  h1 .grad{background:linear-gradient(90deg,#8AA0FF,#C6A2FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h2{font-size:clamp(1.55rem,3.8vw,2.7rem);letter-spacing:-.02em;margin:0 0 26px;max-width:22ch}
+  ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:15px;max-width:64ch}
+  li{font-size:clamp(1rem,2.15vw,1.4rem);color:#D6DAE6;padding-left:30px;position:relative;line-height:1.4}
+  li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .lead{font-size:clamp(1.08rem,2.45vw,1.6rem);color:#B8BFD0;max-width:54ch;line-height:1.5}
+  pre{background:#0E1120;border:1px solid var(--line);border-radius:12px;padding:20px 22px;overflow:auto;
+    font-family:var(--mono);font-size:clamp(.8rem,1.5vw,1.02rem);line-height:1.6;color:#D9E0F5;max-width:74ch}
+  code{font-family:var(--mono);color:#BFCBFF}
+  .big{font-family:var(--mono);font-size:clamp(1.3rem,3.4vw,2.3rem);color:#8AA0FF;margin-top:8px}
+  .tag{display:inline-block;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+    color:#BFCBFF;background:rgba(58,91,255,.14);border:1px solid rgba(122,150,255,.35);padding:6px 13px;border-radius:100px}
+  .bar{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .3s ease;z-index:5}
+  .ctrl{position:fixed;bottom:22px;right:26px;display:flex;gap:10px;z-index:6}
+  .ctrl button{font-family:var(--mono);font-size:1rem;width:44px;height:44px;border-radius:10px;cursor:pointer;
+    background:rgba(255,255,255,.06);color:#E6E9F2;border:1px solid var(--line)}
+  .ctrl button:hover{background:rgba(255,255,255,.14)}
+  .count{position:fixed;bottom:26px;left:26px;font-family:var(--mono);font-size:.8rem;color:var(--muted);z-index:6}
+  @media(prefers-reduced-motion:reduce){.slide.active{animation:none}}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="slide active">
+    <div class="kicker">Track B · DSA · Day 1</div>
+    <h1>How badly does it get <span class="grad">worse</span>?</h1>
+    <p class="lead" style="margin-top:24px">Big-O, with no maths — one room, ten students, and one question you ask every time.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide">
+    <div class="kicker">Start at the floor</div>
+    <h2>What "DSA" even means</h2>
+    <ul>
+      <li><b>Algorithm</b> = a method for getting something done. That's the whole word.</li>
+      <li>You already wrote one: <i>take water, boil it, add tea powder, pour to cup.</i> <b>That is an algorithm.</b></li>
+      <li><b>Data structure</b> = how you arrange your stuff. A pile, a shelf, or labelled jars.</li>
+      <li>For any job there is <b>more than one method</b> — so: <b>which one is better?</b></li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <div class="kicker">1️⃣ The problem</div>
+    <h2>"It took 2 seconds" is worthless</h2>
+    <ul>
+      <li>Faster laptop → different number. 40 Chrome tabs → different number.</li>
+      <li>Different language, different day → different number.</li>
+      <li><b>The expensive version:</b> your code works on the 50 rows you tested. Six months later there are 200,000 and the app freezes. <b>Nobody wrote a bug — it grew badly.</b></li>
+      <li>So the real question: <b>when the data gets bigger, how much worse does this get?</b></li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <div class="kicker">2️⃣ The picture</div>
+    <h2>500 students. Is Priya here?</h2>
+    <pre>METHOD A — read every name, top to bottom
+   worst case: Priya is last  →  500 looks
+
+METHOD B — the register is alphabetical
+   open the middle: "Manoj". Priya comes after M,
+   so she CANNOT be in the first half. Bin it.
+   500 → 250 → 125 → 62 → 31 → 15 → 7 → 3 → 1
+                                    →  9 looks</pre>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <div class="kicker">⭐ The whole idea</div>
+    <h2>Now make it a million</h2>
+    <pre>              500 names        1,000,000 names
+Method A         500 looks       1,000,000 looks
+Method B           9 looks              20 looks</pre>
+    <p class="lead" style="margin-top:26px">The register grew <b>2,000× bigger.</b><br>
+    Method A got <b>2,000× worse.</b><br>
+    Method B got worse by <b>eleven looks.</b></p>
+    <p class="lead" style="margin-top:18px"><b>Some methods fall apart when the job gets bigger. Some barely notice. That difference is the subject.</b></p>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide">
+    <div class="kicker">⚠️ The framing mistake</div>
+    <h2>Big-O is a price tag, not a menu</h2>
+    <p class="lead">You don't <i>choose</i> <code>O(n)</code>.<br><br>
+    You choose a <b>method</b> — and <code>O(n)</code> is the <b>label that describes it.</b><br><br>
+    Like a price: you pick the item, and the price is whatever it is.<br><br>
+    <b>The question is: "what did I do, and what does that cost?"</b></p>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <div class="kicker">🔑 The one test</div>
+    <h2>Double the crowd. What happens?</h2>
+    <pre>work stays the same    →  O(1)        "doesn't care"
+work goes up by 1     →  O(log n)    "barely notices"
+work DOUBLES          →  O(n)        "grows with the crowd"
+a bit over double     →  O(n log n)  "plus the sorting"
+work goes up 4×       →  O(n²)       "falls apart"</pre>
+    <p class="lead" style="margin-top:22px">Don't memorise five formulas. <b>Ask one question and read off the answer.</b></p>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <div class="kicker">1️⃣ O(1) · doesn't care</div>
+    <h2>Ask the student nearest the door</h2>
+    <div class="big">10 students → 1 question<br>20 students → 1 question</div>
+    <p class="lead" style="margin-top:26px"><b>You get this when:</b> you go straight to one thing without looking around.<br><br>
+    The room could hold ten thousand. Still one question.</p>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide">
+    <div class="kicker">2️⃣ O(log n) · barely notices</div>
+    <h2>Guess my number — higher or lower?</h2>
+    <div class="big">range 10 → ~4 guesses<br>range 20 → ~5 guesses</div>
+    <p class="lead" style="margin-top:22px"><b>You get this when:</b> every step throws away HALF of what's left.<br><br>
+    ⚠️ <b>Only works because the numbers are in order.</b> Scrambled, "higher or lower" tells you nothing. <b>No order, no O(log n).</b></p>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <div class="kicker">3️⃣ O(n) · grows with the crowd</div>
+    <h2>Take attendance</h2>
+    <div class="big">10 students → 10 calls<br>20 students → 20 calls</div>
+    <p class="lead" style="margin-top:22px"><b>You get this when:</b> you must look at every item, once.<br><br>
+    📌 <b>If the job genuinely needs touching everything — count them, find the tallest — then O(n) is the BEST that exists.</b> It's not a failure. It's often the right answer.</p>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide">
+    <div class="kicker">4️⃣ O(n log n) · the price of order</div>
+    <h2>Line them up by height</h2>
+    <div class="big">10 students → ~35 comparisons<br>20 students → ~85 comparisons</div>
+    <p class="lead" style="margin-top:22px"><b>You get this when: you sort.</b> Almost every O(n log n) is sorting.<br><br>
+    <b>Sorting is what you pay to unlock halving</b> — pay once, and every future search costs O(log n).</p>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide">
+    <div class="kicker">5️⃣ O(n²) · falls apart</div>
+    <h2>Everyone greets everyone</h2>
+    <div class="big">10 students → 100 greetings<br>20 students → 400<br>40 students → 1,600</div>
+    <p class="lead" style="margin-top:22px"><b>You get this when:</b> for every item you go through every item again — <b>a loop inside a loop.</b><br><br>
+    🚩 The one interviewers hunt for — because there's usually a way out, and finding it is the test.</p>
+  </section>
+
+  <!-- 13 -->
+  <section class="slide">
+    <div class="kicker">🎓 The trap</div>
+    <h2>Find the tallest student</h2>
+    <pre>unsorted room        → O(n)        must see everyone.
+                                    CANNOT be beaten.
+already lined up     → O(1)        tallest is the last one.
+                                    Using sorted data is CHEAP.
+sort it, then look   → O(n log n)  ~35 comparisons + 1 look,
+                                    to answer what 10 looks would.</pre>
+    <p class="lead" style="margin-top:22px"><b>O(n log n) is the price of DOING the sorting. Using sorted data is O(1) or O(log n).</b><br>
+    Sort only when the data will be searched <b>many</b> times.</p>
+  </section>
+
+  <!-- 14 -->
+  <section class="slide">
+    <div class="kicker">🧭 When it does NOT matter</div>
+    <h2>The senior signal</h2>
+    <ul>
+      <li><b>Small n → pick the simple thing.</b> With 5 items the clever method saves 2 steps and costs readability. Juniors optimise on reflex.</li>
+      <li><b>📱 In a real Android app the slow part is almost never the algorithm.</b> It's the network call, the disk read, or work on the main thread.</li>
+      <li>Someone agonising over a 20-item loop while blocking the UI thread has the wrong worry.</li>
+    </ul>
+  </section>
+
+  <!-- 15 -->
+  <section class="slide">
+    <div class="kicker">Recap</div>
+    <h2>What we locked in</h2>
+    <ul>
+      <li><b>Algorithm = a method.</b> Your tea recipe was one.</li>
+      <li>Clocks are useless for comparing methods. <b>Count steps.</b></li>
+      <li><b>One test:</b> double the crowd — what happens to the work?</li>
+      <li>O(n) is often the <b>right</b> answer. O(n²) is the one to interrogate.</li>
+      <li><b>Next:</b> the way out of O(n²) is a labelled jar — <b>hashmaps.</b></li>
+    </ul>
+    <p class="lead" style="margin-top:24px"><span class="tag">End of topic</span></p>
+  </section>
+
+</div>
+
+<div class="bar" id="bar"></div>
+<div class="count" id="count">1 / 15</div>
+<div class="ctrl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+
+<script>
+  var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
+  var bar=document.getElementById('bar'), count=document.getElementById('count');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    bar.style.width=((i+1)/slides.length*100)+'%';count.textContent=(i+1)+' / '+slides.length;}
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1)}
+    else if(e.key==='ArrowLeft'){show(i-1)}
+    else if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}});
+  show(0);
+</script>
+</body>
+</html>

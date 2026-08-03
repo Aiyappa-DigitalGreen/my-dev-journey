@@ -18,6 +18,7 @@ due date. When all four are ticked ✅, the concept is durable.
 | **01 · What is a program?** (exact · complete · ordered) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **02 · `println` + `fun main() { }`** (hatch · front door · walls) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **03 · `val`/`var` + string templates `$`** (jars · default to val · certificate) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
+| **04 · Big-O basics** 🔄 *intuition only — symbols NOT solid* (Track B) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 
 ---
 ### Quick recall log (optional)
@@ -29,3 +30,17 @@ Jot how a review went so we know what needs more work.
   ⚠️ **Open, carried to next session:** the 👓 "what's wrong with this code?" rep — three broken
   programs (`println` outside the braces · missing `}` · a file with no `main`). Do this *before*
   starting `val`/`var`; it's the real test that the wrapper concept landed.
+- **2026-08-03 (later, same day)** — ✅ Code-review rep done, 3/3, with reasoning past what was taught
+  (spotted that a defined-but-uncalled function never runs). `val`/`var` + `$` landed cleanly; he
+  reached for `$` and `${ }` correctly.
+  🔄 **BIG-O IS NOT SOLID — this is the one to re-open next session.** He said *"I seriously did not
+  understand anything"* after the notation was introduced, and he was right to. Cause was **my
+  delivery, not his ability**: he answered the concrete register questions perfectly (500 → 9,
+  1,000,000 → 20) and then got a 5-row formula table dropped on top of a brand-new abstract idea.
+  Reteaching in plain English worked immediately — he produced his own `O(n)` (one bus-ticket
+  counter) and his own `O(1)` (a restaurant seating people) unprompted.
+  **Where he's genuinely still wrong:** he thinks already-sorted data costs `O(n log n)`. It's `O(1)`
+  to grab the last item — `O(n log n)` is the price of *doing* the sort. Corrected in note 04; **check
+  this specific point at the next review.**
+  **Method note for future sessions: dense tables lose him. One scene at a time, his own examples,
+  no symbols until the intuition is load-bearing.**
