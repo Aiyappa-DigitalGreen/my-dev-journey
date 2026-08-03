@@ -397,7 +397,7 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Track A** → W1 Concept 6 = **types** (`Int`, `String`, `Boolean` — what *kind* of thing is in the jar), then operators → `readLine` → `if/else`/`when` → loops. **Track B** → ⚠️ **re-open Big-O first** (see REVIEW.md — the already-sorted = `O(1)` point is still wrong in his head), then arrays. **Track C** → resume/LinkedIn rewrite for 5 yrs Android + first Tier-3 applications (**still not started — 0 days in, flag this every session**).
+- **Next action:** **Track A** → W1 Concept 6 = **types** (`Int`, `String`, `Boolean` — what *kind* of thing is in the jar), then operators → `readLine` → `if/else`/`when` → loops. **Track B** → ⚠️ **re-open Big-O first** (see REVIEW.md — the already-sorted = `O(1)` point is still wrong in his head), then arrays. **Track C** → ⏸️ **blocked on his intake** — resume must be **rewritten from scratch** (`portfolio/resume.html` is a fake-project template, see log below). Ask for **header details + ONE job** to start, not an essay. (**0 days in — flag this every session.**)
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
@@ -405,6 +405,23 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 
 ## 📓 PROGRESS LOG (newest at top)
 
+- **2026-08-03** — 🚩 **`portfolio/resume.html` IS A HAZARD — do not send it, do not edit it, rewrite it.**
+  Opened it to start Track C and found a template that describes **a career-changer with no job
+  history** — the opposite of the truth. It lists **four projects that do not exist** (FieldLens,
+  DocuChat, TaskFlow, SkyCast), claims **PyTorch / CNNs / Pinecone / RAG / agents** (none learned yet),
+  has **no employment section at all**, and puts *"Self-directed engineering program"* under Education.
+  Sending it would hide the single strongest asset (**5 years professional Android**) while claiming
+  skills that collapse in a technical screen. **It must be rewritten from real employment facts, not
+  edited.** Taught the framing for a 5-yr Android resume: experience is the whole document and projects
+  are a footnote · **impact bullets, not responsibility lists** (*"cut cold-start 4.2s → 1.6s"* beats
+  *"responsible for developing features"*) · numbers wherever they exist · **keyword match is mechanical**
+  (a script filters "mobile development" when the posting says Kotlin/Compose/MVVM/Hilt/Crashlytics) ·
+  **mirror what senior postings lead with** — ANSR INSSK002 leads with **crash triage, debugging,
+  flaky-network issues**, so real production-crash stories outrank any feature shipped.
+  **⏸️ Blocked on him:** intake not yet provided (header details · per-job history with what he
+  personally owned + the real stack + any numbers + one thing that broke and he fixed · education).
+  **Refused to draft around the gap** — inventing employment history is the one thing that stays off
+  the table. He'll share details in a later session; **ask for Group 1 + one job to start, not an essay.**
 - **2026-08-03** — 📈 **TRACK B STARTED · DSA Day 1 — Big-O. Honest outcome: intuition ✅, notation ❌.**
   Taught with **zero code** (correct — his Kotlin doesn't reach loops yet). Frame: *"two methods both
   work — which is better?"*, then the **workshop register** (500 students, "is Priya here?"): read every
