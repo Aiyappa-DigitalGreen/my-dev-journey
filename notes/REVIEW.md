@@ -19,6 +19,7 @@ due date. When all four are ticked ✅, the concept is durable.
 | **02 · `println` + `fun main() { }`** (hatch · front door · walls) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **03 · `val`/`var` + string templates `$`** (jars · default to val · certificate) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **04 · Big-O basics** 🔄 *intuition only — symbols NOT solid* (Track B) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
+| **05 · Types** (photo of ₹500 · digits≠number · never Double for money) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 
 ---
 ### Quick recall log (optional)

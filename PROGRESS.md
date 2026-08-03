@@ -397,14 +397,46 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Track A** → W1 Concept 6 = **types** (`Int`, `String`, `Boolean` — what *kind* of thing is in the jar), then operators → `readLine` → `if/else`/`when` → loops. **Track B** → ⚠️ **re-open Big-O first** (see REVIEW.md — the already-sorted = `O(1)` point is still wrong in his head), then arrays. **Track C** → ⏸️ **blocked on his intake** — resume must be **rewritten from scratch** (`portfolio/resume.html` is a fake-project template, see log below). Ask for **header details + ONE job** to start, not an essay. (**0 days in — flag this every session.**)
+- **Next action:** **Track A** → W1 Concept 7 = **operators** (`+ - * / %`, comparison, `&&`/`||`), then `readLine` (real user input — and the `"251"` bug becomes real there) → `if/else`/`when` → loops. Also still unspent in W1: 🤖 **AI-ON rep + prompting basics** and 🗣️ **explain-back out loud** (he has not yet done one aloud). **Track B** → ⚠️ **re-open Big-O first** (see REVIEW.md — the already-sorted = `O(1)` point is still wrong in his head), then arrays. **Track C** → ⏸️ **blocked on his intake** — resume must be **rewritten from scratch** (`portfolio/resume.html` is a fake-project template, see log below). Ask for **header details + ONE job** to start, not an essay. (**0 days in — flag this every session.**)
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** 4 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` (+ 4 matching slide decks)
+- **Notes written:** 5 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` (+ 5 matching slide decks)
 
 ## 📓 PROGRESS LOG (newest at top)
 
+- **2026-08-03** — ✅ **W1 L1 · Concept 6 — types. Two senior rules landed on day one.**
+  Opened by asking him to **predict** `5 + 3` vs `"5" + "3"` before any explanation — he got `8` and
+  `53` and used the word *concatenates* unprompted. Built the concept off his own answer: **`+` has no
+  single meaning; it behaves according to the TYPE**, so *"what kind of thing is this?"* is the question
+  a type answers. Picture: **a photograph of a ₹500 note vs the actual note** — both show "500", you
+  can't buy tea with the photo; the quotes are the difference. Made it consequential with the
+  form-input bug: **everything typed into a text box arrives as text**, so `age + 1` on `"25"` gives
+  **`"251"`** with no crash and no warning — explicitly linked back to the morning's stale build (*the
+  machine did exactly what was asked, and what was asked was wrong*). Then `Int`/`Double`/`String`/
+  `Boolean` + **type inference**; he'd already been using `is` as a Boolean prefix, which is the correct
+  convention.
+  ⚠️ **One answer of his was wrong in the important direction and got demonstrated, not asserted:** he
+  said `"3" + 1` *"cannot be added"*. It **compiles and prints `31`.** Ran it to prove it. Taught the
+  asymmetry — **`"3" + 1` ✅ silently wrong · `1 + "3"` ❌ compile error** — i.e. the hole runs one way
+  only: text-first swallows numbers. Framed honestly: his instinct was right, **Kotlin agrees with him
+  less than he'd hope**, and a type system reduces a class of bugs rather than eliminating them.
+  ⭐ **Two rules that are real interview answers:** (1) **digits alone don't make a number** — phone
+  number is a `String`; his own reason (9.4 bn overflows `Int`'s ~2.1 bn) was factually right, but the
+  senior reason is *it isn't a quantity — you never do arithmetic on it*, and storing it numerically
+  **destroys data** (leading zero in `080…`, the `+` in `+91`, PIN `002233` → `2233`). (2) **💸 never
+  `Double` for money** — showed `0.1 + 0.2 → 0.30000000000000004` live; 200 × ₹499.50 won't reconcile
+  against a payment gateway. Fix: **integer paise** (`49950`), and **put the unit in the name**
+  (`feePerSeatPaise`) or someone "fixes" it in six months.
+  🏆 **Best moment of the topic — the predict-before-run deal paid off immediately.** He got 5 of 6
+  types right (money was the trap), and when asked to predict his output character-for-character he
+  wrote `seats.Paid:` **and that revealed his own missing space** versus the spec — a bug found with no
+  compiler involved. Named it as exactly why the habit exists, and tied it to Concept 1's **exact**.
+  `05_types.kt` written and run, output matches spec. **His variable names left untouched on purpose**
+  (`isBooked` vs `isPaid` — different facts, and that distinction *is* business logic; plus the
+  `boookingRference` typo kept, because the computer accepts any label and only humans suffer).
+  🧠 W1 Gen AI drip flagged to him as **still unspent and now legitimately available** (Track A
+  foundations are solid) — not fired today to avoid stacking a second topic. Track C still 0.
 - **2026-08-03** — 🚩 **`portfolio/resume.html` IS A HAZARD — do not send it, do not edit it, rewrite it.**
   Opened it to start Track C and found a template that describes **a career-changer with no job
   history** — the opposite of the truth. It lists **four projects that do not exist** (FieldLens,
