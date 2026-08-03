@@ -15,7 +15,7 @@ due date. When all four are ticked ✅, the concept is durable.
 
 | Topic | Learned | +1 day | +3 days | +7 days | +21 days |
 |-------|---------|:------:|:-------:|:-------:|:--------:|
-| *(empty — first row gets added after W1 L1)* | | | | | |
+| **01 · What is a program?** (exact · complete · ordered) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 
 ---
 ### Quick recall log (optional)

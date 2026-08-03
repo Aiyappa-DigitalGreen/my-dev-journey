@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is a Program? — Slides</title>
+<!-- Track A · W1 · L1 · Concept 1. Navigate: → / ← / Space. Press F for fullscreen. Fully local. -->
+<style>
+  :root{
+    --ink:#0B0D14;--ink2:#141827;--text:#EDEFF5;--muted:#9AA2B6;
+    --accent:#3A5BFF;--accent-2:#7C4DFF;--line:rgba(255,255,255,.12);
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);overflow:hidden}
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:8vh 10vw;background:radial-gradient(120% 120% at 85% -10%,#1A2140 0%,var(--ink) 60%)}
+  .slide.active{display:flex;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+    color:#8AA0FF;margin-bottom:20px}
+  h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin:0;max-width:18ch;text-wrap:balance}
+  h1 .grad{background:linear-gradient(90deg,#8AA0FF,#C6A2FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h2{font-size:clamp(1.6rem,4vw,2.8rem);letter-spacing:-.02em;margin:0 0 28px;max-width:20ch}
+  ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;max-width:60ch}
+  li{font-size:clamp(1.05rem,2.3vw,1.5rem);color:#D6DAE6;padding-left:30px;position:relative;line-height:1.4}
+  li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .lead{font-size:clamp(1.15rem,2.6vw,1.7rem);color:#B8BFD0;max-width:52ch;line-height:1.5}
+  pre{background:#0E1120;border:1px solid var(--line);border-radius:12px;padding:22px 24px;overflow:auto;
+    font-family:var(--mono);font-size:clamp(.85rem,1.6vw,1.1rem);line-height:1.6;color:#D9E0F5;max-width:70ch}
+  .tag{display:inline-block;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+    color:#BFCBFF;background:rgba(58,91,255,.14);border:1px solid rgba(122,150,255,.35);padding:6px 13px;border-radius:100px}
+  .bar{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .3s ease;z-index:5}
+  .ctrl{position:fixed;bottom:22px;right:26px;display:flex;gap:10px;z-index:6}
+  .ctrl button{font-family:var(--mono);font-size:1rem;width:44px;height:44px;border-radius:10px;cursor:pointer;
+    background:rgba(255,255,255,.06);color:#E6E9F2;border:1px solid var(--line)}
+  .ctrl button:hover{background:rgba(255,255,255,.14)}
+  .count{position:fixed;bottom:26px;left:26px;font-family:var(--mono);font-size:.8rem;color:var(--muted);z-index:6}
+  @media(prefers-reduced-motion:reduce){.slide.active{animation:none}}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 — Title -->
+  <section class="slide active">
+    <div class="kicker">Track A · W1 · Topic 01</div>
+    <h1>What is a <span class="grad">program</span>?</h1>
+    <p class="lead" style="margin-top:24px">By the end of this deck you will know the three properties every program must have — and why every bug you will ever write is one of them.</p>
+  </section>
+
+  <!-- 2 — The problem -->
+  <section class="slide">
+    <div class="kicker">1️⃣ The problem it solves</div>
+    <h2>A helper with no common sense</h2>
+    <ul>
+      <li><b>Unbelievably fast</b> — thousands of operations a second.</li>
+      <li><b>Never bored, never tired</b> — task #1000 gets the same care as task #1.</li>
+      <li><b>Completely without common sense</b> — it cannot guess. Ever.</li>
+    </ul>
+    <p class="lead" style="margin-top:26px">A program is how you get useful work out of a helper that understands nothing.</p>
+  </section>
+
+  <!-- 3 — The picture -->
+  <section class="slide">
+    <div class="kicker">2️⃣ The picture</div>
+    <h2>A recipe for someone who has never seen food</h2>
+    <p class="lead">A human recipe says <i>"boil the water."</i> A human fills the gaps.<br><br>
+    A computer recipe must say: pick up the vessel · walk to the tap · turn the tap · wait for 200ml · turn it off.<br><br>
+    <b>Every gap you leave, it falls into.</b></p>
+  </section>
+
+  <!-- 4 — The failing recipe -->
+  <section class="slide">
+    <div class="kicker">🤖 Executed literally</div>
+    <h2>The tea that never was</h2>
+    <pre>take water          → held in bare hands. No vessel exists.
+boil it             → stove was never turned on.
+add tea powder      → added it TO THE FLOOR.
+boil 5 MORE minutes → "more" than what? Nothing boiled.
+pour it to cup      → no cup exists. No straining → leaves in drink.
+add sugar           → how much? ...adds sugar forever. ♾️</pre>
+    <p class="lead" style="margin-top:22px">Output: a floor, some leaves, and infinite sugar.</p>
+  </section>
+
+  <!-- 5 — The three properties -->
+  <section class="slide">
+    <div class="kicker">⭐ The core</div>
+    <h2>Three properties. That's the whole concept.</h2>
+    <ul>
+      <li><b>EXACT</b> — the instruction is there but too vague to act on. <i>"Take water"</i> — how much, into what?</li>
+      <li><b>COMPLETE</b> — the instruction is missing entirely. Turn on the stove. Strain the leaves.</li>
+      <li><b>ORDERED</b> — every step present and precise, wrong sequence. Cup filled before water exists.</li>
+    </ul>
+    <p class="lead" style="margin-top:26px"><b>Every bug you will ever write is one of these three</b> — a 2am production crash is one of them in a costume.</p>
+  </section>
+
+  <!-- 6 — Why the author can't see it -->
+  <section class="slide">
+    <div class="kicker">The uncomfortable part</div>
+    <h2>You cannot see your own gaps</h2>
+    <p class="lead">Nobody writes <i>"turn on the stove"</i> — not from carelessness, but because your brain already knows how tea works and patches the hole silently.<br><br>
+    The step you never questioned is the step you never wrote.<br><br>
+    <b>That is the entire argument for code review and tests:</b> a second brain that doesn't share your assumptions.</p>
+  </section>
+
+  <!-- 7 — Where & when -->
+  <section class="slide">
+    <div class="kicker">🧭 Where &amp; when</div>
+    <h2>A real login screen</h2>
+    <pre>check email isn't empty      ← exact: which box? what is "empty"?
+check password isn't empty
+send both to the server
+WAIT for the answer          ← complete: drop this and home opens
+                                too early, before the server replies
+if correct → home screen     ← ordered: check before you send
+if wrong   → red error</pre>
+  </section>
+
+  <!-- 8 — When NOT to -->
+  <section class="slide">
+    <div class="kicker">🧭 When NOT to — the senior signal</div>
+    <h2>Knowing when not to write it</h2>
+    <ul>
+      <li><b>When you'll do it twice.</b> Automating a rare task is a net loss — the program still has to be maintained.</li>
+      <li><b>When it needs judgement, not rules.</b> If you can't say the rules out loud, you can't write them down.</li>
+      <li><b>When a tool already exists.</b> The fastest program is the one someone else wrote.</li>
+      <li><b>From scratch, step 1 is not code</b> — it's writing the steps in plain English.</li>
+    </ul>
+  </section>
+
+  <!-- 9 — Q&A -->
+  <section class="slide">
+    <div class="kicker">🎤 Q&amp;A recall</div>
+    <h2>Test your understanding</h2>
+    <ul>
+      <li><b>Q:</b> What is a program?</li>
+      <li><b>A:</b> An ordered sequence of unambiguous instructions a machine executes <i>literally</i> — it supplies no intent of its own, so anything left implicit becomes a defect.</li>
+      <li><b>Q:</b> Why do experienced developers still write bugs?</li>
+      <li><b>A:</b> The gaps are invisible to the author — domain knowledge patches them silently, exactly like never writing "turn on the stove."</li>
+    </ul>
+  </section>
+
+  <!-- 10 — Recap -->
+  <section class="slide">
+    <div class="kicker">Recap</div>
+    <h2>What we locked in</h2>
+    <ul>
+      <li>A program = instructions followed literally, in order, with no guessing.</li>
+      <li>Exact · Complete · Ordered — every bug is one of these three.</li>
+      <li>Your brain hides your own gaps. That's why review and tests exist.</li>
+      <li><b>Next:</b> <code>println</code> — your first real instruction.</li>
+    </ul>
+    <p class="lead" style="margin-top:26px"><span class="tag">End of topic</span></p>
+  </section>
+
+</div>
+
+<div class="bar" id="bar"></div>
+<div class="count" id="count">1 / 10</div>
+<div class="ctrl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+
+<script>
+  var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
+  var bar=document.getElementById('bar'), count=document.getElementById('count');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    bar.style.width=((i+1)/slides.length*100)+'%';count.textContent=(i+1)+' / '+slides.length;}
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1)}
+    else if(e.key==='ArrowLeft'){show(i-1)}
+    else if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}});
+  show(0);
+</script>
+</body>
+</html>

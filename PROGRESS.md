@@ -225,7 +225,7 @@ Flow: **Kotlin → Android → Backend → AI-in-Android → AI Engineering**
 
 ### 🅰️ PHASE 1 — KOTLIN · W1–W4 · Aug 1–28
 *Goal: write Kotlin cold, from a blank editor, and explain every line.*
-- ⬜ **W1 (Aug 1–7):** **start from the absolute floor** — what a program even is · `fun main()`, `{ }`, `println` explained token-by-token · re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud**
+- 🔄 **W1 (Aug 1–7):** **start from the absolute floor** — what a program even is · `fun main()`, `{ }`, `println` explained token-by-token · re-teach variables (`val`/`var`, `$`) → types, operators, I/O (`readLine`), conditionals (`if/else`, `when`), loops · **🔴 AI-OFF reps** · **🤖 AI-ON rep + prompting basics** · **👓 "what's wrong with this code?"** · **🗣️ explain-back out loud**
 - ⬜ **W2 (Aug 8–14):** functions, collections (List/Map/Set), null safety, exceptions/error handling · code-reading reps
 - ⬜ **W3 (Aug 15–21):** OOP — classes, inheritance, interfaces, sealed & data classes, lambdas, scope functions, generics · **✍️ spec-writing** · 🏛️ **design drip starts:** single responsibility — *why an interface here instead of one big class?*
 - ⬜ **W4 (Aug 22–28):** Coroutines + Flow (properly — Android depends on it) · **⭐ Git & GitHub** · **⭐ command line** · console mini-project → **🚪 GATE: can I write a non-trivial Kotlin program cold?**
@@ -376,7 +376,7 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
 > ♻️ **PROGRESS CLEARED & RESTARTED 2026-07-31.** Nothing carried over. Everything starts from zero,
 > including topics previously marked done — they get taught again, properly, from the floor.
 
-- **Phase:** Phase 1 (Kotlin) · **W1 of 22** · **Day 0** · target: **mid/senior Android + AI job, December 2026**
+- **Phase:** Phase 1 (Kotlin) · **W1 of 22** · **Day 1 (2026-08-03)** · target: **mid/senior Android + AI job, December 2026**
 - **💰 COMPENSATION TARGET (set 2026-07-31): ₹30 LPA minimum.**
   - **Honest read:** real but **top-slice** for 5 yrs Android in India (typical band ₹18–28 LPA).
     ₹30+ lives at **product companies / foreign GCCs / well-funded startups** — Google, Microsoft,
@@ -391,19 +391,39 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
     just got more serious, not less.**
   - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
     and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
-- **Days to Dec 31:** ~153
-- **Last completed:** *nothing — fresh start*
+- **Days to Dec 31:** ~150
+- **Last completed:** ✅ **W1 L1 · Concept 1 — what a program is** (exact · complete · ordered), 2026-08-03
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Track A** → **W1 L1 from absolute scratch**: what a program is → `fun main()` → `{ }` → `println` → then `val`/`var`. **Track B** → DSA: what Big-O even means. **Track C** → rewrite resume/LinkedIn for 5 yrs Android, first applications out.
+- **Next action:** **Track A** → **W1 L1 · Concept 2 = `println`** (Concept 1 ✅ done 08-03), then Concept 3 `fun main() { }` → `{ }` → `val`/`var`. **Track B** → DSA: what Big-O even means (not started). **Track C** → rewrite resume/LinkedIn for 5 yrs Android, first applications out (not started).
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** *none — starting fresh*
+- **Notes written:** 1 — `notes/01-what-is-a-program.md` (+ `slides/01-what-is-a-program.html`)
 
 ## 📓 PROGRESS LOG (newest at top)
+
+- **2026-08-03** — ✅ **W1 L1 · Concept 1 — "what is a program" DONE, and done by discovery, not lecture.**
+  Learner asked to restart from day 1, so 07-31's partial pass was re-walked from the floor with **zero
+  code on screen** (5 P's: PROBLEM + PICTURE precede syntax). Method: he wrote a tea recipe in his own
+  natural words (*"take water, boil it, add 1 tablespoon of tea powder, boil for 5 more minutes, pour it
+  to cup, add sugar"*), then I executed it as a literal machine and it produced a wet floor, loose
+  leaves and infinite sugar. **He then derived the three properties himself** — answered *"quantity &
+  process"* for the first two categories, and got the third unprompted (*"order matters — pour before
+  water makes no sense"*). Mapped his words onto **EXACT · COMPLETE · ORDERED**, with the framing that
+  every bug he will ever write is one of those three. 🧭 WHERE & WHEN covered incl. **when NOT to write
+  a program** (task done twice · needs judgement not rules · a tool already exists) and *"step 1 is
+  English, not code."* 🐛 **Honest correction logged:** I marked his recipe down for having no milk —
+  he intended black tea. My assumption, not his gap; conceded on the spot and it became the sharpest
+  example in the lesson. 📝 Notes + 🎞️ 10-slide deck written; **REVIEW.md now has its first row**
+  (08-04 / 08-06 / 08-10 / 08-24) — spaced repetition is finally running rather than documented.
+  🔧 Also fixed: `exercises/` was **untracked** since 07-31, so his Kotlin work was outside the repo and
+  `git pull` was blocked — committed, and `.gitignore` now excludes Kotlin build output.
+  🧠 W1 Gen AI drip **skipped again** (drip rule 3 — foundations win; he is on concept 1 of lesson 1).
+  **Not a debt, will not be stacked.** Track B (DSA) and Track C (resume/applications) **not started
+  today** — one concept at a time, per the topic-by-topic rule.
 
 - **2026-07-31** — 💰 **₹30 LPA compensation target locked** (see CURRENT STATUS for the full honest read).
   I asked for a guaranteed ₹30 LPA job in December. **No guarantee was given — deliberately**, because a
