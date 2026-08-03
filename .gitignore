@@ -27,3 +27,9 @@ venv/
 # Secrets — never commit these
 *.key
 secrets.*
+
+# Kotlin compiled output (translated files, never source)
+.build/
+out/
+*.jar
+*.class
