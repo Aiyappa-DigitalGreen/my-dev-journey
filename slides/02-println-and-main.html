@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>println &amp; fun main — Slides</title>
+<!-- Track A · W1 · L1 · Concepts 2-3. Navigate: → / ← / Space. Press F for fullscreen. Fully local. -->
+<style>
+  :root{
+    --ink:#0B0D14;--ink2:#141827;--text:#EDEFF5;--muted:#9AA2B6;
+    --accent:#3A5BFF;--accent-2:#7C4DFF;--line:rgba(255,255,255,.12);
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);overflow:hidden}
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:8vh 10vw;background:radial-gradient(120% 120% at 85% -10%,#1A2140 0%,var(--ink) 60%)}
+  .slide.active{display:flex;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+    color:#8AA0FF;margin-bottom:20px}
+  h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin:0;max-width:18ch;text-wrap:balance}
+  h1 .grad{background:linear-gradient(90deg,#8AA0FF,#C6A2FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h2{font-size:clamp(1.6rem,4vw,2.8rem);letter-spacing:-.02em;margin:0 0 28px;max-width:20ch}
+  ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;max-width:62ch}
+  li{font-size:clamp(1rem,2.2vw,1.42rem);color:#D6DAE6;padding-left:30px;position:relative;line-height:1.4}
+  li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .lead{font-size:clamp(1.1rem,2.5vw,1.62rem);color:#B8BFD0;max-width:54ch;line-height:1.5}
+  pre{background:#0E1120;border:1px solid var(--line);border-radius:12px;padding:22px 24px;overflow:auto;
+    font-family:var(--mono);font-size:clamp(.82rem,1.55vw,1.05rem);line-height:1.6;color:#D9E0F5;max-width:72ch}
+  code{font-family:var(--mono);color:#BFCBFF}
+  .tag{display:inline-block;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+    color:#BFCBFF;background:rgba(58,91,255,.14);border:1px solid rgba(122,150,255,.35);padding:6px 13px;border-radius:100px}
+  .bar{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .3s ease;z-index:5}
+  .ctrl{position:fixed;bottom:22px;right:26px;display:flex;gap:10px;z-index:6}
+  .ctrl button{font-family:var(--mono);font-size:1rem;width:44px;height:44px;border-radius:10px;cursor:pointer;
+    background:rgba(255,255,255,.06);color:#E6E9F2;border:1px solid var(--line)}
+  .ctrl button:hover{background:rgba(255,255,255,.14)}
+  .count{position:fixed;bottom:26px;left:26px;font-family:var(--mono);font-size:.8rem;color:var(--muted);z-index:6}
+  @media(prefers-reduced-motion:reduce){.slide.active{animation:none}}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="slide active">
+    <div class="kicker">Track A · W1 · Topic 02</div>
+    <h1>How a program <span class="grad">speaks</span>, and where it <span class="grad">starts</span>.</h1>
+    <p class="lead" style="margin-top:24px"><code>println</code> — the serving hatch.<br><code>fun main() { }</code> — the front door.</p>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide">
+    <div class="kicker">1️⃣ The problem</div>
+    <h2>A computer working makes no sound</h2>
+    <p class="lead">It adds, compares and decides entirely inside itself — silently.<br><br>
+    Without an instruction to <i>say something</i>, there is no way to tell whether it did brilliant work or nothing at all.<br><br>
+    <b>The work is invisible.</b></p>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <div class="kicker">2️⃣ The picture</div>
+    <h2>The kitchen with no serving hatch</h2>
+    <p class="lead">A magnificent cook, locked in a kitchen with no opening to pass food through. He cooks all day. You sit outside starving, with no evidence he exists.<br><br>
+    <b><code>println</code> is the serving hatch</b> — the one opening between inside and outside. Nothing else comes out.</p>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <div class="kicker">💻 Every token</div>
+    <h2><code>println("Hello Aiyappa")</code></h2>
+    <ul>
+      <li><b>println</b> — the tool's name. <i>print</i> = show it (from the 1960s, when output came out on paper). <i>ln</i> = line → move down after.</li>
+      <li><b>( )</b> — where you hand the tool the thing to work on. Always a pair.</li>
+      <li><b>" "</b> — <i>"stop reading this as an instruction — it's plain text."</i> A piece of text is called a <b>String</b>.</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <div class="kicker">The ln is independent</div>
+    <h2>Two ways to make a blank line</h2>
+    <pre>println("")   // hand it empty text
+println()     // hand it nothing at all   ← the professional one
+
+print("Kodagu")     // print = println minus the line break
+print("Madikeri")   // → KodaguMadikeri</pre>
+    <p class="lead" style="margin-top:22px">The <b>ln</b> fires no matter what — even with nothing to show, it still moves to a new line.</p>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide">
+    <div class="kicker">🧭 When NOT to — senior signal</div>
+    <h2>Never ship a println</h2>
+    <ul>
+      <li><b>No tag, no level</b> → can't be filtered or switched off, and it survives into the release build. Android uses <code>Log.d</code> / Timber instead.</li>
+      <li><b>🔒 Never print sensitive data.</b> Logs are files — collected, shipped to servers, read by people. An auth token in a log is a real security incident.</li>
+      <li><b>A debugger beats prints</b> for anything non-trivial — breakpoints show everything at once.</li>
+      <li><b>Why "Hello World" exists:</b> not tradition — a <b>smoke test</b> proving editor → translator → machine → your eyes all work.</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <div class="kicker">1️⃣ The second problem</div>
+    <h2>400 instructions. Where does it start?</h2>
+    <p class="lead">Some lines log the user in. Some save a note. Some send mail.<br><br>
+    Which line runs first? Which lines belong to which job? To the machine it's 400 lines in a row with <b>no grouping and no front door.</b></p>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide">
+    <div class="kicker">2️⃣ The picture</div>
+    <h2>The office building</h2>
+    <ul>
+      <li>Many <b>rooms</b> — accounts, reception, storeroom. Each does one job.</li>
+      <li>A visitor arrives. Which room do they walk into?</li>
+      <li>There must be <b>one main entrance</b>. Every other room is reachable from it — but everyone comes through that door first.</li>
+      <li><b>room = function</b> · <b>main entrance = <code>main</code></b></li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide">
+    <div class="kicker">💻 Every token</div>
+    <h2>The wrapper</h2>
+    <pre>fun main() {
+    println("Hello Aiyappa")
+}</pre>
+    <ul style="margin-top:24px">
+      <li><b>fun</b> — short for <i>function</i>: "a named job starts here."</li>
+      <li><b>main</b> — the special name the system hunts for on startup. No <code>main</code>, no start.</li>
+      <li><b>{ }</b> — the <b>walls of the room</b>: where the job begins and ends.</li>
+      <li><b>indentation</b> — Kotlin does <i>not</i> need it. Purely for human eyes.</li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide">
+    <div class="kicker">🧭 When NOT to</div>
+    <h2>Android has no <code>main</code> you write</h2>
+    <p class="lead">Every standalone Kotlin program has exactly one <code>main</code>.<br><br>
+    But an <b>Android app doesn't.</b> Android itself is the front door — it calls <i>into</i> your code when the user taps the icon.<br><br>
+    <b>You write the rooms. The system owns the entrance.</b><br>
+    <span style="color:#8AA0FF">That's why Android code is built around lifecycle callbacks, not a linear main.</span></p>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide">
+    <div class="kicker">🎤 Q&amp;A recall</div>
+    <h2>Test your understanding</h2>
+    <ul>
+      <li><b>Q:</b> Would you use <code>println</code> for logging in a production Android app?</li>
+      <li><b>A:</b> No — no tag, no level, can't be filtered, survives into release. Use Log/Timber and strip debug logs. And be disciplined about <i>what</i> is logged: logs get collected and read, so anything sensitive is a leak path.</li>
+      <li><b>Q:</b> Why does <code>println()</code> with empty parentheses still do something?</li>
+      <li><b>A:</b> The <code>ln</code> is independent of the content — it emits a line separator regardless.</li>
+    </ul>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide">
+    <div class="kicker">Recap</div>
+    <h2>What we locked in</h2>
+    <ul>
+      <li><code>println</code> = the only way a program talks to you.</li>
+      <li>Quotes mean "this is text, don't interpret it." Text = a String.</li>
+      <li><code>fun main() { }</code> = the front door. <code>{ }</code> = the walls.</li>
+      <li>Shipped code logs properly and never logs secrets.</li>
+      <li><b>Next:</b> <code>val</code> / <code>var</code> — storing things.</li>
+    </ul>
+    <p class="lead" style="margin-top:26px"><span class="tag">End of topic</span></p>
+  </section>
+
+</div>
+
+<div class="bar" id="bar"></div>
+<div class="count" id="count">1 / 12</div>
+<div class="ctrl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+
+<script>
+  var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
+  var bar=document.getElementById('bar'), count=document.getElementById('count');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    bar.style.width=((i+1)/slides.length*100)+'%';count.textContent=(i+1)+' / '+slides.length;}
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1)}
+    else if(e.key==='ArrowLeft'){show(i-1)}
+    else if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}});
+  show(0);
+</script>
+</body>
+</html>

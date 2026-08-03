@@ -392,19 +392,44 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
   - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
     and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
 - **Days to Dec 31:** ~150
-- **Last completed:** ✅ **W1 L1 · Concept 1 — what a program is** (exact · complete · ordered), 2026-08-03
+- **Last completed:** ✅ **W1 L1 · Concepts 1–3** — what a program is (exact · complete · ordered) · `println` · `fun main() { }`. First working Kotlin program written + run: `exercises/w1/02_output.kt`. 2026-08-03
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Track A** → **W1 L1 · Concept 2 = `println`** (Concept 1 ✅ done 08-03), then Concept 3 `fun main() { }` → `{ }` → `val`/`var`. **Track B** → DSA: what Big-O even means (not started). **Track C** → rewrite resume/LinkedIn for 5 yrs Android, first applications out (not started).
+- **Next action:** **Track A** → ⚠️ **FIRST: finish the open 👓 code-review rep** (3 broken programs — `println` outside braces · missing `}` · no `main`; see REVIEW.md), **THEN** Concept 4 = `val`/`var` + `$`. **Track B** → DSA: what Big-O even means (**not started — 0 days in**). **Track C** → rewrite resume/LinkedIn for 5 yrs Android, first applications out (**not started — 0 days in**).
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** 1 — `notes/01-what-is-a-program.md` (+ `slides/01-what-is-a-program.html`)
+- **Notes written:** 2 — `notes/01-what-is-a-program.md` · `notes/02-println-and-main.md` (+ matching slide decks)
 
 ## 📓 PROGRESS LOG (newest at top)
 
+- **2026-08-03** — ✅ **W1 L1 · Concepts 2 & 3 — `println` and `fun main() { }`. First working Kotlin program, written and run.**
+  `println` taught as **the serving hatch** on a windowless kitchen (a computer working makes no sound —
+  the work is invisible until you tell it to speak). Every token: `println` (`print` from 1960s paper
+  printers + `ln` = line) · `( )` · `" "` · the word **String**. 🎯 **Two signals he's understanding, not
+  following:** (1) asked to predict output he volunteered *"& at end cursor will be in next line"* — he
+  derived the trailing newline from the name, unprompted; (2) for the blank-line exercise he wrote
+  **`println()`** with empty parentheses, the form a professional uses, having only been shown parentheses
+  described as "where you hand something over." He applied the `ln` rule to a case never demonstrated.
+  Told him so explicitly, per the discovery-learning note — he should learn to recognise that feeling.
+  🧭 WHERE & WHEN incl. the three senior reasons to **never ship a `println`** (no tag/level → unfilterable
+  and survives release · **🔒 logs are files that get collected and read, so a token in a log is a real
+  security incident** · a debugger beats prints), and *why Hello World exists — it's a **smoke test**, not
+  a tradition*. Then `fun main() { }` via the **office building** (many rooms = functions, one main
+  entrance = `main`, `{ }` = the walls of the room, indentation = for humans only, Kotlin doesn't need it).
+  **WHEN NOT:** an Android app has no `main` he ever writes — the framework owns the entrance, which is
+  why Android is lifecycle callbacks rather than a linear `main`. ✅ **He wrote `exercises/w1/02_output.kt`
+  and ran it via `run.sh`; output verified correct, blank line and all.** Taught him `nano` for this
+  (Cursor is installed, but its autocomplete would defeat an 🔴 AI-OFF rep).
+  ⚠️ **Two honest gaps logged rather than papered over:** (a) he built the file by copying `01_hello.kt`
+  and swapping the middle, so `fun main()` came from the old file and **isn't in his fingers yet**;
+  (b) the 👓 **"what's wrong with this code?" rep was issued but NOT completed** — session ended first.
+  It's carried in REVIEW.md and CURRENT STATUS and must be done **before** `val`/`var`, since it's the
+  actual test that the wrapper landed. 📝 Notes 02 + 12-slide deck written; REVIEW.md row added.
+  **Track B (DSA) and Track C (resume/applications) still at zero after day 1** — stated plainly here
+  because both are daily tracks and this is exactly how they quietly never start.
 - **2026-08-03** — ✅ **W1 L1 · Concept 1 — "what is a program" DONE, and done by discovery, not lecture.**
   Learner asked to restart from day 1, so 07-31's partial pass was re-walked from the floor with **zero
   code on screen** (5 P's: PROBLEM + PICTURE precede syntax). Method: he wrote a tea recipe in his own

@@ -16,8 +16,15 @@ due date. When all four are ticked ✅, the concept is durable.
 | Topic | Learned | +1 day | +3 days | +7 days | +21 days |
 |-------|---------|:------:|:-------:|:-------:|:--------:|
 | **01 · What is a program?** (exact · complete · ordered) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
+| **02 · `println` + `fun main() { }`** (hatch · front door · walls) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 
 ---
 ### Quick recall log (optional)
 Jot how a review went so we know what needs more work.
 - _(e.g. "2026-07-05 — recalled val vs var easily; forgot what `when` does → reviewed again")_
+- **2026-08-03** — Day 1. Derived exact/complete/ordered himself from a failed tea recipe. Understood
+  `ln` deeply enough to predict the trailing cursor position unprompted, and reached for `println()`
+  (empty parens) for a blank line without being shown it. Strong first day.
+  ⚠️ **Open, carried to next session:** the 👓 "what's wrong with this code?" rep — three broken
+  programs (`println` outside the braces · missing `}` · a file with no `main`). Do this *before*
+  starting `val`/`var`; it's the real test that the wrapper concept landed.
