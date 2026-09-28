@@ -392,19 +392,33 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
   - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
     and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
 - **Days to Dec 31:** ~150
-- **Last completed:** ✅ **W1 L1 · Concepts 1–5** — what a program is (exact · complete · ordered) · `println` · `fun main() { }` · `val`/`var` · string templates `$`. 4 working programs in `exercises/w1/`. Plus 👓 code-review rep (3/3) and 🔄 **Track B day 1: Big-O — intuition landed, symbols did not.** 2026-08-03
+- **Last completed:** ✅ **Backend · Auth Concept 1 — why tokens exist** (stateless server · wristband · token ≠ encrypted password) · 2026-09-28. *(Previous: W1 L1 Concepts 1–6, 2026-08-03.)*
+- **🔀 PLAN REORDER (his call, 2026-09-28):** after an 8-week gap he asked to start **Backend with Authentication, from scratch**. Auth pulls forward from W12. Kotlin W1 is **paused, not done** — nothing in W1 is ticked. Dates in the 22-week table are now stale; re-plan honestly when he's ready.
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Track A** → W1 Concept 7 = **operators** (`+ - * / %`, comparison, `&&`/`||`), then `readLine` (real user input — and the `"251"` bug becomes real there) → `if/else`/`when` → loops. Also still unspent in W1: 🤖 **AI-ON rep + prompting basics** and 🗣️ **explain-back out loud** (he has not yet done one aloud). **Track B** → ⚠️ **re-open Big-O first** (see REVIEW.md — the already-sorted = `O(1)` point is still wrong in his head), then arrays. **Track C** → ⏸️ **blocked on his intake** — resume must be **rewritten from scratch** (`portfolio/resume.html` is a fake-project template, see log below). Ask for **header details + ONE job** to start, not an essay. (**0 days in — flag this every session.**)
+- **Next action:** **Auth Concept 2 = Authentication ("who are you?") vs Authorization ("what may you do?")** — still no code. Planned auth sequence (one per session): 1 ✅ why tokens → 2 authn vs authz → 3 passwords: plaintext is catastrophic → hashing + salt (bcrypt/argon2) → 4 sessions & cookies → 5 tokens/JWT (signed not encrypted, expiry, refresh, why JWT logout is hard) → 6 🎓 senior layer (Android token storage/Keystore, OAuth/Google sign-in overview, brute force + rate limiting). **Before first code:** decide language — Python/FastAPI (plan's W10 pick) vs Kotlin/Ktor; either needs `if`/functions taught token-by-token first. Warm-up next session: +1 review of 06 (check "token is not encrypted password"). Kotlin reviews 01–05 overdue → compressed re-teach when Kotlin resumes. **Track C** still blocked on resume intake.
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** 5 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` (+ 5 matching slide decks)
+- **Notes written:** 6 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` · `06-why-tokens-exist` (+ 6 matching slide decks)
 
 ## 📓 PROGRESS LOG (newest at top)
 
+- **2026-09-28** — 🔀 **BACKEND STARTED (out of order, his request) · Auth Concept 1 — why tokens exist.**
+  First session after an **8-week gap** (last: 08-03). He asked to learn backend from scratch starting
+  with Authentication; honoured it and flagged the reorder (Auth was W12). Taught pre-code, 5 P's:
+  client/server/request defined → **stateless server** problem (forgetful waiter) → club bouncer puzzle.
+  He answered "ask for the bill" (✅ proof of payment) and "store my password, send it" (⚠️ works —
+  it's Basic Auth — but multiplies exposure). 🏆 **Then derived the core principle himself:** *"wristband
+  contains no details, just a way to get in, so if lost, no problem"* → named it (cheap-to-lose
+  credential instead of the secret) + table: scope / expiry / revocable. Explain-back was solid
+  (password once → token → validated each request → deletion makes it useless) with **one real
+  misconception: "token = encrypted password"** — corrected: random string, nothing to decrypt.
+  Missing in his explain-back: leading with the *why* (stateless). 2 interview Q&As given
+  (password vs token · "HTTP is stateless"). Notes/slides `06-why-tokens-exist`. Kotlin reviews 01–05
+  overdue — deliberately not forced today. Language choice (FastAPI vs Ktor) deferred until code.
 - **2026-08-03** — ✅ **W1 L1 · Concept 6 — types. Two senior rules landed on day one.**
   Opened by asking him to **predict** `5 + 3` vs `"5" + "3"` before any explanation — he got `8` and
   `53` and used the word *concatenates* unprompted. Built the concept off his own answer: **`+` has no

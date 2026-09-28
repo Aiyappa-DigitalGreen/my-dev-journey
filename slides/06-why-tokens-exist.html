@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Tokens Exist — Slides</title>
+<!-- WORKSHOP SLIDES TEMPLATE. Copy this file to slides/<NN>-<slug>.html and fill the <section> slides.
+     Navigate: → / ← / Space, or click arrows. Press F for fullscreen. Fully local, no internet needed. -->
+<style>
+  :root{
+    --ink:#0B0D14;--ink2:#141827;--text:#EDEFF5;--muted:#9AA2B6;
+    --accent:#3A5BFF;--accent-2:#7C4DFF;--line:rgba(255,255,255,.12);
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);overflow:hidden}
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+    padding:8vh 10vw;background:radial-gradient(120% 120% at 85% -10%,#1A2140 0%,var(--ink) 60%)}
+  .slide.active{display:flex;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+    color:#8AA0FF;margin-bottom:20px}
+  h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.05;letter-spacing:-.03em;margin:0;max-width:18ch;text-wrap:balance}
+  h1 .grad{background:linear-gradient(90deg,#8AA0FF,#C6A2FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h2{font-size:clamp(1.6rem,4vw,2.8rem);letter-spacing:-.02em;margin:0 0 28px;max-width:20ch}
+  ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;max-width:60ch}
+  li{font-size:clamp(1.05rem,2.3vw,1.5rem);color:#D6DAE6;padding-left:30px;position:relative;line-height:1.4}
+  li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+  .lead{font-size:clamp(1.15rem,2.6vw,1.7rem);color:#B8BFD0;max-width:52ch;line-height:1.5}
+  pre{background:#0E1120;border:1px solid var(--line);border-radius:12px;padding:22px 24px;overflow:auto;
+    font-family:var(--mono);font-size:clamp(.85rem,1.6vw,1.1rem);line-height:1.6;color:#D9E0F5;max-width:70ch}
+  .tag{display:inline-block;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+    color:#BFCBFF;background:rgba(58,91,255,.14);border:1px solid rgba(122,150,255,.35);padding:6px 13px;border-radius:100px}
+  /* chrome */
+  .bar{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width .3s ease;z-index:5}
+  .ctrl{position:fixed;bottom:22px;right:26px;display:flex;gap:10px;z-index:6}
+  .ctrl button{font-family:var(--mono);font-size:1rem;width:44px;height:44px;border-radius:10px;cursor:pointer;
+    background:rgba(255,255,255,.06);color:#E6E9F2;border:1px solid var(--line)}
+  .ctrl button:hover{background:rgba(255,255,255,.14)}
+  .count{position:fixed;bottom:26px;left:26px;font-family:var(--mono);font-size:.8rem;color:var(--muted);z-index:6}
+  @media(prefers-reduced-motion:reduce){.slide.active{animation:none}}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <section class="slide active">
+    <div class="kicker">Backend · Auth · Topic 06</div>
+    <h1>Why <span class="grad">tokens</span> exist.</h1>
+    <p class="lead" style="margin-top:24px">The forgetful server, the club wristband, and why your password should travel only once.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Three words first</div>
+    <h2>Client · Server · Request</h2>
+    <ul>
+      <li><b>Client</b>: the thing that asks (the Swiggy app on your phone).</li>
+      <li><b>Server</b>: a computer elsewhere that answers (Swiggy's data centre).</li>
+      <li><b>Request</b>: one message from client to server ("show my past orders").</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">1 · The problem</div>
+    <h2>The server forgets you after every request</h2>
+    <ul>
+      <li>Request 1: "I'm Aiyappa + password" → ✅ welcome</li>
+      <li>Request 2, one second later: "show my orders" → 🤷 who are you?</li>
+      <li>Official word: <b>stateless</b>, meaning no memory between requests.</li>
+      <li>Naive fix: send the password every tap → about 1,000 exposures a week.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">2 · The picture</div>
+    <h2>The club wristband 🎟️</h2>
+    <p class="lead">Pay and show ID <b>once</b> at the door. Get a wristband. Any bouncer lets you back in. You never hand over your wallet again.</p>
+    <p class="lead" style="margin-top:20px;color:#C6A2FF">Hand over something cheap to lose instead of the valuable secret.</p>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Password vs token</div>
+    <h2>Why the wristband is safer</h2>
+    <ul>
+      <li><b>Where:</b> password often reused everywhere → token works for one service only.</li>
+      <li><b>How long:</b> password lasts years → token <b>expires</b>.</li>
+      <li><b>If stolen:</b> change the password everywhere → the server just <b>cancels</b> the token.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">The flow</div>
+    <h2>Log in once, show the token every time after</h2>
+    <pre>1. LOGIN (once)
+   App → Server : email + password
+   Server checks ✅  →  App : token "a7f3k9x2..."
+
+2. EVERY TAP AFTER
+   App → Server : "show my orders" + token
+   Server : valid token → it's Aiyappa ✅</pre>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">⚠️ Misconception</div>
+    <h2>A token is NOT an encrypted password</h2>
+    <ul>
+      <li>It's a <b>new random string</b> the server invents.</li>
+      <li>An encrypted password can be decrypted back. A token has no password inside.</li>
+      <li>Steal the wristband and you learn nothing about the wallet.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">🧭 Where &amp; when</div>
+    <h2>When to reach for it, and when not to</h2>
+    <ul>
+      <li><b>Where:</b> every logged-in app (Swiggy, Instagram, banking).</li>
+      <li><b>When:</b> the server must know <i>who</i> sent each request after login.</li>
+      <li><b>When NOT:</b> public data anyone can read needs no identity and no token.</li>
+      <li><b>From scratch:</b> step 1 is a login endpoint that checks the password and returns a token.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">🎤 Q&amp;A recall</div>
+    <h2>Interview check</h2>
+    <ul>
+      <li><b>Q:</b> Password vs token?</li>
+      <li><b>A:</b> A token is issued after the password is verified. It's random, scoped to one service, short-lived and revocable. The password crosses the network once.</li>
+      <li><b>Q:</b> What does "HTTP is stateless" mean?</li>
+      <li><b>A:</b> No memory between requests, so each request must prove who it's from. A token does that safely.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="kicker">Recap</div>
+    <h2>What we locked in</h2>
+    <ul>
+      <li>Servers are stateless. They forget you every request.</li>
+      <li>Token = wristband: cheap to lose, expires, can be cancelled.</li>
+      <li>Next: Authentication ("who are you?") vs Authorization ("what may you do?").</li>
+    </ul>
+    <p class="lead" style="margin-top:26px"><span class="tag">End of topic</span></p>
+  </section>
+
+</div>
+
+<div class="bar" id="bar"></div>
+<div class="count" id="count">1 / 10</div>
+<div class="ctrl"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+
+<script>
+  var slides=[].slice.call(document.querySelectorAll('.slide')), i=0;
+  var bar=document.getElementById('bar'), count=document.getElementById('count');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    bar.style.width=((i+1)/slides.length*100)+'%';count.textContent=(i+1)+' / '+slides.length;}
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1)}
+    else if(e.key==='ArrowLeft'){show(i-1)}
+    else if(e.key.toLowerCase()==='f'){if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}else{document.exitFullscreen()}}});
+  show(0);
+</script>
+</body>
+</html>

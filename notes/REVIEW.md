@@ -20,6 +20,7 @@ due date. When all four are ticked ✅, the concept is durable.
 | **03 · `val`/`var` + string templates `$`** (jars · default to val · certificate) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **04 · Big-O basics** 🔄 *intuition only — symbols NOT solid* (Track B) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **05 · Types** (photo of ₹500 · digits≠number · never Double for money) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
+| **06 · Why tokens exist** (forgetful/stateless server · wristband · token ≠ encrypted password) — Backend/Auth | 2026-09-28 | ⬜ 09-29 | ⬜ 10-01 | ⬜ 10-05 | ⬜ 10-19 |
 
 ---
 ### Quick recall log (optional)
@@ -45,3 +46,8 @@ Jot how a review went so we know what needs more work.
   this specific point at the next review.**
   **Method note for future sessions: dense tables lose him. One scene at a time, his own examples,
   no symbols until the intuition is load-bearing.**
+- **2026-09-28** — ⏸️ **8-week gap** since 08-03; rows 01–05 are all overdue → per the Learning Gap
+  Protocol, give them a *compressed re-teach*, not a cold quiz, when Kotlin resumes.
+  ✅ Auth Concept 1 (why tokens exist) landed: he derived *"wristband has no details, losing it is no
+  problem"* himself. ⚠️ Watch at +1 day: he called the token *"an encrypted password"* — corrected
+  (random string, nothing to decrypt). Re-check that exact point.
