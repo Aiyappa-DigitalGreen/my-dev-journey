@@ -21,6 +21,7 @@ due date. When all four are ticked ✅, the concept is durable.
 | **04 · Big-O basics** 🔄 *intuition only — symbols NOT solid* (Track B) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **05 · Types** (photo of ₹500 · digits≠number · never Double for money) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **06 · Why tokens exist** (forgetful/stateless server · wristband · token ≠ encrypted password) — Backend/Auth | 2026-09-28 | ⬜ 09-29 | ⬜ 10-01 | ⬜ 10-05 | ⬜ 10-19 |
+| **07 · AuthN vs AuthZ** (hotel: Name vs Zone · 401 vs 403 · IDOR = forgot ownership check) — Backend/Auth | 2026-09-28 | ⬜ 09-29 | ⬜ 10-01 | ⬜ 10-05 | ⬜ 10-19 |
 
 ---
 ### Quick recall log (optional)
@@ -51,3 +52,6 @@ Jot how a review went so we know what needs more work.
   ✅ Auth Concept 1 (why tokens exist) landed: he derived *"wristband has no details, losing it is no
   problem"* himself. ⚠️ Watch at +1 day: he called the token *"an encrypted password"* — corrected
   (random string, nothing to decrypt). Re-check that exact point.
+- **2026-09-28 (later)** — ✅ Auth Concept 2 (authN vs authZ) landed. His first instinct for the
+  second check was still token-shaped ("does the token belong to you"); after the two-check diagram his
+  explain-back was correct. Missed the 401/403 code in it → re-check at +1 day.

@@ -392,20 +392,28 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
   - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
     and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
 - **Days to Dec 31:** ~150
-- **Last completed:** ✅ **Backend · Auth Concept 1 — why tokens exist** (stateless server · wristband · token ≠ encrypted password) · 2026-09-28. *(Previous: W1 L1 Concepts 1–6, 2026-08-03.)*
+- **Last completed:** ✅ **Backend · Auth Concepts 1–2** — why tokens exist (stateless · wristband) + authN vs authZ (hotel · 401 vs 403 · IDOR) · 2026-09-28. *(Previous: W1 L1 Concepts 1–6, 2026-08-03.)*
 - **🔀 PLAN REORDER (his call, 2026-09-28):** after an 8-week gap he asked to start **Backend with Authentication, from scratch**. Auth pulls forward from W12. Kotlin W1 is **paused, not done** — nothing in W1 is ticked. Dates in the 22-week table are now stale; re-plan honestly when he's ready.
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Auth Concept 2 = Authentication ("who are you?") vs Authorization ("what may you do?")** — still no code. Planned auth sequence (one per session): 1 ✅ why tokens → 2 authn vs authz → 3 passwords: plaintext is catastrophic → hashing + salt (bcrypt/argon2) → 4 sessions & cookies → 5 tokens/JWT (signed not encrypted, expiry, refresh, why JWT logout is hard) → 6 🎓 senior layer (Android token storage/Keystore, OAuth/Google sign-in overview, brute force + rate limiting). **Before first code:** decide language — Python/FastAPI (plan's W10 pick) vs Kotlin/Ktor; either needs `if`/functions taught token-by-token first. Warm-up next session: +1 review of 06 (check "token is not encrypted password"). Kotlin reviews 01–05 overdue → compressed re-teach when Kotlin resumes. **Track C** still blocked on resume intake.
+- **Next action:** **Auth Concept 3 = passwords: plaintext storage is catastrophic → hashing + salt** — still no code. Planned auth sequence: 1 ✅ why tokens → 2 ✅ authn vs authz → 3 passwords: plaintext is catastrophic → hashing + salt (bcrypt/argon2) → 4 sessions & cookies → 5 tokens/JWT (signed not encrypted, expiry, refresh, why JWT logout is hard) → 6 🎓 senior layer (Android token storage/Keystore, OAuth/Google sign-in overview, brute force + rate limiting). **Before first code:** decide language — Python/FastAPI (plan's W10 pick) vs Kotlin/Ktor; either needs `if`/functions taught token-by-token first. Warm-up next session: +1 review of 06 + 07 (check "token is not encrypted password" and 401 vs 403). Open puzzle carried to C5: why doesn't Instagram log you out every 30 days? Kotlin reviews 01–05 overdue → compressed re-teach when Kotlin resumes. **Track C** still blocked on resume intake.
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** 6 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` · `06-why-tokens-exist` (+ 6 matching slide decks)
+- **Notes written:** 7 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` · `06-why-tokens-exist` · `07-authn-vs-authz` (+ 7 matching slide decks)
 
 ## 📓 PROGRESS LOG (newest at top)
 
+- **2026-09-28 (later)** — ✅ **Auth Concept 2 — authN vs authZ.** Follow-up first: *"what if I don't send the
+  token?"* → stranger → **401** → login screen; he predicted expired token = 401 himself (rule: missing/
+  expired/fake/cancelled all = no token). Planted the refresh-token puzzle for C5. Then the IDOR hook
+  (order #1001 → #1002 with a valid token): Q1 right; Q2 still token-shaped ("check token belongs to
+  you") → showed the two-check diagram (token→who vs data→owner). Hotel picture, N=Name/Z=Zone,
+  401 vs 403 table, IDOR named as a top real-world bug. Explain-back correct and well-structured
+  (opened from the student's misconception); missed stating 401/403 → model answer given.
+  3 interview Q&As (authN/authZ · 401/403 · IDOR). Notes/slides `07-authn-vs-authz`.
 - **2026-09-28** — 🔀 **BACKEND STARTED (out of order, his request) · Auth Concept 1 — why tokens exist.**
   First session after an **8-week gap** (last: 08-03). He asked to learn backend from scratch starting
   with Authentication; honoured it and flagged the reorder (Auth was W12). Taught pre-code, 5 P's:
