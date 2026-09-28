@@ -65,6 +65,23 @@ You don't hand over your **wallet** every time you re-enter.
 
 ---
 
+## ❓ His follow-up: "What if I don't send the token?"
+
+Take the wristband off → the bouncer treats you as a **stranger**. Same on the server:
+
+```
+App → Server : "show my orders"      (no token)
+Server → App : 401 Unauthorized      ("prove who you are first")
+App          : sends you to the Login screen
+```
+
+- **Rule:** missing · expired · fake · cancelled token → **all the same → 401 → log in again.** *(he predicted this himself)*
+- **Public data needs no token.** Swiggy's restaurant list loads while logged out.
+- **The app attaches the token automatically** to every request (one piece of code, e.g. a Retrofit interceptor — W8).
+- 🤔 **Open puzzle → Concept 5:** tokens expire in 30 days, so why doesn't Instagram log you out every month? *(hint: refresh token)*
+
+---
+
 ## 🧭 Where & When
 - **WHERE:** every logged-in app — Swiggy, Instagram, banking apps.
 - **WHEN:** any time a server must know *who* sent each request after login.
