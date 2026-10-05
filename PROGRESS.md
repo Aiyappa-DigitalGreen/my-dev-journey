@@ -392,20 +392,31 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
   - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
     and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
 - **Days to Dec 31:** ~150
-- **Last completed:** ✅ **Backend · Auth Concepts 1–2** — why tokens exist (stateless · wristband) + authN vs authZ (hotel · 401 vs 403 · IDOR) · 2026-09-28. *(Previous: W1 L1 Concepts 1–6, 2026-08-03.)*
+- **Last completed:** ✅ **Backend · Auth Concept 3 — passwords** (plain text ❌ → encryption ❌ key problem → hashing → salt → slow bcrypt/argon2) · 2026-10-05. *(Previous: Auth C1–2, 2026-09-28.)*
 - **🔀 PLAN REORDER (his call, 2026-09-28):** after an 8-week gap he asked to start **Backend with Authentication, from scratch**. Auth pulls forward from W12. Kotlin W1 is **paused, not done** — nothing in W1 is ticked. Dates in the 22-week table are now stale; re-plan honestly when he's ready.
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Auth Concept 3 = passwords: plaintext storage is catastrophic → hashing + salt** — still no code. Planned auth sequence: 1 ✅ why tokens → 2 ✅ authn vs authz → 3 passwords: plaintext is catastrophic → hashing + salt (bcrypt/argon2) → 4 sessions & cookies → 5 tokens/JWT (signed not encrypted, expiry, refresh, why JWT logout is hard) → 6 🎓 senior layer (Android token storage/Keystore, OAuth/Google sign-in overview, brute force + rate limiting). **Before first code:** decide language — Python/FastAPI (plan's W10 pick) vs Kotlin/Ktor; either needs `if`/functions taught token-by-token first. Warm-up next session: +1 review of 06 + 07 (check "token is not encrypted password" and 401 vs 403). Open puzzle carried to C5: why doesn't Instagram log you out every 30 days? Kotlin reviews 01–05 overdue → compressed re-teach when Kotlin resumes. **Track C** still blocked on resume intake.
+- **Next action:** **Auth Concept 4 = sessions & cookies** — where does the wristband live, and how does the server remember it? Still no code. Remaining sequence: 4 sessions & cookies → 5 tokens/JWT (signed not encrypted, expiry, refresh, why JWT logout is hard — carries the open Instagram-30-days puzzle) → 6 🎓 senior layer (Android token storage/Keystore, OAuth/Google sign-in, brute force + rate limiting). **Before first code:** decide language — Python/FastAPI vs Kotlin/Ktor; needs `if`/functions taught token-by-token first. **Warm-up next session:** +1 review of 08 — ⚠️ check he no longer says **"key"** for hash/salt (said it 4× today), and that salt is *not secret*. 06/07 +21 on 10-19: ask for the **numbers 401/403** (missed twice). Kotlin reviews 01–05 overdue → compressed re-teach when Kotlin resumes. **Track C** still blocked on resume intake.
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** 7 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` · `06-why-tokens-exist` · `07-authn-vs-authz` (+ 7 matching slide decks)
+- **Notes written:** 8 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` · `06-why-tokens-exist` · `07-authn-vs-authz` · `08-password-hashing-salt` (+ 8 matching slide decks)
 
 ## 📓 PROGRESS LOG (newest at top)
 
+- **2026-10-05** — ✅ **Auth Concept 3 — passwords: hashing + salt.** 7-day gap → compressed re-teach of 06+07
+  first. Recall: token≠encrypted password ✅ (misconception fixed); 401/403 names right but **numbers missing
+  again**. Then discovery: RockYou plain-text story → his first idea *"encrypt, decrypt at login"* (good
+  instinct → key-on-server problem, Adobe 2013) → after smoothie hint **he derived hashing himself**:
+  *"make the password I send encrypted too, if both match the password is same"*. Spotted the duplicate-hash
+  leak (crack one → both). Derived salt (*"add something extra"*), placed it in the login formula, got
+  "slow = hacker needs more time" (asymmetry added by me). ⚠️ **Gap: says "key" for hash/salt (4×)** → built a
+  key/hash/salt table. ⚠️ Said hashing stops "unauthorized access" → corrected (it makes stolen data useless).
+  Explain-back thin on first try; completed via 3 fill-in lines — all correct but short. Answers trending
+  very terse → next session, push for full sentences out loud. No drip (no code written yet, retrospective
+  rule). 3 interview Q&As. Notes/slides `08-password-hashing-salt`.
 - **2026-09-28 (later)** — ✅ **Auth Concept 2 — authN vs authZ.** Follow-up first: *"what if I don't send the
   token?"* → stranger → **401** → login screen; he predicted expired token = 401 himself (rule: missing/
   expired/fake/cancelled all = no token). Planted the refresh-token puzzle for C5. Then the IDOR hook

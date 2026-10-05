@@ -20,8 +20,9 @@ due date. When all four are ticked ✅, the concept is durable.
 | **03 · `val`/`var` + string templates `$`** (jars · default to val · certificate) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **04 · Big-O basics** 🔄 *intuition only — symbols NOT solid* (Track B) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
 | **05 · Types** (photo of ₹500 · digits≠number · never Double for money) | 2026-08-03 | ⬜ 08-04 | ⬜ 08-06 | ⬜ 08-10 | ⬜ 08-24 |
-| **06 · Why tokens exist** (forgetful/stateless server · wristband · token ≠ encrypted password) — Backend/Auth | 2026-09-28 | ⬜ 09-29 | ⬜ 10-01 | ⬜ 10-05 | ⬜ 10-19 |
-| **07 · AuthN vs AuthZ** (hotel: Name vs Zone · 401 vs 403 · IDOR = forgot ownership check) — Backend/Auth | 2026-09-28 | ⬜ 09-29 | ⬜ 10-01 | ⬜ 10-05 | ⬜ 10-19 |
+| **06 · Why tokens exist** (forgetful/stateless server · wristband · token ≠ encrypted password) — Backend/Auth | 2026-09-28 | ⏭️ 09-29 (missed) | ⏭️ 10-01 (missed) | ✅ 10-05 | ⬜ 10-19 |
+| **07 · AuthN vs AuthZ** (hotel: Name vs Zone · 401 vs 403 · IDOR = forgot ownership check) — Backend/Auth | 2026-09-28 | ⏭️ 09-29 (missed) | ⏭️ 10-01 (missed) | ✅ 10-05 | ⬜ 10-19 |
+| **08 · Passwords: hashing + salt** (smoothie · encryption ❌ key on server · salt not secret · slow bcrypt = asymmetry) — Backend/Auth | 2026-10-05 | ⬜ 10-06 | ⬜ 10-08 | ⬜ 10-12 | ⬜ 10-26 |
 
 ---
 ### Quick recall log (optional)
@@ -55,3 +56,7 @@ Jot how a review went so we know what needs more work.
 - **2026-09-28 (later)** — ✅ Auth Concept 2 (authN vs authZ) landed. His first instinct for the
   second check was still token-shaped ("does the token belong to you"); after the two-check diagram his
   explain-back was correct. Missed the 401/403 code in it → re-check at +1 day.
+- **2026-10-05** — 7-day gap → compressed re-teach of 06+07, then recall. ✅ Q1 solid: *"token is entirely
+  different, not an encrypted password — a wristband for entry that expires"* → the 09-28 misconception is gone.
+  🟡 Q2: named **Unauthorized / Forbidden** correctly, but again gave **no numbers (401/403)** and skipped
+  "does re-login fix it?" → **2nd time missing the codes. Re-check at +21 (10-19): ask for the NUMBER.**
