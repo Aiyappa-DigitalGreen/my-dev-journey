@@ -392,19 +392,30 @@ Git/GitHub · command line · SQL · debugging/profiling · testing · **DevOps 
   - **🚫 Not a guarantee.** No one can promise an offer — it depends on who's hiring, which panel,
     and performance on the day. What's controllable: hours in, depth of foundations, interview reps.
 - **Days to Dec 31:** ~150
-- **Last completed:** ✅ **Backend · Auth Concept 3 — passwords** (plain text ❌ → encryption ❌ key problem → hashing → salt → slow bcrypt/argon2) · 2026-10-05. *(Previous: Auth C1–2, 2026-09-28.)*
+- **Last completed:** ✅ **Backend · Auth Concept 4 — sessions & cookies** (server notebook = session store · random session ID · cookie auto-sent by browser) · 2026-10-06. *(Previous: Auth C3 passwords, 2026-10-05.)*
 - **🔀 PLAN REORDER (his call, 2026-09-28):** after an 8-week gap he asked to start **Backend with Authentication, from scratch**. Auth pulls forward from W12. Kotlin W1 is **paused, not done** — nothing in W1 is ticked. Dates in the 22-week table are now stale; re-plan honestly when he's ready.
 - **Teaching baseline:** 🧒 **ABSOLUTE ZERO** — explain `fun main()`, `{ }`, `println`, every token. No "obviously". (See Rule Zero in GUARDRAILS.md.)
 - **Destination level:** 🎓 **5-year Android dev + AI.** Every phase's SENIOR LAYER is mandatory.
 - **Prior projects:** 📛 **excluded until W20.** Portfolio = only what's built inside this plan.
 - **Drips running:** 🧠 Gen AI literacy (20 min/wk, from W1) · 🏛️ Design Sense (25 min/wk, **from W3**) — both conversation-only, retrospective, and **skipped if that week's Track A topic isn't solid**. See THE DRIP RULE in GUARDRAILS.md.
-- **Next action:** **Auth Concept 4 = sessions & cookies** — where does the wristband live, and how does the server remember it? Still no code. Remaining sequence: 4 sessions & cookies → 5 tokens/JWT (signed not encrypted, expiry, refresh, why JWT logout is hard — carries the open Instagram-30-days puzzle) → 6 🎓 senior layer (Android token storage/Keystore, OAuth/Google sign-in, brute force + rate limiting). **Before first code:** decide language — Python/FastAPI vs Kotlin/Ktor; needs `if`/functions taught token-by-token first. **Warm-up next session:** +1 review of 08 — ⚠️ check he no longer says **"key"** for hash/salt (said it 4× today), and that salt is *not secret*. 06/07 +21 on 10-19: ask for the **numbers 401/403** (missed twice). Kotlin reviews 01–05 overdue → compressed re-teach when Kotlin resumes. **Track C** still blocked on resume intake.
+- **Next action:** **Auth Concept 5 = tokens/JWT deeper** — expiry, refresh tokens (answers the open Instagram-30-days puzzle), why JWT logout is hard. *(A plain JWT overview — header/payload/signature, "encoded not encrypted" — was already given 2026-10-06; build on it, don't re-dump.)* Then 6 🎓 senior layer (Android token storage/Keystore, OAuth/Google sign-in, brute force + rate limiting). **Before first code:** decide language — Python/FastAPI vs Kotlin/Ktor. **Reviews due:** 08 +1 (10-06) was skipped today → do it next session (check no "key" for hash/salt; salt not secret). 09 +1 on 10-07: check he adds *"browser sends it automatically"*. 06/07 +21 on 10-19: ask for the **numbers 401/403**. Kotlin reviews 01–05 overdue. **Track C** still blocked on resume intake.
 - **DSA problems solved:** 0 / ~150–180
 - **Apps live on Play Store:** 0 / 2 *(target: Sept 30)*
 - **Applications sent:** 0 · **Interviews:** 0 · **Mocks done:** 0
-- **Notes written:** 8 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` · `06-why-tokens-exist` · `07-authn-vs-authz` · `08-password-hashing-salt` (+ 8 matching slide decks)
+- **Notes written:** 9 — `01-what-is-a-program` · `02-println-and-main` · `03-variables-and-string-templates` · `04-big-o-basics` · `05-types` · `06-why-tokens-exist` · `07-authn-vs-authz` · `08-password-hashing-salt` · `09-sessions-and-cookies` (+ 9 matching slide decks)
 
 ## 📓 PROGRESS LOG (newest at top)
+
+- **2026-10-06** — ✅ **Auth Concept 4 — sessions & cookies.** Started with discovery (forgetful bank clerk): he
+  designed the **notebook = session store** himself, then the **card = session ID**, and picked the random-ID
+  card over a name card (reason first given as "clerk can't get details" → corrected: it's about **Ravi not being
+  able to forge/guess it**). At the cookie puzzle he stopped it: *"dont explain like this i am not getting anything
+  first explain what is session,token,jwt,cookies etc"* → switched to a **direct overview of all four** (session ·
+  cookie · token · JWT incl. header/payload/signature + "encoded not encrypted") with a comparison table. **Method
+  lesson: for a cluster of related terms, give the map first, puzzles after.** Explain-back: *"session is stored in
+  server, cookie stores session id in browser"* ✅ correct but terse — missing "browser sends it automatically"
+  (added). 08 +1 review skipped (he asked to move on) → carry to next session. No drip (no code yet). 3 interview
+  Q&As. Notes/slides `09-sessions-and-cookies`.
 
 - **2026-10-05** — ✅ **Auth Concept 3 — passwords: hashing + salt.** 7-day gap → compressed re-teach of 06+07
   first. Recall: token≠encrypted password ✅ (misconception fixed); 401/403 names right but **numbers missing

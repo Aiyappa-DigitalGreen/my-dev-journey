@@ -23,6 +23,7 @@ due date. When all four are ticked ✅, the concept is durable.
 | **06 · Why tokens exist** (forgetful/stateless server · wristband · token ≠ encrypted password) — Backend/Auth | 2026-09-28 | ⏭️ 09-29 (missed) | ⏭️ 10-01 (missed) | ✅ 10-05 | ⬜ 10-19 |
 | **07 · AuthN vs AuthZ** (hotel: Name vs Zone · 401 vs 403 · IDOR = forgot ownership check) — Backend/Auth | 2026-09-28 | ⏭️ 09-29 (missed) | ⏭️ 10-01 (missed) | ✅ 10-05 | ⬜ 10-19 |
 | **08 · Passwords: hashing + salt** (smoothie · encryption ❌ key on server · salt not secret · slow bcrypt = asymmetry) — Backend/Auth | 2026-10-05 | ⬜ 10-06 | ⬜ 10-08 | ⬜ 10-12 | ⬜ 10-26 |
+| **09 · Sessions & cookies** (bank clerk notebook = session store · card = random session ID · wallet = cookie, auto-sent · logout = delete row) — Backend/Auth | 2026-10-06 | ⬜ 10-07 | ⬜ 10-09 | ⬜ 10-13 | ⬜ 10-27 |
 
 ---
 ### Quick recall log (optional)
